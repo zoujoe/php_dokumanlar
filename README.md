@@ -6,4 +6,15 @@ If you'd like to learn more about tasteful, please visit [the website.](https://
 
 ## Building from source
 
-```
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# g
