@@ -17,4 +17,6 @@ $ yarn dev
 $ yarn build
 $ yarn start
 
-# g
+# generate static project
+$ yarn generate
+```
