@@ -16,4 +16,8 @@
 	<stop  offset="1" style="stop-color:#6040DD"/>
 </linearGradient>
 <circle class="st0" cx="216" cy="192.8" r="167.6"/>
-<linearGradient id="path3797_1_" gradientUnits="userSpaceOnUse" x1="222.5774" y1="61.1693" x2="399.4226" y2="61.1693" gradientTransform="matr
+<linearGradient id="path3797_1_" gradientUnits="userSpaceOnUse" x1="222.5774" y1="61.1693" x2="399.4226" y2="61.1693" gradientTransform="matrix(1 0 0 -1 -95 254)">
+	<stop  offset="1.260747e-03" style="stop-color:#F25050"/>
+	<stop  offset="1" style="stop-color:#6040DD"/>
+</linearGradient>
+<path id="path3797" inkscape:connector-curvature="0" clas
