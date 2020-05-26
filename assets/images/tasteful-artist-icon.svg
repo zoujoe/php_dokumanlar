@@ -24,4 +24,7 @@
 	c0,12.2-12.4,22.1-27.6,22.1s-27.6-9.9-27.6-22.1c0-12.2,12.4-22.1,27.6-22.1c1.9,0,3.7,0.1,5.5,0.4v-73.9c-8.4-9.5-20.5-15-33.2-15
 	h-44.2v88.4c0,48.8,39.6,88.4,88.4,88.4s88.4-39.6,88.4-88.4v-88.4H260.2z"/>
 <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="468.0656" x2="426.9099" y2="468.0656">
-	<stop  offset
+	<stop  offset="0" style="stop-color:#F25050"/>
+	<stop  offset="1" style="stop-color:#6040DD"/>
+</linearGradient>
+<ellipse class="st2" cx="213.5" cy="468.1" rx="213.5" ry="167.
