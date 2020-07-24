@@ -1,0 +1,37 @@
+
+// Colour palette for tasteful.
+
+// _____        __            _ _     _______ _
+// |  __ \      / _|          | | |   |__   __| |
+// | |  | | ___| |_ __ _ _   _| | |_     | |  | |__   ___ _ __ ___   ___ ___
+// | |  | |/ _ |  _/ _` | | | | | __|    | |  | '_ \ / _ | '_ ` _ \ / _ / __|
+// | |__| |  __| || (_| | |_| | | |_     | |  | | | |  __| | | | | |  __\__ \
+// |_____/ \___|_| \__,_|\__,_|_|\__|    |_|  |_| |_|\___|_| |_| |_|\___|___/
+
+/*
+-- SHADES --
+*/
+
+// ! Reds
+
+// - light
+//  * saturated
+$saturated-red: hsl(0, 86%, 63%);
+$saturated-red-dim: hsl(0, 86%, 23%);
+//  * soft
+$soft-red: hsl(352, 42%, 61%);
+$soft-red-dim: hsl(352, 42%, 31%);
+
+// - dark
+//  * saturated
+$saturated-red-dark: hsl(0, 66%, 73%);
+$saturated-red-dim-dark: hsl(0, 66%, 33%);
+//  * soft
+$soft-red-dark: hsl(352, 45%, 71%);
+$soft-red-dim-dark: hsl(352, 45%, 20%);
+
+// ! Purples
+
+$dimmest-purple: hsl(253, 68%, 15%);
+$dimmer-purple: hsl(253, 69%, 20%);
+$dimmish-purple: hsl(252, 20%, 56%);
