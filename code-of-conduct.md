@@ -6,4 +6,5 @@
 
 ### Rules
 
-1. Do not abuse another user as a joke or otherwise. Keep overt
+1. Do not abuse another user as a joke or otherwise. Keep overt banter that could be misunderstood to DMs on another platform.
+2. Do not participate in any form of vote manipulation. This includes creating a burner account to like your own posts, 
