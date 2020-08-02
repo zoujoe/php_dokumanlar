@@ -10,4 +10,6 @@
 2. Do not participate in any form of vote manipulation. This includes creating a burner account to like your own posts, or creating many accounts to influence the average score of a project. 
 3. Do not post pornographic content to tasteful. This includes child pornography. Explicit album covers are permitted, but may be removed with discretion.
 4. Do not share files that were illegally obtained or are being shared in an illegal manner.
-5. Do not spam your own content or others. You may po
+5. Do not spam your own content or others. You may post about your own content strictly only on your own page.
+6. Do not attempt to illegally disrupt the operation of the tasteful website.
+7. Any content that clearly infringes these rules
