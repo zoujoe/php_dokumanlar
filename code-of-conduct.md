@@ -16,4 +16,6 @@
 
 ### Guidelines
 
-* Whilst these are not bannable offences, you may be warned for infrin
+* Whilst these are not bannable offences, you may be warned for infringing these guidelines; this may influence your account's standing in relation to moderation abilities, for instance. 
+
+1. Unless it is inherently relevant to the topic at hand
