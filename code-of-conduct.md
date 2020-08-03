@@ -12,4 +12,8 @@
 4. Do not share files that were illegally obtained or are being shared in an illegal manner.
 5. Do not spam your own content or others. You may post about your own content strictly only on your own page.
 6. Do not attempt to illegally disrupt the operation of the tasteful website.
-7. Any content that clearly infringes these rules
+7. Any content that clearly infringes these rules is to be reported responsibility. It is your duty to keep tasteful a safe place for everyone.
+
+### Guidelines
+
+* Whilst these are not bannable offences, you may be warned for infrin
