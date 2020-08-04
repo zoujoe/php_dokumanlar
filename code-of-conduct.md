@@ -18,4 +18,5 @@
 
 * Whilst these are not bannable offences, you may be warned for infringing these guidelines; this may influence your account's standing in relation to moderation abilities, for instance. 
 
-1. Unless it is inherently relevant to the topic at hand
+1. Unless it is inherently relevant to the topic at hand, please avoid political discussion (especially in regards to economics).
+2. Do not flame another user because they have an opinion you disagree with. Have constructive conversations and try to develop a deeper understanding o
