@@ -25,4 +25,5 @@
 
 ## For developers
 
-1. It is expected that all participants in this repository will not be disrespectful to any particular group or individua
+1. It is expected that all participants in this repository will not be disrespectful to any particular group or individual. This is not a political issue and is not up for debate.
+2. Forks of this repository are expected to abide by at least rule zero. tasteful or its deviations are not to be used as platforms
