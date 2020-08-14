@@ -19,4 +19,17 @@ export default {
   width: 30vw;
   &.wider {
     width: auto;
-    m
+    min-width: 30vw;
+    max-width: 40vw;
+  }
+}
+@media (max-width: 1000px) {
+  .article-content {
+    width: 80vw;
+    &.wider {
+      min-width: 80vw;
+      max-width: 95vw;
+    }
+  }
+}
+</style>
