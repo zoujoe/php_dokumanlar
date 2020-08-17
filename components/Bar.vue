@@ -14,4 +14,16 @@
         <regular-button type="primary">
           Update
         </regular-button>
-     
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import regularButton from '~/components/RegularButton'
+
+export default {
+  name: 'Bar',
+  components: {
+    regularButton
+  },
