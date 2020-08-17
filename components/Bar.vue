@@ -7,4 +7,11 @@
       <div class="prompt">
         <regular-button type="primary">
           Yes
-        </
+        </regular-button>
+        <regular-button type="primary">
+          No
+        </regular-button>
+        <regular-button type="primary">
+          Update
+        </regular-button>
+     
