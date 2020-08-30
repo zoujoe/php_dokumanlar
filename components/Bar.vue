@@ -27,3 +27,16 @@ export default {
   components: {
     regularButton
   },
+  props: {
+    visible: Boolean
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.bar {
+  position: fixed;
+  width: 30vw;
+  bottom: -8vh;
+  background: $dimmish-purple;
+  color: 
