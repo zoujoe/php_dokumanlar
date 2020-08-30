@@ -39,4 +39,10 @@ export default {
   width: 30vw;
   bottom: -8vh;
   background: $dimmish-purple;
-  color: 
+  color: $lighter-purple;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0px 0px 32px $dimmer-purple;
+  text-align: center;
+  left: calc(50vw - (30vw / 2) - 16px);
+  transition: bottom
