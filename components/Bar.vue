@@ -54,4 +54,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top
+    margin-top: 8px;
+  }
+  .prompt {
+    display: flex;
+  }
+}
+</style>
