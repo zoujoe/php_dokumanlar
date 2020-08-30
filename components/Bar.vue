@@ -45,4 +45,13 @@ export default {
   box-shadow: 0px 0px 32px $dimmer-purple;
   text-align: center;
   left: calc(50vw - (30vw / 2) - 16px);
-  transition: bottom
+  transition: bottom 0.2s ease-in-out;
+  z-index: 999; // the highest!
+  &.visible {
+    bottom: 4vh;
+  }
+  .prompt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top
