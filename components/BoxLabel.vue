@@ -8,4 +8,14 @@
 export default {
   name: 'BoxLabel',
   props: {
-    i
+    includeRightMargin: Boolean
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit C
