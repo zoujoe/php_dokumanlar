@@ -27,4 +27,12 @@ export default {
   line-height: 1.4rem;
   max-width: 50ch;
   margin-left: 5px;
-  color: $quite-
+  color: $quite-dark-grey;
+  transition: all 0.2s linear;
+  &.dark {
+    color: $quite-light-grey;
+  }
+  &.solarised-light {
+    color: $solarised-light-strong-content;
+  }
+  &.solarised
