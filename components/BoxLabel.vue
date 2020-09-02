@@ -18,4 +18,13 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit C
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+.box-label {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.4rem;
+  max-width: 50ch;
+  margin-left: 5px;
+  color: $quite-
