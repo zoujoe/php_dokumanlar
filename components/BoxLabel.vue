@@ -46,4 +46,10 @@ export default {
   }
 }
 @media (max-width: 1000px) {
-  .b
+  .box-label {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+</style>
