@@ -35,4 +35,15 @@ export default {
   &.solarised-light {
     color: $solarised-light-strong-content;
   }
-  &.solarised
+  &.solarised-dark {
+    color: $solarised-dark-strong-content;
+  }
+  &.black {
+    color: $quite-dark-grey;
+  }
+  &.includeRightMargin {
+    margin-right: 15px;
+  }
+}
+@media (max-width: 1000px) {
+  .b
