@@ -74,3 +74,60 @@ export default {
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  transition: all 0.1s linear;
+  &.light {
+    background: $greyish-blue;
+  }
+  &.dark {
+    background: $greyish-blue-dim;
+  }
+}
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  &.light {
+    background: $greyish-blue-dim;
+  }
+  &.dark {
+    background: $greyish-blue;
+  }
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  &.light {
+    background: $muted-green-dim;
+  }
+  &.dark {
+    background: $saturated-green-dim;
+  }
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input:checked ~ .checkmark {
+  &.light {
+    background: $muted-green;
+  }
+  &.dark {
+    background: $saturated-green;
+  }
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+</style>
