@@ -4,4 +4,12 @@
       <slot name="left" />
     </div>
     <div class="divider" :class="[{hideLeftColumn}, colourMode]" />
-    <div cl
+    <div class="container-content-right" :class="[{hideLeftColumn, conservativeMobileView}]">
+      <slot name="right" />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 
