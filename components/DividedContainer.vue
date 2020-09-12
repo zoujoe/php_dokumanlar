@@ -12,4 +12,11 @@
 
 <script>
 export default {
-  name: 
+  name: 'DividedContainer',
+  props: {
+    redBorder: Boolean,
+    shadow: Boolean,
+    hideLeftColumn: Boolean,
+    conservativeMobileView: Boolean
+  },
+  computed:
