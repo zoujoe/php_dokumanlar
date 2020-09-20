@@ -19,4 +19,13 @@ export default {
     hideLeftColumn: Boolean,
     conservativeMobileView: Boolean
   },
-  computed:
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss"
