@@ -37,4 +37,13 @@ export default {
   padding-left: 40px;
   padding-right: 40px;
   margin-bottom: 40px;
-  border-radi
+  border-radius: 0px 0px 10px 10px;
+  transition: all 0.2s linear;
+  z-index: 1;
+  position: relative;
+  &.dark {
+    background: $quite-deep-black;
+  }
+  &:before {
+    transform: translateX(-40px) translateY(-35px);
+   
