@@ -60,4 +60,15 @@ export default {
     }
   }
   &.solarised-light {
-    background: $solarised-light-secondary-background
+    background: $solarised-light-secondary-background;
+    &:before {
+      opacity: 0.5;
+    }
+  }
+  &.solarised-dark {
+    background: $solarised-dark-secondary-background;
+  }
+  &.black {
+    background: $deep-black;
+    &:before {
+      backgr
