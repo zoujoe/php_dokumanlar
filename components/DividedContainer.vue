@@ -46,4 +46,10 @@ export default {
   }
   &:before {
     transform: translateX(-40px) translateY(-35px);
-   
+    content: " ";
+    position: absolute;
+    background: $tasteful-gradient;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px 10px 0px 0px;
+    transition: all 0.
