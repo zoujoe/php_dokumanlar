@@ -52,4 +52,12 @@ export default {
     width: 100%;
     height: 5px;
     border-radius: 10px 10px 0px 0px;
-    transition: all 0.
+    transition: all 0.2s linear;
+  }
+  &.solarised-light, &.solarised-dark {
+    &:before {
+      background: $solarised-tasteful-gradient;
+    }
+  }
+  &.solarised-light {
+    background: $solarised-light-secondary-background
