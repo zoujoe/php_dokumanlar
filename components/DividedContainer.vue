@@ -82,4 +82,13 @@ export default {
   &.shadow {
     box-shadow: 0px 0px 50px;
     &.light {
- 
+      color: $quite-light-grey;
+    }
+    &.dark {
+      color: $dark-grey;
+    }
+    &.black {
+      color: $black;
+    }
+    &.solarised-light {
+      color: $solarised-light-mai
