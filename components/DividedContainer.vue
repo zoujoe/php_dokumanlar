@@ -91,4 +91,15 @@ export default {
       color: $black;
     }
     &.solarised-light {
-      color: $solarised-light-mai
+      color: $solarised-light-main-background;
+    }
+    &.solarised-dark {
+      color: $solarised-dark-main-background;
+    }
+  }
+}
+.container-content-left {
+  margin-right: 15px;
+  text-align: left;
+  width: 35%;
+  &.hid
