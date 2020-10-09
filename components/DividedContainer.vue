@@ -71,4 +71,15 @@ export default {
   &.black {
     background: $deep-black;
     &:before {
-      backgr
+      background: $quite-deep-black;
+    }
+  }
+  &.redBorder {
+    &:before {
+      background: $red-gradient;
+    }
+  }
+  &.shadow {
+    box-shadow: 0px 0px 50px;
+    &.light {
+ 
