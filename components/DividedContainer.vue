@@ -102,4 +102,16 @@ export default {
   margin-right: 15px;
   text-align: left;
   width: 35%;
-  &.hid
+  &.hideLeftColumn {
+    width: 0%;
+    margin-right: 0;
+    .paragraph {
+      display: none;
+    }
+    .subheading {
+      display: none;
+    }
+  }
+}
+.container-content-right {
+  width:
