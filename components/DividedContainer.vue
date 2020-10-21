@@ -143,4 +143,15 @@ export default {
   .divided-container {
     display: block;
     &.conservativeMobileView {
-      width: 
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 0;
+      &:before {
+        transform: translateX(-10px) translateY(-15px);
+      }
+      .divider {
+        display: none;
+      }
+    }
+  }
+  .container-conte
