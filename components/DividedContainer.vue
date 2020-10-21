@@ -124,4 +124,12 @@ export default {
   min-height: 100%;
   margin-right: 15px;
   background: $very-light-grey;
-  transition: a
+  transition: all 0.2s linear;
+  &.dark, &.black {
+    background: $dark-grey;
+  }
+  &.solarised-light {
+    background: $solarised-light-main-background;
+  }
+  &.solarised-dark {
+    background: $solarised-dark-main-back
