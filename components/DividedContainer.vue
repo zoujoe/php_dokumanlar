@@ -114,4 +114,14 @@ export default {
   }
 }
 .container-content-right {
-  width:
+  width: 65%;
+  &.hideLeftColumn {
+    width: 100%;
+  }
+}
+.divider {
+  width: 3px;
+  min-height: 100%;
+  margin-right: 15px;
+  background: $very-light-grey;
+  transition: a
