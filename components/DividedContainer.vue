@@ -132,4 +132,15 @@ export default {
     background: $solarised-light-main-background;
   }
   &.solarised-dark {
-    background: $solarised-dark-main-back
+    background: $solarised-dark-main-background;
+  }
+  &.hideLeftColumn {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .divided-container {
+    display: block;
+    &.conservativeMobileView {
+      width: 
