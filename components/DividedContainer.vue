@@ -154,4 +154,14 @@ export default {
       }
     }
   }
-  .container-conte
+  .container-content-left {
+    width: 100%;
+    margin-right: 0;
+    .paragraph {
+      display: none;
+    }
+  }
+  .container-content-right {
+    width: 100%;
+    &.conservativeMobileView {
+      overflo
