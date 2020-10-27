@@ -9,4 +9,11 @@
       :class="[{placeholder, alternate}, colourMode]"
       v-bind="$attrs"
       class="dropdown"
-      @change="reportV
+      @change="reportValue"
+    >
+      <option disabled>
+        {{ descriptionValue }}
+      </option>
+      <option v-for="option in options" :key="option.id">
+        {{ option }}
+      </option
