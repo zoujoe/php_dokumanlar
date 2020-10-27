@@ -164,4 +164,9 @@ export default {
   .container-content-right {
     width: 100%;
     &.conservativeMobileView {
-      overflo
+      overflow-y: auto;
+      height: 100%;
+    }
+  }
+}
+</style>
