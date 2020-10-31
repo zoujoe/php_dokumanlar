@@ -16,4 +16,18 @@
       </option>
       <option v-for="option in options" :key="option.id">
         {{ option }}
-      </option
+      </option>
+    </select>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Dropdown',
+  props: {
+    defaultValue: {
+      type: String,
+      default: ''
+    },
+    descriptionValue: {
+      type: 
