@@ -42,3 +42,17 @@ export default {
       type: Array,
       default: () => {
         return []
+      }
+    },
+    alternate: Boolean
+  },
+  data () {
+    return {
+      value: ''
+    }
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    },
+    
