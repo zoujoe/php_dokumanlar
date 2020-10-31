@@ -55,4 +55,13 @@ export default {
     colourMode () {
       return this.$store.state.theme.colourMode
     },
-    
+    placeholder () {
+      if (this.value === this.descriptionValue) {
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  mounted () {
+    if (this.defaultValu
