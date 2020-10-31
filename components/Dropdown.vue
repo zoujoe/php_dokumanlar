@@ -30,4 +30,15 @@ export default {
       default: ''
     },
     descriptionValue: {
-      type: 
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: ''
+    },
+    returnIndex: Boolean,
+    options: {
+      type: Array,
+      default: () => {
+        return []
