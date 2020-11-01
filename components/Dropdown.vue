@@ -64,4 +64,10 @@ export default {
     }
   },
   mounted () {
-    if (this.defaultValu
+    if (this.defaultValue) {
+      this.value = this.defaultValue
+    } else if (this.descriptionValue) {
+      this.value = this.descriptionValue
+    } else {
+      this.value = this.options[0]
+ 
