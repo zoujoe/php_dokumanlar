@@ -70,4 +70,11 @@ export default {
       this.value = this.descriptionValue
     } else {
       this.value = this.options[0]
- 
+    }
+  },
+  methods: {
+    reportValue () {
+      let returnValue = this.value
+      if (this.returnIndex) {
+        const selectedItemIndex = this.options.indexOf(this.value)
+  
