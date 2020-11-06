@@ -88,4 +88,12 @@ export default {
 <style lang="scss" scoped>
 
 .dropdown {
-  appear
+  appearance: none;
+  background: $lighter-purple;
+  color: $desaturated-dimmest-purple;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 16px;
+  margin-bo
