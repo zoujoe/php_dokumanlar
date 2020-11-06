@@ -77,4 +77,15 @@ export default {
       let returnValue = this.value
       if (this.returnIndex) {
         const selectedItemIndex = this.options.indexOf(this.value)
-  
+        returnValue = [this.value, selectedItemIndex]
+      }
+      this.$emit('change', returnValue)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+.dropdown {
+  appear
