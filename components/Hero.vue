@@ -11,4 +11,13 @@
 export default {
   name: 'Hero',
   props: {
-    b
+    background: {
+      type: String,
+      default: ''
+    },
+    narrow: Boolean,
+    fullscreen: Boolean
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMo
