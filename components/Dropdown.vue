@@ -114,4 +114,8 @@ export default {
 
 .dropdown-label {
   display: block;
-  margin-top: 16p
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: $desaturated-lightest-purple;
+}
+</style>
