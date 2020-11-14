@@ -102,4 +102,16 @@ export default {
   }
   &.alternate {
     background: $lightest-purple;
-    col
+    color: $desaturated-dimmest-purple;
+    &.placeholder {
+      color: rgba($desaturated-dimmest-purple, 0.5);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.dropdown-label {
+  display: block;
+  margin-top: 16p
