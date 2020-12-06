@@ -33,4 +33,14 @@ export default {
 }
 .hero {
   width: 50vw;
-  transition: all
+  transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  padding-left: 25vw;
+  padding-right: 25vw;
+  &.narrow {
+    width: 40vw;
+    padding-left: 30vw;
+    padding-righ
