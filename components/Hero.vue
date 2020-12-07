@@ -43,4 +43,17 @@ export default {
   &.narrow {
     width: 40vw;
     padding-left: 30vw;
-    padding-righ
+    padding-right: 30vw;
+  }
+}
+.hero-background {
+  background-size: cover;
+  display: block;
+  filter: blur(250px);
+  width: 110%;
+  left: -5%;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.4;
+}
+.hero-contain
