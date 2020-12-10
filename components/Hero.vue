@@ -56,4 +56,10 @@ export default {
   z-index: 1;
   opacity: 0.4;
 }
-.hero-contain
+.hero-container, .hero, .hero-background {
+  height: 400px;
+}
+.fullscreen {
+  height: 100vh;
+}
+</style>
