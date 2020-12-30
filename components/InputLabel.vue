@@ -13,4 +13,14 @@ export default {
   },
   computed: {
     colourMode () {
-      return this.$store.
+      return this.$store.state.theme.colourMode
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+.input-label {
+  font-size: 1rem;
+  
