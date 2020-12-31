@@ -23,4 +23,11 @@ export default {
 <style scoped lang="scss">
 .input-label {
   font-size: 1rem;
-  
+  font-weight: 400;
+  text-align: left;
+  line-height: 2rem;
+  max-width: 50ch;
+  color: $greyish-blue-dim;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  transition: all 0.2s linea
