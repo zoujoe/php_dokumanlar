@@ -30,4 +30,12 @@ export default {
   color: $greyish-blue-dim;
   margin-top: 20px;
   margin-bottom: 5px;
-  transition: all 0.2s linea
+  transition: all 0.2s linear;
+  &.dark {
+    color: $greyish-blue;
+  }
+  &.solarised-light {
+    color: $solarised-light-strong-content;
+  }
+  &.solarised-dark {
+    color: $solarised-dark-strong-conten
