@@ -38,4 +38,17 @@ export default {
     color: $solarised-light-strong-content;
   }
   &.solarised-dark {
-    color: $solarised-dark-strong-conten
+    color: $solarised-dark-strong-content;
+  }
+  &.black {
+    color: $quite-dark-grey;
+  }
+  &.error {
+    max-width: 30ch;
+    color: $saturated-red-dim;
+    &.dark {
+      color: $saturated-red;
+    }
+  }
+  &.noTopMargin {
+    margi
