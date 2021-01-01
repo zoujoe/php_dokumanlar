@@ -51,4 +51,14 @@ export default {
     }
   }
   &.noTopMargin {
-    margi
+    margin-top: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .input-label {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+</style>
