@@ -9,3 +9,11 @@
     </p>
     <transition name="fade">
       <modal v-if="showModal" @closeModal="showModal = false">
+        <template #heading>
+          <masthead smaller>
+            Review likers
+          </masthead>
+        </template>
+        <template #left>
+          <ul>
+      
