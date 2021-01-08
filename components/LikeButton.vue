@@ -16,4 +16,12 @@
         </template>
         <template #left>
           <ul>
-      
+            <li v-for="liker in likers" :key="liker.id">
+              {{ liker.username }}
+            </li>
+          </ul>
+        </template>
+      </modal>
+    </transition>
+  </div>
+</te
