@@ -43,4 +43,20 @@ export default {
     likes: {
       type: Number,
       default: 0
+    },
+    likers: {
+      type: Array,
+      default: () => {
+        return []
+      }
     }
+  },
+  data () {
+    return {
+      showModal: false
+    }
+  }
+}
+</script>
+
+<st
