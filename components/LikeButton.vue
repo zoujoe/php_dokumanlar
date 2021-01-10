@@ -80,3 +80,14 @@ export default {
   &:hover {
     color: $saturated-purple;
   }
+}
+.favourited-icon, .unfavourited-icon {
+  transition: all 0.2s linear;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.likes {
+  margin: 0;
+}
+.material-design-icon
