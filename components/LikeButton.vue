@@ -90,4 +90,13 @@ export default {
 .likes {
   margin: 0;
 }
-.material-design-icon
+.material-design-icon {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.likes {
+  &:hover {
+    cursor: pointer;
+  }
+}
+</style>
