@@ -24,4 +24,12 @@
       </modal>
     </transition>
   </div>
-</te
+</template>
+
+<script>
+import HeartIcon from 'vue-material-design-icons/Heart.vue'
+import Modal from '~/components/Modal.vue'
+import Masthead from '~/components/Masthead.vue'
+
+export default {
+  name:
