@@ -70,4 +70,13 @@ export default {
   border: none;
 }
 .favourited-icon {
-  co
+  color: $saturated-purple;
+  &:hover {
+    color: $desaturated-dimmish-purple;
+  }
+}
+.unfavourited-icon {
+  color: $desaturated-dimmish-purple;
+  &:hover {
+    color: $saturated-purple;
+  }
