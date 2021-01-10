@@ -59,4 +59,15 @@ export default {
 }
 </script>
 
-<st
+<style lang="scss" scoped>
+.like-button-container {
+  display: flex;
+  align-items: center;
+}
+.like-button {
+  appearance: none;
+  background: none;
+  border: none;
+}
+.favourited-icon {
+  co
