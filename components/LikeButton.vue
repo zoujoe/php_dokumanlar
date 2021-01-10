@@ -32,4 +32,15 @@ import Modal from '~/components/Modal.vue'
 import Masthead from '~/components/Masthead.vue'
 
 export default {
-  name:
+  name: 'LikeButton',
+  components: {
+    HeartIcon,
+    Modal,
+    Masthead
+  },
+  props: {
+    likedCondition: Boolean,
+    likes: {
+      type: Number,
+      default: 0
+    }
