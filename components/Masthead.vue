@@ -1,3 +1,5 @@
 <template>
   <div :class="[{ noShadow, fitWidth, noLeftMarginOnLargeScreens, smallBottomMargin, fullWidth, noMargin }, colourMode]" class="masthead">
-    <h1 :class="[{ centred, fi
+    <h1 :class="[{ centred, fitWidth, smaller, bigger }, colourMode]" class="masthead-content" :contenteditable="editable" @keydown.enter.prevent @input="emitValue">
+      <slot>Masthead content</slot>
+    </h1
