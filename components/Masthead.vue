@@ -2,4 +2,15 @@
   <div :class="[{ noShadow, fitWidth, noLeftMarginOnLargeScreens, smallBottomMargin, fullWidth, noMargin }, colourMode]" class="masthead">
     <h1 :class="[{ centred, fitWidth, smaller, bigger }, colourMode]" class="masthead-content" :contenteditable="editable" @keydown.enter.prevent @input="emitValue">
       <slot>Masthead content</slot>
-    </h1
+    </h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Masthead',
+  props: {
+    centred: Boolean,
+    smaller: Boolean,
+    fullWidth: Boolean,
+    f
