@@ -13,4 +13,10 @@ export default {
     centred: Boolean,
     smaller: Boolean,
     fullWidth: Boolean,
-    f
+    fitWidth: Boolean,
+    noLeftMarginOnLargeScreens: Boolean,
+    smallBottomMargin: Boolean,
+    noShadow: Boolean,
+    editable: Boolean,
+    bigger: Boolean,
+    noMargin: Boole
