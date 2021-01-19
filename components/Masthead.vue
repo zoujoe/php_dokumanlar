@@ -19,4 +19,13 @@ export default {
     noShadow: Boolean,
     editable: Boolean,
     bigger: Boolean,
-    noMargin: Boole
+    noMargin: Boolean
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  },
+  methods: {
+    emitValue (element) {
+      this.$emit('change', ele
