@@ -28,4 +28,14 @@ export default {
   },
   methods: {
     emitValue (element) {
-      this.$emit('change', ele
+      this.$emit('change', element.target.textContent)
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+.masthead {
+  margin-top: 8px;
+  
