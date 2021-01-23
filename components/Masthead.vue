@@ -38,4 +38,15 @@ export default {
 <style scoped lang="scss">
 .masthead {
   margin-top: 8px;
-  
+  margin-bottom: 8px;
+  &.noMargin {
+    margin: 0;
+  }
+}
+.masthead-content {
+  font-size: 36px;
+  color: $dimmest-purple;
+  font-weight: 900;
+  max-width: 50vw;
+  margin: 0;
+ 
