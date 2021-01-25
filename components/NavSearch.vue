@@ -438,3 +438,154 @@ export default {
       &.search-content-before-search {
         display: flex;
       }
+      &.search-settings {
+        display: flex;
+      }
+    }
+  }
+  &.results-layout {
+    display: flex;
+    padding-left: 3vw;
+    width: calc(100% - 3vw);
+  }
+}
+
+@supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+  .search-content-container {
+    backdrop-filter: blur(15px);
+    &.light, &.dark, &.black, &.solarised-light, &.solarised-dark {
+      background: none;
+    }
+  }
+}
+
+.results-container {
+  width: 100%;
+}
+.circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: $green-gradient;
+  opacity: 0.3;
+  &.solarised-light, &.solarised-dark {
+    background: $solarised-circle-gradient;
+  }
+  &.black {
+    background: $dark-grey;
+  }
+}
+.search-content-before-search {
+  display: none;
+  align-items: flex-end;
+  height: 100%;
+}
+.search-settings {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  z-index: 100;
+  &.results-position {
+    position: sticky;
+    transform: none;
+    left: 0;
+    top: 3vh;
+    display: none;
+  }
+}
+.flex-container {
+  display: flex;
+}
+.tags {
+  max-width: 100%;
+}
+.results {
+  display: flex;
+  transform: none !important; // bandaid fix for anime.js-related bug
+  padding-left: 3vw;
+  padding-top: 3vh;
+  padding-bottom: 10vh;
+  overflow-y: auto;
+}
+.release-results {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-gap: 20px;
+  margin-left: 3vw;
+}
+.search-settings-mobile-results-prompt {
+  display: none !important; // conflicts with .search-content-container > * display: none // TO FIX!!
+}
+.hide-search-button {
+  display: none !important; // conflicts with .search-content-container > * display: none
+}
+@media (max-width: 1000px) {
+  .nav-search {
+    &.hideBarOnMobile {
+      display: none;
+    }
+  }
+  .search-content-container {
+    width: 100%;
+    &.results-layout {
+      display: block;
+      padding-left: 0;
+    }
+  }
+  .not-on-mobile {
+    display: none;
+  }
+  .search-content-before-search {
+    display: none !important; // to fix... one day. im tired
+  }
+  .circle {
+    display: none; // performance yknow
+  }
+  .search-settings {
+    width: 100vw;
+    position: relative;
+    top: 30px;
+    left: 0;
+    transform: none;
+    margin-bottom: 5vh;
+    &.results-position {
+      width: 98vw;
+      left: 1vw;
+      top: 3vh;
+      max-height: 10vh;
+    }
+  }
+  .search-settings-divided-container {
+    margin-left: auto;
+    margin-right: auto;
+    &.resultsLoaded {
+      display: none;
+    }
+  }
+  .search-settings-mobile-results-prompt {
+    &.resultsLoaded {
+      width: 100%;
+      display: flex;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+  .hide-search-button {
+    display: block !important; // conflicts with .hide-search-button display: none. it's ugly and i need to fix
+    position: sticky;
+    top: 50vh;
+    z-index: 10000;
+  }
+  .results {
+    display: block;
+  }
+  .release-results {
+    margin-left: 0;
+    display: block;
+  }
+}
+</style>
