@@ -18,3 +18,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.paragraph-container {
+  display: flex;
+  justify-content: center;
+}
+
+.alwaysFull {
+  width: 100%;
+}
+</style>
