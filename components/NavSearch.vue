@@ -223,3 +223,218 @@ export default {
       countries.unshift('All countries')
       return countries
     }
+  },
+  watch: {
+    searchQuery () {
+      this.search()
+    }
+  },
+  methods: {
+    updateDisplay (focused) {
+      if (focused) {
+        this.searching = true
+        anime({
+          targets: '.circle',
+          translateX: '70vw',
+          translateY: '-50vh',
+          easing: 'easeOutExpo',
+          loop: true,
+          duration: 400000
+        })
+      } else if (!focused) {
+        this.searching = false
+      }
+    },
+    findReleaseType (value) {
+      this.releaseTypeName = value
+      switch (value) {
+        case 'All release types':
+          this.releaseType = false
+          break
+        case 'Singles':
+          this.releaseType = 'single'
+          break
+        case 'LPs':
+          this.releaseType = 'album'
+          break
+        case 'EPs':
+          this.releaseType = 'ep'
+      }
+    },
+    updateSearchQuery (query, value) {
+      this.includeInSearch[query] = value
+    },
+    hideSearch (e) {
+      try {
+        if (e.target === e.currentTarget) {
+        // if the parent div is clicked (what we want)
+          this.searching = false
+        }
+      } catch (err) {
+        // if e is undefined, presumably ie. button is calling this function
+        this.searching = false
+      }
+    },
+    calculateDynamicColours (target, data) {
+      switch (target) {
+        case 'artist':
+          return { backgroundColor: data.imagePalette.DarkMuted }
+        case 'artist-name':
+          return { color: data.imagePalette.LightVibrant }
+      }
+    },
+    showSearchResults (toShow, result = true) {
+      anime.remove('.circle')
+      this.loadingSearchResults = false
+      this.resultsLoaded = true
+      this.$set(this.showingResults, toShow, result)
+    },
+    processReleases (releases) {
+      this.releases = releases.data['release-groups']
+      this.releases.forEach((releasegroup, i) => {
+        // get album art first
+        this.$axios
+          .get(
+            '/coverArtArchive/release-group/' + releasegroup.id
+          )
+          .then((res) => {
+            const imageURL = res.data.images[0].thumbnails.small
+            this.$set(this.releases[i], 'image', imageURL)
+          })
+          .catch((err) => {
+            console.log('No album cover found.\n' + err)
+          })
+      })
+    },
+    search (source) {
+      this.loadingSearchResults = true
+      this.showingResults = { artists: false, releases: false }
+      this.artists = []
+      this.releases = []
+
+      // const getColours = (image, index, type) => {
+      //   const palette = (v, imagePalette) => {
+      //     v.getPalette()
+      //       .then((palette) => {
+      //         Object.keys(palette).forEach((colour) => {
+      //           const r = palette[colour]._rgb[0]
+      //           const g = palette[colour]._rgb[1]
+      //           const b = palette[colour]._rgb[2]
+      //           const formattedRGB = `rgb(${r}, ${g}, ${b})`
+      //           imagePalette[colour] = formattedRGB
+      //         })
+      //         this.artists[index].imagePalette = imagePalette
+      //       })
+      //       .finally(() => {
+      //         this.showSearchResults('artists')
+      //       })
+      //   }
+      //   if (type === 'artist') {
+      //     const proxyLowResolutionImageURL = '/wikimediaCommons?width=10&f=' + image
+      //     const imagePalette = {}
+      //     const v = new Vibrant(proxyLowResolutionImageURL)
+      //     palette(v, imagePalette)
+      //   } else {
+      //     const imageURL = image
+      //     const imagePalette = {}
+      //     const v = new Vibrant(imageURL)
+      //     palette(v, imagePalette)
+      //   }
+      // }
+
+      // check if a query is present
+      if (!this.searchQuery && source === 'from-input') {
+        this.loadingSearchResults = false
+        return false
+      }
+
+      // convert country to a code
+      let countryCode = this.selectedRegion
+      if (this.selectedRegion !== 'All countries') {
+        countryCode = countryList.getCode(this.selectedRegion)
+      }
+
+      if (this.includeInSearch.artists) {
+        this.$axios
+          .get(
+            `https://us-central1-tasteful.cloudfunctions.net/search?query=${this.searchQuery}&querytype=artist&releasetype=All&region=${countryCode}&limit=${this.amountOfResults}`
+          )
+          .then((res) => {
+            this.artists = res.data
+            this.showingResults.artists = true
+            if (!this.includeInSearch.releases) {
+              this.loadingSearchResults = false
+              this.resultsLoaded = true
+            } else if (this.includeInSearch.releases && this.showingResults.releases) {
+              this.loadingSearchResults = false
+              this.resultsLoaded = true
+            }
+          })
+      }
+      if (this.includeInSearch.releases) {
+        this.$axios
+          .get(
+            `https://us-central1-tasteful.cloudfunctions.net/search?query=${this.searchQuery}&querytype=release-group&releasetype=${this.releaseType}&region=${countryCode}&limit=${this.amountOfResults}`
+          )
+          .then((res) => {
+            this.releases = res.data
+            this.showingResults.releases = true
+
+            if (!this.includeInSearch.artists) {
+              this.loadingSearchResults = false
+              this.resultsLoaded = true
+            } else if (this.includeInSearch.artists && this.showingResults.artists) {
+              this.loadingSearchResults = false
+              this.resultsLoaded = true
+            }
+          })
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.nav-search {
+  width: 100%;
+}
+.search-bar {
+  width: 95%;
+  backdrop-filter: blur(15px);
+}
+.text-input-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+.search-content-container {
+  display: none;
+  position: absolute;
+  will-change: background;
+  transition: background 0.2s linear;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  color: $saturated-blue;
+  z-index: 4;
+  pointer-events: none; // allow clicks through element while not visible
+  &.dark, &.black, &.solarised-dark {
+    background: rgba($deep-black, 0.8);
+  }
+  &.light, &.solarised-light {
+    background: rgba($light-grey, 0.8);
+  }
+  & > * {
+    display: none;
+  }
+  &.searching {
+    display: block;
+    pointer-events: auto;
+    overflow-x: hidden;
+    &.visible {
+      height: 100vh;
+    }
+    & > * {
+      display: block;
+      &.search-content-before-search {
+        display: flex;
+      }
