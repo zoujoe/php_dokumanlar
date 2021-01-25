@@ -49,4 +49,14 @@ export default {
   font-weight: 900;
   max-width: 50vw;
   margin: 0;
- 
+  &.smaller {
+    font-size: 24px;
+  }
+  &.bigger {
+    font-size: 96px;
+  }
+  &.centred {
+    text-align: center;
+  }
+}
+</style>
