@@ -9,4 +9,15 @@ export default {
   name: 'Pill',
   props: {
     alt: Boolean,
-    smaller: 
+    smaller: Boolean
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+  .pill {
+    background: $lighter-purple;
+    border-radius: 10px;
+    padding: 32px;
+    &.alt {
+      background: $l
