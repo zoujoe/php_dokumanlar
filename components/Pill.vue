@@ -20,4 +20,10 @@ export default {
     border-radius: 10px;
     padding: 32px;
     &.alt {
-      background: $l
+      background: $lightest-purple;
+    }
+    &.smaller {
+      padding: 16px;
+    }
+  }
+</style>
