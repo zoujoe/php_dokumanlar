@@ -10,4 +10,15 @@ export default {
       type: String,
       default: ''
     },
-    s
+    size: {
+      type: String,
+      default: 'small'
+    },
+    username: {
+      type: String,
+      default: ''
+    },
+    noClick: Boolean,
+    release: {
+      type: String,
+      d
