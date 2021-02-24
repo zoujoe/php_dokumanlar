@@ -21,4 +21,12 @@ export default {
     noClick: Boolean,
     release: {
       type: String,
-      d
+      default: ''
+    }
+  },
+  methods: {
+    sendToDestination () {
+      if (this.noClick) {
+        return false
+      } else if (this.release) {
+        this.$router.push({ path: `/release/${
