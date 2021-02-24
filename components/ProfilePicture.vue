@@ -29,4 +29,16 @@ export default {
       if (this.noClick) {
         return false
       } else if (this.release) {
-        this.$router.push({ path: `/release/${
+        this.$router.push({ path: `/release/${this.release}` })
+      } else {
+        this.$router.push({ path: `/user/${this.username}` })
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.profile-picture {
+  background-size: cover;
+  bord
