@@ -41,4 +41,16 @@ export default {
 <style lang="scss" scoped>
 .profile-picture {
   background-size: cover;
-  bord
+  border-radius: 10px;
+  transition: opacity 0.2s linear;
+  &.small {
+    width: 32px;
+    height: 32px;
+  }
+  &.medium {
+    width: 64px;
+    height: 64px;
+  }
+  &:hover {
+    cursor: pointer;
+    op
