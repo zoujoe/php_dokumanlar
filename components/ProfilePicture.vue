@@ -53,4 +53,13 @@ export default {
   }
   &:hover {
     cursor: pointer;
-    op
+    opacity: 0.8;
+  }
+  &.noClick {
+    &:hover {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+}
+</style>
