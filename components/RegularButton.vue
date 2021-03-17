@@ -86,3 +86,30 @@ export default {
   &.centred {
     margin-left: auto;
     margin-right: auto;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $lightest-purple;
+    &.light {
+      background: $saturated-purple;
+      box-shadow: 0px 0px 10px hsl(252, 20%, 56%);
+    }
+  }
+  &.disabled {
+    background: none;
+    color: $desaturated-lightest-purple;
+    opacity: 0.8;
+    &:hover {
+      cursor: not-allowed;
+      background: none;
+      box-shadow: none;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+</style>
