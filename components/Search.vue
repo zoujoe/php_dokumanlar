@@ -105,3 +105,190 @@ export default {
   name: 'Search',
   components: {
     paragraph,
+    tag,
+    SettingsIcon,
+    MagnifyIcon
+  },
+  props: {
+    desktop: Boolean
+  },
+  data () {
+    return {
+      searchType: 'artists',
+      specificSearch: true,
+      lastSearchWasSpecific: false,
+      searchResult: {},
+      searchRequest: '',
+      amountOfArtists: -1,
+      loading: false,
+      displaySearchResults: false,
+      showModal: false
+    }
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  },
+  mounted () {
+    // focus search
+    document.getElementById('search-box').focus()
+    // render animations
+    lottie.loadAnimation({
+      container: document.getElementById('loading-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: loadingData
+    })
+    lottie.stop()
+    // stop animation initially to improve performance
+  },
+  methods: {
+    search () {
+      this.searchResult = []
+      this.loading = true
+      this.displaySearchResults = true
+      lottie.play()
+
+      if (
+        this.specificSearch &&
+        (!this.lastSearchWasSpecific || !this.searchRequest.includes('"'))
+      ) {
+        this.searchRequest = '"' + this.searchRequest + '"'
+        this.lastSearchWasSpecific = true
+      } else if (!this.specificSearch) {
+        this.searchRequest = this.searchRequest.replace(/"/g, '')
+        this.lastSearchWasSpecific = false
+      }
+
+      // if (this.searchType === 'artists') {
+      //   this.$axios
+      //     .get(
+      //       'https://musicbrainz.org/ws/2/artist/?query=artist:' +
+      //           this.searchRequest +
+      //           '?inc=genres&fmt=json'
+      //     )
+      //     .then((res) => {
+      //       this.processData(res, false)
+      //       this.loading = false
+      //       lottie.stop()
+      //     })
+      // } else {
+      //   this.$axios
+      //     .get(
+      //       'https://musicbrainz.org/ws/2/release-group/?query=release:' +
+      //         this.searchRequest +
+      //         '?inc=genres&inc=recordings&fmt=json'
+      //     )
+      //     .then((res) => {
+      //       this.processData(res, true)
+      //       this.loading = false
+      //       lottie.stop()
+      //     })
+      // }
+    },
+    processData (res, isRelease) {
+      if (isRelease) {
+        const albums = res.data['release-groups']
+        albums.forEach(album => this.searchResult.push(album))
+      } else {
+        const artists = res.data.artists
+        this.amountOfArtists = res.data.count
+        artists.forEach(artist => this.searchResult.push(artist))
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.search {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s linear;
+
+  &.displayingSearchResults {
+    max-height: 50vh;
+  }
+
+  &.desktop {
+    display: none;
+  }
+}
+
+.album-art {
+  height: 32px;
+  margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.search-item {
+  display: flex;
+  margin-bottom: 1rem;
+
+  .album-item {
+    display: flex;
+  }
+}
+
+.artist-name {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 50%;
+
+  &.dark {
+    color: hsl(222, 88%, 75%);
+  }
+}
+
+#loading-container {
+  width: 64px;
+  height: 64px;
+  display: none;
+
+  &.loading {
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+  }
+}
+
+#search-container {
+  display: flex;
+  background: hsl(252, 15%, 90%);
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  transition: all 0.2s linear;
+
+  &.dark {
+    background: hsl(252, 15%, 10%);
+  }
+
+  &.black {
+    background: $deep-black;
+  }
+}
+
+#search-box {
+  color: hsl(252, 15%, 10%);
+  background: none;
+  border: none;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 10px;
+  font-size: 1rem;
+  width: 100%;
+
+  &.dark {
+    color: hsl(252, 15%, 70%);
+  }
+
+  &.black {
+    color: $quite-light-grey;
