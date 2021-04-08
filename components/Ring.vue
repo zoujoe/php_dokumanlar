@@ -42,3 +42,57 @@ export default {
       type: Number,
       default: 4
     },
+    percent: {
+      type: Number,
+      default: 4
+    },
+    colour: {
+      type: String,
+      default: 'hsl(252, 70%, 56%)' // saturated-purple
+    },
+    shadow: Boolean
+  },
+  data () {
+    return {
+      circumference: undefined,
+      position: undefined,
+      radius: undefined
+    }
+  },
+  watch: {
+    width () {
+      this.calculateDimensions()
+    }
+  },
+  created () {
+    this.calculateDimensions()
+  },
+  methods: {
+    calculateDimensions () {
+      this.radius = (this.width / 2) - (this.strokeWidth * 2)
+      this.circumference = this.radius * 2 * Math.PI
+      this.position = this.width / 2
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.ring {
+  display: flex;
+  transform: rotate(180deg);
+  position: relative;
+}
+.ring-circle {
+  transition: stroke-dashoffset 0.2s;
+}
+.shadow {
+  opacity: 0.1;
+}
+.inside-ring {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
