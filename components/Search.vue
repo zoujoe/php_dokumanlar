@@ -292,3 +292,124 @@ export default {
 
   &.black {
     color: $quite-light-grey;
+  }
+}
+
+.icon-button {
+  font-size: 24px;
+  background: none;
+  color: hsl(222, 46%, 36%);
+  border: none;
+  transition: 0.2s all linear;
+
+  &:hover {
+    color: hsl(222, 68%, 45%);
+    cursor: pointer;
+  }
+
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+#settings-button {
+  color: hsl(222, 30%, 65%);
+  padding-right: 0px;
+
+  &:hover {
+    color: hsl(222, 46%, 36%);
+  }
+
+  &.dark {
+    color: hsl(222, 46%, 26%);
+
+    &:hover {
+      color: hsl(222, 68%, 45%);
+    }
+  }
+}
+
+.radio {
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: hsl(352, 42%, 61%);
+  color: #666;
+  height: 20px;
+  width: 20px;
+  border: 0;
+  border-radius: 5px;
+  margin-right: 7px;
+  outline: none;
+  transition: all 0.2s linear;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:checked {
+    background: hsl(352, 72%, 35%);
+  }
+}
+
+#refine-radios-container {
+  display: flex;
+
+  label {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+}
+
+.search-results {
+  overflow: auto;
+  max-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.search-results-amount {
+  color: $soft-red;
+  font-size: 1rem;
+
+  &.dark {
+    color: $soft-red-dim;
+  }
+}
+
+.tags {
+  display: flex;
+}
+
+a {
+  color: $soft-red;
+
+  &:hover {
+    color: $soft-red-dim;
+    cursor: pointer;
+  }
+}
+
+.search-results-list {
+  padding-left: 20px;
+}
+
+@media (max-width: 1000px) {
+  .search {
+    &.displayingSearchResults {
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .search {
+    &.desktop {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+</style>
