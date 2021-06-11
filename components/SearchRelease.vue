@@ -38,4 +38,15 @@ export default {
 .release-image {
   width: 150px;
   height: 150px;
-  border-radiu
+  border-radius: 15px;
+  opacity: 1;
+  transition: all 0.2s linear;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+.no-artwork {
+  background: $tasteful-gradient;
+  display: flex;
+  justi
