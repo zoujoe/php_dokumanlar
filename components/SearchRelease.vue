@@ -16,4 +16,15 @@ export default {
   components: {
     paragraph
   },
-  props: 
+  props: {
+    release: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
+  methods: {
+    redirectToRelease (mbid) {
+      this.$store.commit('search/setRelease', this.release)
+      this.$r
