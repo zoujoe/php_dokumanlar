@@ -27,4 +27,15 @@ export default {
   methods: {
     redirectToRelease (mbid) {
       this.$store.commit('search/setRelease', this.release)
-      this.$r
+      this.$router.push({ path: '/release/' + mbid })
+      this.$emit('changeSearching', false)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.release-image {
+  width: 150px;
+  height: 150px;
+  border-radiu
