@@ -49,4 +49,13 @@ export default {
 .no-artwork {
   background: $tasteful-gradient;
   display: flex;
-  justi
+  justify-content: center;
+  align-items: center;
+}
+.release-title-artworkless {
+  color: $snow-white;
+  font-size: 1.5rem;
+  max-width: 10ch;
+  max-height: 100px;
+  word-wrap: break-word;
+  text-align: 
