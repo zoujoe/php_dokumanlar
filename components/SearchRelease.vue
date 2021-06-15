@@ -58,4 +58,6 @@ export default {
   max-width: 10ch;
   max-height: 100px;
   word-wrap: break-word;
-  text-align: 
+  text-align: center;
+}
+</style>
