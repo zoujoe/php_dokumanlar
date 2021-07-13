@@ -8,4 +8,14 @@
 
 <script>
 export default {
-  n
+  name: 'Subheading',
+  props: {
+    centred: Boolean,
+    smaller: Boolean,
+    smallest: Boolean,
+    noMargin: Boolean,
+    editable: Boolean,
+    topMargin: Boolean,
+    titleCase: Boolean
+  },
+  co
