@@ -36,4 +36,15 @@ export default {
 .subheading {
   margin: 0px;
   margin-bottom: 8px;
-  &.noMargin
+  &.noMargin {
+    margin-bottom: 0px;
+  }
+  &.topMargin {
+    margin-top: 16px;
+  }
+}
+.subheading-content {
+  color: $dimmer-purple;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercas
