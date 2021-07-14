@@ -47,4 +47,15 @@ export default {
   color: $dimmer-purple;
   font-size: 24px;
   font-weight: 700;
-  text-transform: uppercas
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  &.smaller {
+    font-size: 14px;
+    letter-spacing: 2px;
+    &.titleCase {
+      letter-spacing: normal;
+      font-size: 18px;
+    }
+  }
+  &.smalles
