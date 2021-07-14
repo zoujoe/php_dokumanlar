@@ -18,4 +18,12 @@ export default {
     topMargin: Boolean,
     titleCase: Boolean
   },
-  co
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  },
+  methods: {
+    emitValue (element) {
+      this.$emit('change', element.target.textContent)
+    }
