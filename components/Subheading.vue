@@ -58,4 +58,12 @@ export default {
       font-size: 18px;
     }
   }
-  &.smalles
+  &.smallest {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none;
+    color: $muted-purple;
+  }
+  &.titleCase {
+    text-transform: n
