@@ -66,4 +66,10 @@ export default {
     color: $muted-purple;
   }
   &.titleCase {
-    text-transform: n
+    text-transform: none;
+  }
+  &.centred {
+    text-align: center;
+  }
+}
+</style>
