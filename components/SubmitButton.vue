@@ -129,3 +129,29 @@ export default {
 .loading-icon {
   animation: rotation 1s infinite linear;
 }
+
+@media (max-width: 1000px) {
+  .submit-button {
+    &.centreOnSmallScreens {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes GradientAnimation {
+  0%{background-position:82% 0%}
+  50%{background-position:19% 100%}
+  100%{background-position:82% 0%}
+}
+</style>
