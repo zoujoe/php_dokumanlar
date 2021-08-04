@@ -5,4 +5,14 @@
         <slot name="header" />
       </subheading>
     </div>
-    <div class="table-content" :class="{ 'table-content-curved': noHeader, lessLeftPaddi
+    <div class="table-content" :class="{ 'table-content-curved': noHeader, lessLeftPadding, smallRows }">
+      <slot name="content" />
+    </div>
+  </div>
+</template>
+
+<script>
+import subheading from '~/components/Subheading.vue'
+
+export default {
+  name: 'VerticalTabl
