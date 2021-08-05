@@ -15,4 +15,17 @@
 import subheading from '~/components/Subheading.vue'
 
 export default {
-  name: 'VerticalTabl
+  name: 'VerticalTable',
+  components: {
+    subheading
+  },
+  props: {
+    noHeader: Boolean,
+    smallRows: Boolean,
+    lessLeftPadding: Boolean
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.vertical-table 
