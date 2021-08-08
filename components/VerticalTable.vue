@@ -28,4 +28,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vertical-table 
+.vertical-table {
+  background: $lighter-purple;
+  color: black;
+  border-radius: 10px;
+}
+.header {
+  padding: 32px;
+  padding-bottom: 16px;
+}
+.table-content {
+  // CAVEAT: u
