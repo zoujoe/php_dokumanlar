@@ -40,4 +40,13 @@ export default {
 .table-content {
   // CAVEAT: unless i distinguish row as its own component and do some conditional class trickery,
   //         rows will have to be styled in both ReleaseList under the sortable-list class as well
- 
+  //         as the VerticalTable components.
+  .row {
+    padding-left: 32px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    &:nth-child(even) {
+      background: $lightest-purple;
+    }
+  }
+  &.lessLeftPadding 
