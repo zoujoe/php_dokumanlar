@@ -38,4 +38,6 @@ export default {
   padding-bottom: 16px;
 }
 .table-content {
-  // CAVEAT: u
+  // CAVEAT: unless i distinguish row as its own component and do some conditional class trickery,
+  //         rows will have to be styled in both ReleaseList under the sortable-list class as well
+ 
