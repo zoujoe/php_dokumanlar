@@ -49,4 +49,16 @@ export default {
       background: $lightest-purple;
     }
   }
-  &.lessLeftPadding 
+  &.lessLeftPadding {
+    .row {
+      padding-left: 16px;
+    }
+  }
+  &.smallRows {
+    .row {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+  &.table-content-curved {
+    border-radius: 10p
