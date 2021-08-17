@@ -61,4 +61,7 @@ export default {
     }
   }
   &.table-content-curved {
-    border-radius: 10p
+    border-radius: 10px;
+  }
+}
+</style>
