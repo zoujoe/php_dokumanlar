@@ -48,4 +48,12 @@
   <defs
      id="defs3793">
     <style
-       id="style3786">.a{fill:url(#a);}<
+       id="style3786">.a{fill:url(#a);}</style>
+    <linearGradient
+       id="a"
+       x1="95"
+       y1="396"
+       x2="527"
+       y2="396"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="
