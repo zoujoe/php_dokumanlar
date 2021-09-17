@@ -1,0 +1,138 @@
+
+const crypto = require('crypto')
+const moment = require('moment')
+const functions = require('firebase-functions')
+const admin = require('firebase-admin')
+const axios = require('axios')
+const cors = require('cors')
+
+exports.search = functions.https.onRequest((req, res) => {
+  return cors()(req, res, () => {
+    // it's worth noting that much of this code could be executed client-side
+    // but is instead done in this function for, yknow, elegance. might change.
+    const queryType = req.query.querytype // release-group, artist..
+    const limit = req.query.limit // amount of search results to load
+    const region = req.query.region // from which region in particular
+    const releaseType = req.query.releasetype // single, ep, lp..
+    const query = req.query.query
+    // example: /search?query=Kendrick Lamar&queryType=artist&limit=3
+    //          &region=All countries&releaseType=All
+
+    const searchResults = []
+    const headers = {
+      headers: {
+        'User-Agent': 'Application tasteful/0.4.0 (lcshoesmith@protonmail.com)'
+      }
+    }
+
+    const findArtistReleases = (i, artistInDatabase) => {
+      searchResults[i].releases = {}
+      const id = searchResults[i].id
+      if (artistInDatabase) {
+        // if the artist exists in the database, read the existing data
+        Object.entries(artistInDatabase.releases).forEach(([releaseID, releasegroup]) => {
+          searchResults[i].releases[releaseID] = {} // ERROR
+          searchResults[i].releases[releaseID].image = releasegroup.image
+          searchResults[i].releases[releaseID].title = releasegroup.title
+        })
+        return 'from database'
+      } // if they don't, we'll need to add them
+      // find releases
+      return axios
+        .get('https://musicbrainz.org/ws/2/release-group/?query=arid:' + id + ' AND status:"official" AND primarytype:"album"&limit=30&fmt=json', headers)
+        .then(res => res.data['release-groups'])
+        .catch((err) => {
+          res.status(500).send('ERROR WITH ' + id + ': ' + err)
+        })
+    }
+
+    const getArtistImageInfo = (wikidataID) => {
+      return axios
+        .get(
+          'https://wikidata.org/w/api.php?action=wbgetclaims&format=json&origin=*&property=P18&entity=' + wikidataID, headers
+        )
+        .then(res => res.data.claims.P18[0].mainsnak)
+        .catch((e) => {
+          // ** AIM TO REPLACE WITH MORE EFFICIENT ALTERNATIVE **
+          // getAlbumArtCandidate(i)
+        })
+    }
+
+    const getArtistRelations = (artist) => {
+      return axios
+        .get(
+          'https://musicbrainz.org/ws/2/artist/' + artist.id + '?inc=url-rels&fmt=json', headers
+        )
+        .then(res => res.data.relations)
+        .catch((err) => {
+          res.status(500).send('ERROR WITH ARTIST RELATIONS FOR ' + artist.id + ': ' + err)
+        })
+    }
+
+    const getWikidataID = (relations) => {
+      let foundWikidata = false
+      for (let relationIndex = 0; relationIndex < relations.length; relationIndex++) {
+        const relation = relations[relationIndex]
+        // get wikidata link
+        if (relation.type === 'wikidata') {
+          foundWikidata = true
+          // get wikidata ID
+          const wikidataID = relation.url.resource.slice(30) // https://www.wikidata.org/wiki/ = 30 chars
+          // lookup image
+          return wikidataID
+        }
+      }
+      // if no wikidata page was found, get album art instead
+      if (!foundWikidata) {
+        // ** AIM TO REPLACE WITH MORE EFFICIENT ALTERNATIVE **
+        // getAlbumArtCandidate(i)
+      }
+    }
+
+    const getArtistImage = (imageInfo, i) => {
+      // get filename and location
+      // (this process is a serious pain)
+      try {
+        // remove invalid characters before hash
+        let imageName = imageInfo.datavalue.value.replace(/ /g, '_')
+        const hashedImageName = crypto.createHash('md5').update(imageName).digest('hex')
+        const firstCharacterInHash = hashedImageName.charAt(0)
+        const secondCharacterInHash = hashedImageName.charAt(1)
+        // remove other invalid characters after hash (generates incorrect md5 otherwise)
+        imageName = imageName.replace('(', '%28') // no regex here as these should only occur once.
+        imageName = imageName.replace(')', '%29')
+        imageName = imageName.replace(',', '%2C')
+        // download very low res image first
+        const lowResolutionImageURL = 'https://commons.wikimedia.org/w/thumb.php?width=10&f=' + imageName // only 10px wide; stretched and blurred while loading the main image.
+        searchResults[i].imageURLLowRes = lowResolutionImageURL
+        // Note: may replace full resolution URL with a good-enough alternative (eg. 400px) in the future
+        const imageURL = 'https://upload.wikimedia.org/wikipedia/commons/' + firstCharacterInHash + '/' + firstCharacterInHash + secondCharacterInHash + '/' + imageName
+        searchResults[i].imageURL = imageURL
+      } catch (e) {
+        // if an image is not found, replace with tasteful image < TO DESIGN >
+        searchResults[i].imageURL = 'artist-icon'
+        searchResults[i].imageURLLowRes = 'artist-icon'
+        // res.status(500).send(e)
+        // if (e === 'TypeError: "res.data.claims.P18 is undefined"') {
+        // ** AIM TO REPLACE WITH MORE EFFICIENT ALTERNATIVE **
+        // If the artist has no image supplied, get an album artwork instead.
+        // getAlbumArtCandidate(i)
+        // }
+      }
+    }
+
+    const getArtistReleaseImageURL = (releasegroup) => {
+      return axios
+        .get(
+          'https://coverartarchive.org/release-group/' + releasegroup.id, headers
+        )
+        .then(res => res.data.images[0].thumbnails.small)
+        .catch((err) => {
+          console.log('No album cover found with ' + releasegroup.title + ' @ https://coverartarchive.org/release-group/' + releasegroup.id + '. ' + err)
+        })
+    }
+
+    const getReleaseArtwork = (releasegroup) => {
+      return axios
+        .get(
+          'https://coverartarchive.org/release-group/' + releasegroup.id, headers
