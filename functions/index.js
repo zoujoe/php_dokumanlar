@@ -136,3 +136,190 @@ exports.search = functions.https.onRequest((req, res) => {
       return axios
         .get(
           'https://coverartarchive.org/release-group/' + releasegroup.id, headers
+        )
+        .then(res => [res.data.images[0].thumbnails.small, res.data.images[0].thumbnails['1200']])
+        .catch((err) => {
+          if (err.message === 'Request failed with status code 404') {
+            // no release artwork found
+            return 'no-artwork'
+          } else {
+            res.status(500).send(err)
+          }
+        })
+    }
+
+    // const processArtistReleases = async (releases, i) => {
+    //   // get album artworks
+    //   for (const releasegroup of releases) {
+    //     searchResults[i].releases[releasegroup.id] = {}
+    //     const releaseTitle = releasegroup.title
+    //     const imageURL = await getArtistReleaseImageURL(releasegroup)
+    //     searchResults[i].releases[releasegroup.id].image = imageURL
+    //     searchResults[i].releases[releasegroup.id].title = releaseTitle
+    //   }
+    // }
+
+    // const saveSearchResultToDatabase = (i) => {
+    //   const id = searchResults[i].id
+    //   admin.firestore().collection('artists')
+    //     .doc(id)
+    //     .set(
+    //       searchResults[i]
+    //     )
+    // }
+
+    const processArtists = async (data) => {
+      const artists = data.artists
+      for (const [i, artist] of artists.entries()) {
+        searchResults[i] = artist
+        console.log('Starting.')
+        // check tasteful database
+        const artistInDatabase = await admin.firestore().collection('artists').doc(artist.id)
+          .get()
+          .then(res => res.data())
+        console.log(artistInDatabase)
+        const relations = await getArtistRelations(artist)
+        console.log('Got relations.')
+        const wikidataID = await getWikidataID(relations)
+        console.log('Got ID.')
+        const imageInfo = await getArtistImageInfo(wikidataID)
+        console.log('Got artist image info.')
+        getArtistImage(imageInfo, i)
+        const artistReleases = await findArtistReleases(i, artistInDatabase)
+        console.log('Got artist releases.')
+        if (artistReleases !== 'from database') {
+          // if it's from the database all data is already obtained, ready to return
+          // otherwise we need to find the data and then save it to database
+          // await processArtistReleases(artistReleases, i) // This is the bottleneck.
+          searchResults[i].releases = artistReleases
+          searchResults[i].cached = false
+          console.log('Processed artist releases.')
+        } else {
+          searchResults[i].cached = true
+        }
+      }
+      concludeSearch()
+    }
+
+    const processReleases = async (data) => {
+      const releases = data['release-groups']
+      for (const [i, releasegroup] of releases.entries()) {
+        // add to search results
+        searchResults[i] = releasegroup
+        // get album art
+        const releaseArtwork = await getReleaseArtwork(releasegroup, i)
+        searchResults[i].image = releaseArtwork[0]
+        searchResults[i].imageHQ = releaseArtwork[1]
+      }
+      concludeSearch()
+    }
+
+    const concludeSearch = () => {
+      // send back search results as a nice digestable json
+      res.status(200).send(searchResults)
+    }
+
+    let queryURL = 'https://musicbrainz.org/ws/2/' + queryType + '/?query='
+
+    if (queryType === 'artist') {
+      queryURL = queryURL + 'artist:"' + query + '"'
+      if (region !== 'All countries') {
+        queryURL = queryURL + ' AND country:"' + region
+      }
+    } else if (queryType === 'release-group') {
+      queryURL = queryURL + 'releasegroup:"' + query + '"'
+      if (releaseType !== 'All') {
+        queryURL = queryURL + ' AND primarytype:"' + releaseType
+      }
+    }
+    queryURL = queryURL + '?inc=genres&fmt=json&limit=' + limit
+    // queryURL might look like musicbrainz.org/ws/2/artist/?query=
+    //                          artist:"Kendrick Lamar"?inc=genres&fmt=json&limit=3
+    // time to call the API!
+    axios
+      .get(
+        queryURL,
+        headers
+      )
+      .then((queryResult) => {
+        if (queryType === 'artist') {
+          processArtists(queryResult.data)
+        } else if (queryType === 'release-group') {
+          processReleases(queryResult.data)
+        }
+      })
+      .catch((err) => {
+        res.status(500).send(err)
+      })
+  })
+})
+
+exports.processArtistReleases = functions.https.onRequest((req, res) => {
+  return cors()(req, res, async () => {
+    const id = req.query.id
+    const searchResults = {}
+    const headers = {
+      headers: {
+        'User-Agent': 'Application tasteful/0.4.0 (lcshoesmith@protonmail.com)'
+      }
+    }
+    // get releases
+    console.log('Processing artist releases.')
+    const releases = await axios
+      .get('https://musicbrainz.org/ws/2/release-group/?query=arid:' + id + ' AND status:"official" AND primarytype:"album"&limit=30&fmt=json', headers)
+      .then(res => res.data['release-groups'])
+      .catch((err) => {
+        res.status(500).send('ERROR WITH ' + id + ': ' + err)
+      })
+
+    const getReleaseArtwork = (releasegroup) => {
+      return axios
+        .get(
+          'https://coverartarchive.org/release-group/' + releasegroup.id, headers
+        )
+        .then(res => [res.data.images[0].thumbnails.small, res.data.images[0].thumbnails['1200']])
+        .catch((err) => {
+          // TODO: improve handling here
+          console.log('No album cover found.\n' + err)
+        })
+    }
+
+    for (const [i, releasegroup] of releases.entries()) {
+      // add to search results
+      searchResults[i] = releasegroup
+      // get album art
+      const releaseArtwork = await getReleaseArtwork(releasegroup, i)
+      searchResults[i].image = releaseArtwork[0]
+      searchResults[i].imageHQ = releaseArtwork[1]
+    }
+    res.status(200).send(releases)
+  })
+})
+
+exports.getReleaseData = functions.https.onRequest((req, res) => {
+  return cors()(req, res, () => {
+    const id = req.query.query
+
+    const headers = {
+      headers: {
+        'User-Agent': 'tasteful/0.4.0 ( lcshoesmith@protonmail.com )'
+      }
+    }
+
+    const getReleaseArtwork = (releasegroup) => {
+      return axios
+        .get(
+          'https://coverartarchive.org/release-group/' + releasegroup.id, headers
+        )
+        .then(releaseArt => [releaseArt.data.images[0].thumbnails.large, releaseArt.data.images[0].thumbnails['1200']])
+        .catch((err) => {
+          res.status(500).send(err)
+        })
+    }
+
+    const getReleaseInfo = () => {
+      return axios
+        .get(
+          'https://musicbrainz.org/ws/2/release-group/' + id + '?inc=genres&fmt=json',
+          headers
+        )
