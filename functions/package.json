@@ -20,4 +20,7 @@
     "moment": "^2.29.1"
   },
   "devDependencies": {
-    "firebase-functions-
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
