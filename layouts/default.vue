@@ -250,3 +250,188 @@ export default {
           error.message = 'Not too sure how to handle this one. Code: ' + error.code
       }
     },
+    user (user) {
+      if (user !== null && user !== false && this.email !== '') {
+        // when sign in is completed (and not from persisted state)...
+        // check to see if the user has a username
+        const usersDatabase = this.$fire.firestore.collection('users')
+        usersDatabase.doc(this.user.id).get()
+          .then((user) => {
+            const userData = user.data()
+            let username
+            if (userData === undefined || userData.username === undefined) {
+              // if the user has no username
+              username = null
+            } else {
+              // if the user has a username
+              username = userData.username
+            }
+            setTimeout(() => {
+              this.showModal = false
+              if (username !== null) {
+                this.$router.push({ path: '/user/' + username })
+              } else {
+                this.$router.push({ path: '/user/settings' })
+              }
+            }, 1000)
+          })
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+    // check if user is already logged in
+    this.$fire.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.$store.dispatch('login/updateUser', user)
+      }
+    })
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll () {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop
+      if (currentScrollPosition < 0) {
+        return
+      } // Stop executing this function if the difference between
+      // current scroll position and last scroll position is less than some offset
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 100) {
+        return
+      }
+      this.showNavbar = currentScrollPosition < this.lastScrollPosition
+      this.lastScrollPosition = currentScrollPosition
+      if (this.showNavbar && this.lastScrollPosition >= 100) {
+        this.showNavBackground = true
+      } else {
+        this.showNavBackground = false
+      }
+    },
+    toggleColourScheme () {
+      const indexOfTheme = this.colourModeToggle.indexOf(this.colourMode)
+      let indexOfThemeToCommit = 0
+      // if the currently selected theme is not in the toggle...
+      if (indexOfTheme === -1) {
+      // ...reset the theme to the first declared in the toggle.
+        indexOfThemeToCommit = 0
+      } else if (indexOfTheme === 0) {
+        indexOfThemeToCommit = 1
+      } else {
+        indexOfThemeToCommit = 0
+      }
+      this.$store.commit('theme/setColourMode', this.colourModeToggle[indexOfThemeToCommit])
+      localStorage.setItem('theme', this.colourMode)
+    },
+    signIn () {
+      if (this.showSignIn) { // sign in
+        this.$store.dispatch('login/signInUser', { email: this.email, password: this.password })
+      } else if (!this.showSignIn && this.allowSignup) { // signup with invite
+        this.$store.dispatch('login/signUpUser', { email: this.email, username: this.username, password: this.password })
+      } else { // sign up
+        alert('Sign ups are currently disabled. If you have an invite code and seed, visit https://tasteful.reviews/invite.')
+      // this.$store.dispatch('login/signUpUser', { email: this.email, password: this.password })
+      }
+    },
+    updateDisplayOnSearch (searching) {
+      if (searching) {
+      // If the search menu is up, disable overflow.
+        this.noOverflowX = true
+      } else {
+        this.noOverflowX = false
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+@import '~assets/scss/palette.scss';
+
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 400;
+  src: url(/fonts/PublicSans-Medium.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 500;
+  src: url(/fonts/PublicSans-SemiBold.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 700;
+  src: url(/fonts/PublicSans-Bold.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 900;
+  src: url(/fonts/PublicSans-Black.woff2) format("woff2");
+}
+body,
+html,
+#app {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  // &.noOverflowX {
+  //   overflow-x: hidden;
+  // }
+}
+body,
+html,
+#app,
+input,
+button {
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#app {
+  transition: background 0.2s linear;
+  min-height: 100vh;
+  &.light {
+    background: $lightest-purple;
+  }
+  &.dark {
+    background: $dark-background;
+  }
+  &.solarised-light {
+    background: $solarised-light-main-background;
+  }
+  &.solarised-dark {
+    background: $solarised-dark-main-background;
+  }
+  &.black {
+    background: $black;
+  }
+}
+input, textarea, select {
+  font-family: inherit;
+}
+nav {
+  user-select: none;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
+  opacity: 1;
+  transition: all 0.2s linear;
+  &:before {
+    transition: all 0.2s linear;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: $nav-background;
+    backdrop-filter: blur(5px);
+    content: " ";
+    width: 100%;
+    opacity: 0;
