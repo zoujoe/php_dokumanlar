@@ -623,3 +623,35 @@ input, button, a {
     .submit-button {
       margin-bottom: calc(5% - 5px); // -5px to account for links below
     }
+    .modal-link {
+      margin-top: 5px;
+      margin-left: 0;
+    }
+  }
+  .display-only-if-on-mobile {
+    display: block;
+  }
+  #links {
+    display: none;
+    &.showMenuOnMobile {
+      display: flex;
+    }
+  }
+  .toggle-menu-icon {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  #sign-in-button-container {
+    height: 55px;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all opacity 0.2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>
