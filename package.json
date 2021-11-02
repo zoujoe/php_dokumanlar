@@ -1,4 +1,9 @@
 {
   "name": "tasteful",
   "version": "0.4.0",
-  "description": "The best online music commu
+  "description": "The best online music community.",
+  "author": "Lachlan Shoesmith",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nu
