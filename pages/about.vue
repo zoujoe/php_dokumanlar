@@ -84,3 +84,110 @@
           renewed on a monthly basis. Lower-tier benefits may include an ad-free
           interface, while higher tiers may get additional promotion for their
           reviews.
+        </paragraph>
+      </paragraph-container>
+      <paragraph-container>
+        <subheading>
+          If tasteful is open-source, couldn't somebody fork it and make a free
+          version?
+        </subheading>
+        <paragraph>
+          Yes, and this is something I've considered. If tasteful does take
+          off, this is incredibly likely to occur but I will not be changing my
+          stance as I believe in open-source software, in addition to the
+          goodness of the community in that those who think tasteful is a good
+          product will be willing to donate - a very generous act, mind you!
+          Again, I'm not expecting tasteful to be popular - let alone for anyone
+          to be willing to pay, frankly - but this website is not free to run,
+          and it takes up a lot of my time to develop. Your interest alone in
+          this service means the world to me, and I am eternally grateful.
+          💜
+        </paragraph>
+      </paragraph-container>
+      <paragraph-container>
+        <subheading>Does tasteful have a crowdfunding campaign?</subheading>
+        <paragraph>
+          No, and it never will. tasteful is something that I - Lachlan - am
+          trying to consistently work on, but I simply cannot guarantee release
+          dates and certain content; I am in my final year of schooling and,
+          frankly, I shouldn't have time to work on this. Alas, I do, but that
+          time is fragile. I also don't believe that it's fair that you should
+          pay for a non-tangible product, especially one that will be that way
+          for quite some time.
+        </paragraph>
+      </paragraph-container>
+      <paragraph-container>
+        <subheading>Who worked on tasteful?</subheading>
+        <paragraph>
+          tasteful is the work of a community who are looking for the perfect
+          place to discuss music. A place which is friendly and welcoming to
+          both those knowledgeable or the people looking to listen to more
+          music. Here are some of the main people involved in the
+          project:
+        </paragraph>
+        <list>
+          <li>
+            👩‍💻 <a href="https://twitter.com/lachlantula">Lachlan</a> -
+            development, designing
+          </li>
+          <li>
+            👩‍🎨 <a href="https://twitter.com/kolbbbbb">Kol</a> - icon design
+          </li>
+          <li>
+            🤗 Everyone who used to follow
+            <a
+              href="https://twitter.com/tastefulreviews"
+            >our Twitter account</a>. RIP.
+          </li>
+        </list>
+        <paragraph>
+          tasteful's database is powered by <a href="https://musicbrainz.org">MusicBrainz</a> as well as <a href="https://www.wikidata.org">Wikidata</a>.
+        </paragraph>
+        <paragraph>
+          tasteful was developed on the land of the Darug people of modern-day Sydney, who are the traditional custodians and the Traditional Owners of the land on which we
+          developed this software, who we acknowledge with great respect. We also pay our respects to Elders past and present, and acknowledge the Aboriginal people for their custodianship of this land,
+          who have long before us lived, loved, and raised their children on this land.
+          <br>
+          Please be aware that tasteful may feature the names, images, and voices of deceased people.
+        </paragraph>
+      </paragraph-container>
+    </article-content>
+  </main>
+</template>
+
+<script>
+// @ is an alias to /src
+import masthead from '~/components/Masthead.vue'
+import subheading from '~/components/Subheading.vue'
+import articleContent from '~/components/ArticleContent.vue'
+import paragraphContainer from '~/components/ParagraphContainer.vue'
+import paragraph from '~/components/Paragraph.vue'
+import list from '~/components/List.vue'
+
+export default {
+  name: 'About',
+  components: {
+    masthead,
+    subheading,
+    articleContent,
+    paragraph,
+    paragraphContainer,
+    list
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.about {
+  padding-left: 3vw;
+  padding-right: 3vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3vh;
+}
+</style>
