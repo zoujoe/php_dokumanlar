@@ -93,3 +93,94 @@ export default {
         name: 'Querying...'
       },
       singles: [],
+      albums: [],
+      live: [],
+      extendedPlays: [],
+      mixtapes: [],
+      broadcasts: [],
+      others: []
+    }
+  },
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  },
+  mounted () {
+    // this.$axios.get('https://musicbrainz.org/ws/2/artist/?query=arid:' + this.id + '&fmt=json')
+    //   .then((res) => {
+    //     this.artist = res.data.artists[0]
+    //     document.title = 'tasteful | ' + this.artist.name
+    //   })
+    // this.$axios.get('https://musicbrainz.org/ws/2/release-group/?query=arid:' + this.id + '+AND+status:official&limit=100&fmt=json')
+    //   .then((res) => {
+    //     this.releases = res.data['release-groups']
+    //     this.sortReleasesByType()
+    //   })
+  },
+  methods: {
+    sortReleasesByType () {
+      for (const release of this.releases) {
+        if (release['primary-type'] === 'Single') {
+          this.singles.push(release)
+        } else if (release['primary-type'] === 'Album') {
+          if (release['secondary-types'] && release['secondary-types']) {
+            if (release['secondary-types'].includes('Mixtape/Street')) {
+              this.mixtapes.push(release)
+            } else if (release['secondary-types'].includes('Live')) {
+              this.live.push(release)
+            }
+          } else {
+            this.albums.push(release)
+          }
+        } else if (release['primary-type'] === 'EP') {
+          this.extendedPlays.push(release)
+        } else if (release['primary-type'] === 'Broadcast') {
+          this.broadcasts.push(release)
+        } else {
+          this.others.push(release)
+        }
+      }
+      this.singles.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+      this.mixtapes.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+      this.live.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+      this.albums.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+      this.extendedPlays.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+      this.broadcasts.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+      this.others.sort(
+        (release1, release2) => this.sortReleasesAlphabetically(release1, release2)
+      )
+    },
+    sortReleasesAlphabetically (release1, release2) {
+      if (release1.title < release2.title) {
+        return -1
+      } else if (release1.title > release2.title) {
+        return 1
+      }
+      return 0
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.artist {
+  padding-left: 3vw;
+  padding-right: 3vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3vh;
+}
+</style>
