@@ -6,4 +6,6 @@
           <masthead centred>
             Donation destination
           </masthead>
-          <para
+          <paragraph>
+            All of these are Australian organisations. We may donate to non-Australian organisations
+            at some point in the future, but these are groups that we tru
