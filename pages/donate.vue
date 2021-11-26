@@ -8,4 +8,10 @@
           </masthead>
           <paragraph>
             All of these are Australian organisations. We may donate to non-Australian organisations
-            at some point in the future, but these are groups that we tru
+            at some point in the future, but these are groups that we trust and usually have personal experience with,
+            and as such can vouch for their quality.
+          </paragraph>
+        </template>
+        <template #right>
+          <paragraph-container>
+       
