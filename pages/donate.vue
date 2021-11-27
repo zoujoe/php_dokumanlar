@@ -23,4 +23,7 @@
                   🦋 <a href="https://www.beyondblue.org.au/">Beyond Blue</a> - fantastic resource for seeking help for a wide variety of
                   mental illnesses.
                 </li>
-       
+                <li>
+                  🐕 <a href="https://www.blackdoginstitute.org.au/">Black Dog Institute</a> - pioneers research into mental health
+                  and the treatment of such.
+           
