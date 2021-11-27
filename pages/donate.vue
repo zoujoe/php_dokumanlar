@@ -20,4 +20,7 @@
               poignant issue that deeply influences many members of the music community - both consumers and creators alike.
               <list>
                 <li>
-                  🦋
+                  🦋 <a href="https://www.beyondblue.org.au/">Beyond Blue</a> - fantastic resource for seeking help for a wide variety of
+                  mental illnesses.
+                </li>
+       
