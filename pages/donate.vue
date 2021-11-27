@@ -14,4 +14,6 @@
         </template>
         <template #right>
           <paragraph-container>
-       
+            <subheading>November</subheading>
+            <paragraph>
+              In November, tasteful focuses on <strong>mental health</strong>, and why wouldn't we?  It's an incredib
