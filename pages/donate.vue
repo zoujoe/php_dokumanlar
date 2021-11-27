@@ -16,4 +16,8 @@
           <paragraph-container>
             <subheading>November</subheading>
             <paragraph>
-              In November, tasteful focuses on <strong>mental health</strong>, and why wouldn't we?  It's an incredib
+              In November, tasteful focuses on <strong>mental health</strong>, and why wouldn't we?  It's an incredibly
+              poignant issue that deeply influences many members of the music community - both consumers and creators alike.
+              <list>
+                <li>
+                  🦋
