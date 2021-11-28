@@ -29,4 +29,11 @@
                 </li>
               </list>
               If you need help urgently, please don't hesitate to contact your
-              <a href="https://en.wikipedia.org/wiki/List_of_suicide_crisis
+              <a href="https://en.wikipedia.org/wiki/List_of_suicide_crisis_lines">local crisis line</a>. 💜
+            </paragraph>
+          </paragraph-container>
+        </template>
+      </modal>
+    </transition>
+    <article-content>
+      <masthead centred small
