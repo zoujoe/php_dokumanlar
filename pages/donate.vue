@@ -26,4 +26,7 @@
                 <li>
                   🐕 <a href="https://www.blackdoginstitute.org.au/">Black Dog Institute</a> - pioneers research into mental health
                   and the treatment of such.
-           
+                </li>
+              </list>
+              If you need help urgently, please don't hesitate to contact your
+              <a href="https://en.wikipedia.org/wiki/List_of_suicide_crisis
