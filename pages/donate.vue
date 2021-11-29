@@ -36,4 +36,10 @@
       </modal>
     </transition>
     <article-content>
-      <masthead centred small
+      <masthead centred smaller full-width>
+        Donate
+      </masthead>
+      <paragraph-container>
+        <subheading>Thank you for even considering donating!</subheading>
+        <paragraph>
+          It t
