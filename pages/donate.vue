@@ -42,4 +42,5 @@
       <paragraph-container>
         <subheading>Thank you for even considering donating!</subheading>
         <paragraph>
-          It t
+          It truly means the world, and your donations will go to directly to the tasteful team,
+          unless stated otherwise on the tier. Let's talk about how to unlock the full buffet of fea
