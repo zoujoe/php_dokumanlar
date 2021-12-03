@@ -48,4 +48,11 @@
         <paragraph smaller>
           All prices are in $USD.
         </paragraph>
-      </par
+      </paragraph-container>
+    </article-content>
+    <div id="tiers-container" :class="colourMode">
+      <masthead smaller fit-width centred>
+        Tiers
+      </masthead>
+      <div id="tiers">
+   
