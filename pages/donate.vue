@@ -55,4 +55,6 @@
         Tiers
       </masthead>
       <div id="tiers">
-   
+        <div id="lowest-tier" :class="colourMode" class="tier">
+          <div class="tier-content">
+            <subheading>$3<span :class="colourMode" class="money-amount">/mo</span> 🥞</subheading>
