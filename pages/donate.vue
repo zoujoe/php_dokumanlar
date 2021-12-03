@@ -43,4 +43,9 @@
         <subheading>Thank you for even considering donating!</subheading>
         <paragraph>
           It truly means the world, and your donations will go to directly to the tasteful team,
-          unless stated otherwise on the tier. Let's talk about how to unlock the full buffet of fea
+          unless stated otherwise on the tier. Let's talk about how to unlock the full buffet of features tasteful has been cooking up over the last year or two.
+        </paragraph>
+        <paragraph smaller>
+          All prices are in $USD.
+        </paragraph>
+      </par
