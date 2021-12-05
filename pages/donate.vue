@@ -58,3 +58,8 @@
         <div id="lowest-tier" :class="colourMode" class="tier">
           <div class="tier-content">
             <subheading>$3<span :class="colourMode" class="money-amount">/mo</span> 🥞</subheading>
+            <paragraph>
+              The base tier has the following benefits...
+              <list>
+                <li>❌ No advertisements.</li>
+                <li>Early access to
