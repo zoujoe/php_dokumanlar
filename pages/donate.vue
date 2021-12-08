@@ -65,4 +65,9 @@
                 <li>Early access to major tasteful updates (ie 0.x.0 versions).</li>
                 <li>Receive the kinda nice and neat Silver Supporter badge! It's pretty cool.</li>
               </list>
-            </parag
+            </paragraph>
+          </div>
+        </div>
+        <div id="middle-tier" :class="colourMode" class="tier">
+          <div class="tier-content">
+            <subheading>$5<span :class="
