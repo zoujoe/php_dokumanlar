@@ -62,4 +62,7 @@
               The base tier has the following benefits...
               <list>
                 <li>❌ No advertisements.</li>
-                <li>Early access to
+                <li>Early access to major tasteful updates (ie 0.x.0 versions).</li>
+                <li>Receive the kinda nice and neat Silver Supporter badge! It's pretty cool.</li>
+              </list>
+            </parag
