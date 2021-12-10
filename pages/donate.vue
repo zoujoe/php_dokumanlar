@@ -73,4 +73,6 @@
             <subheading>$5<span :class="colourMode" class="money-amount">/mo</span> 🍨</subheading>
             <paragraph>
               Get the same bonuses as the $3/mo folk, in addition to the following...
-       
+              <list>
+                <li>More nuanced profile customisation.</li>
+                <li>Unlock every single customisation option for the website and make tasteful your ow
