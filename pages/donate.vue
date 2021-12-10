@@ -75,4 +75,10 @@
               Get the same bonuses as the $3/mo folk, in addition to the following...
               <list>
                 <li>More nuanced profile customisation.</li>
-                <li>Unlock every single customisation option for the website and make tasteful your ow
+                <li>Unlock every single customisation option for the website and make tasteful your own.</li>
+                <li>Receive the very special and cool Golden Supporter badge! How pretty.</li>
+              </list>
+            </paragraph>
+          </div>
+        </div>
+        <div id="h
