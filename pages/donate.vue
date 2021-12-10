@@ -83,4 +83,8 @@
         </div>
         <div id="highest-tier" :class="colourMode" class="tier">
           <div class="tier-content">
-            <subheading>$10<span :class="colourMode" class="money-amount">/mo<
+            <subheading>$10<span :class="colourMode" class="money-amount">/mo</span> 🌟</subheading>
+            <paragraph>
+              Receive all the benefits of the other tiers, and...
+              <list>
+                <li>Use minor updates (ie 0.x.x rather th
