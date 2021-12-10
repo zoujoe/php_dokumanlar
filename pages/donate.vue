@@ -81,4 +81,6 @@
             </paragraph>
           </div>
         </div>
-        <div id="h
+        <div id="highest-tier" :class="colourMode" class="tier">
+          <div class="tier-content">
+            <subheading>$10<span :class="colourMode" class="money-amount">/mo<
