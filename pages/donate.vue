@@ -87,4 +87,6 @@
             <paragraph>
               Receive all the benefits of the other tiers, and...
               <list>
-                <li>Use minor updates (ie 0.x.x rather th
+                <li>Use minor updates (ie 0.x.x rather than 0.x.0 'major' updates) early, live on the official tasteful website.</li>
+                <li>Get deeper insight into what I'm working on and what's coming next.</li>
+        
