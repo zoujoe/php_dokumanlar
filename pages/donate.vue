@@ -89,4 +89,7 @@
               <list>
                 <li>Use minor updates (ie 0.x.x rather than 0.x.0 'major' updates) early, live on the official tasteful website.</li>
                 <li>Get deeper insight into what I'm working on and what's coming next.</li>
-        
+                <li>Receive the Platinum Titanium Cool Mineral Supporter badge. Very impressive stuff. You deserve it.</li>
+              </list>
+            </paragraph>
+     
