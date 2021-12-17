@@ -103,4 +103,10 @@
       no-definitive-height
       dont-show-right-on-mobile
     >
-      <t
+      <template #left>
+        <subheading>
+          The Care Package
+        </subheading>
+        <paragraph>
+          The Care Package is, essentially, just a donation to express your gratitude.
+          I know that it se
