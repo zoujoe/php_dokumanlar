@@ -92,4 +92,15 @@
                 <li>Receive the Platinum Titanium Cool Mineral Supporter badge. Very impressive stuff. You deserve it.</li>
               </list>
             </paragraph>
-     
+          </div>
+        </div>
+      </div>
+    </div>
+    <hero
+      no-padding
+      inside-padding
+      smaller-image
+      no-definitive-height
+      dont-show-right-on-mobile
+    >
+      <t
