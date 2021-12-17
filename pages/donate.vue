@@ -109,4 +109,5 @@
         </subheading>
         <paragraph>
           The Care Package is, essentially, just a donation to express your gratitude.
-          I know that it se
+          I know that it seems self-indulgent to put this as an option, but we really want to give the opportunity for our users to not
+          only keep the doors open here, but to also unlock even mor
