@@ -114,4 +114,6 @@
           working around-the-clock.
         </paragraph>
         <paragraph>
-          In addition to those causes, every month a quarter o
+          In addition to those causes, every month a quarter of all Care Package donations goes to a specific cause.
+          <!-- You can view our current destination <a @click="showModal = !showModal">here</a>. -->
+        </parag
