@@ -116,4 +116,8 @@
         <paragraph>
           In addition to those causes, every month a quarter of all Care Package donations goes to a specific cause.
           <!-- You can view our current destination <a @click="showModal = !showModal">here</a>. -->
-        </parag
+        </paragraph>
+        <paragraph>
+          Donations will be split amongst the following <strong>every month</strong>:
+          <list>
+            <li>🙋‍♀️ The tasteful team.
