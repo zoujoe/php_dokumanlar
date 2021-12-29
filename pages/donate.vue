@@ -120,4 +120,7 @@
         <paragraph>
           Donations will be split amongst the following <strong>every month</strong>:
           <list>
-            <li>🙋‍♀️ The tasteful team.
+            <li>🙋‍♀️ The tasteful team.</li>
+            <li>🧠 <a href="https://musicbrainz.org/">MusicBrainz</a></li>
+            <li>👩‍💻 <a href="https://vuejs.org/">Vue.js</a></li>
+          </li
