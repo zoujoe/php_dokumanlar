@@ -131,4 +131,8 @@
       </template>
       <template #right>
         <div>
-          <img id="screensho
+          <img id="screenshot" src="@/assets/images/screenshot.png" alt="Screenshot of tasteful code.">
+          <paragraph class="faded">
+            I can see myself from here!
+          </paragraph>
+        </di
