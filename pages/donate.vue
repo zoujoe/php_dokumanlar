@@ -123,4 +123,12 @@
             <li>🙋‍♀️ The tasteful team.</li>
             <li>🧠 <a href="https://musicbrainz.org/">MusicBrainz</a></li>
             <li>👩‍💻 <a href="https://vuejs.org/">Vue.js</a></li>
-          </li
+          </list>
+        </paragraph>
+        <subheading smaller>
+          💰 Starting from $5
+        </subheading>
+      </template>
+      <template #right>
+        <div>
+          <img id="screensho
