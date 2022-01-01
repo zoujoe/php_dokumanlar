@@ -135,4 +135,14 @@
           <paragraph class="faded">
             I can see myself from here!
           </paragraph>
-        </di
+        </div>
+      </template>
+    </hero>
+  </main>
+</template>
+
+<script>
+// @ is an alias to /src
+import masthead from '~/components/Masthead.vue'
+import subheading from '~/components/Subheading.vue'
+import arti
