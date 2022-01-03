@@ -169,4 +169,18 @@ export default {
       showModal: false
     }
   },
-  
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.article-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tiers-c
