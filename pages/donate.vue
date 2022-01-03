@@ -148,4 +148,11 @@ import subheading from '~/components/Subheading.vue'
 import articleContent from '~/components/ArticleContent.vue'
 import paragraphContainer from '~/components/ParagraphContainer.vue'
 import paragraph from '~/components/Paragraph.vue'
-import modal fro
+import modal from '~/components/Modal.vue'
+import list from '~/components/List.vue'
+import hero from '~/components/Hero.vue'
+
+export default {
+  name: 'Donate',
+  components: {
+    mas
