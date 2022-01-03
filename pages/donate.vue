@@ -145,4 +145,7 @@
 // @ is an alias to /src
 import masthead from '~/components/Masthead.vue'
 import subheading from '~/components/Subheading.vue'
-import arti
+import articleContent from '~/components/ArticleContent.vue'
+import paragraphContainer from '~/components/ParagraphContainer.vue'
+import paragraph from '~/components/Paragraph.vue'
+import modal fro
