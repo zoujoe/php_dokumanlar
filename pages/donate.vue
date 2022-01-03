@@ -155,4 +155,18 @@ import hero from '~/components/Hero.vue'
 export default {
   name: 'Donate',
   components: {
-    mas
+    masthead,
+    subheading,
+    articleContent,
+    paragraph,
+    paragraphContainer,
+    modal,
+    list,
+    hero
+  },
+  data () {
+    return {
+      showModal: false
+    }
+  },
+  
