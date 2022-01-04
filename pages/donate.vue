@@ -192,3 +192,13 @@ export default {
   padding-right: 3vw;
   margin-top: 6vh;
   transition: all 0.2s linear;
+  .masthead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.dark {
+    background: $quite-deep-black;
+    box-shadow: 0px -30px 50px $dark-grey;
+  }
+  &.solarised-light {
+    ba
