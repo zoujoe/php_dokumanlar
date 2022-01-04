@@ -205,4 +205,13 @@ export default {
     box-shadow: 0px -30px 50px $solarised-light-main-background;
   }
   &.solarised-dark {
-    background: $solarised-
+    background: $solarised-dark-secondary-background;
+    box-shadow: 0px -30px 50px $solarised-dark-main-background;
+  }
+  &.black {
+    background: $black;
+    box-shadow: 0px -30px 50px $deep-black;
+  }
+}
+
+#tier
