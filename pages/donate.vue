@@ -183,4 +183,12 @@ export default {
   margin-right: auto;
 }
 
-#tiers-c
+#tiers-container {
+  background: $quite-white;
+  box-shadow: 0px -30px 50px $very-light-grey;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  margin-top: 6vh;
+  transition: all 0.2s linear;
