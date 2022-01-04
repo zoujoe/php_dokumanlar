@@ -201,4 +201,8 @@ export default {
     box-shadow: 0px -30px 50px $dark-grey;
   }
   &.solarised-light {
-    ba
+    background: $solarised-light-secondary-background;
+    box-shadow: 0px -30px 50px $solarised-light-main-background;
+  }
+  &.solarised-dark {
+    background: $solarised-
