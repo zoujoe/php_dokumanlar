@@ -234,4 +234,19 @@ export default {
     background: $solarised-light-main-background;
   }
   &.solarised-dark {
-    background: $solarised-dark-main
+    background: $solarised-dark-main-background;
+  }
+  &.black {
+    background: $deep-black;
+  }
+  .paragraph {
+    &.dark {
+      color: hsl(222, 10%, 80%);
+    }
+  }
+}
+
+.tier-content {
+  padding: 3vh 3vw 3vh 3vw;
+  width: 80%;
+}
