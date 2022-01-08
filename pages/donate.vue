@@ -214,4 +214,16 @@ export default {
   }
 }
 
-#tier
+#tiers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tier {
+  background: #fff;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s linea
