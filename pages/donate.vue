@@ -226,4 +226,12 @@ export default {
   height: 60vh;
   display: flex;
   justify-content: center;
-  transition: all 0.2s linea
+  transition: all 0.2s linear;
+  &.dark {
+    background: hsl(249, 22%, 20%);
+  }
+  &.solarised-light {
+    background: $solarised-light-main-background;
+  }
+  &.solarised-dark {
+    background: $solarised-dark-main
