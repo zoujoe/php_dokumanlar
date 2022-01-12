@@ -250,3 +250,12 @@ export default {
   padding: 3vh 3vw 3vh 3vw;
   width: 80%;
 }
+
+.money-amount {
+  transition: all 0.2s linear;
+  font-size: 1rem;
+  margin-left: 3px;
+  color: hsl(222, 28%, 45%);
+  &.dark {
+    color: hsl(222, 38%, 75%);
+  
