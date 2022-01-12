@@ -258,4 +258,17 @@ export default {
   color: hsl(222, 28%, 45%);
   &.dark {
     color: hsl(222, 38%, 75%);
+  }
+}
+
+#lowest-tier {
+  border-radius: 10px 0px 0px 10px;
+}
+
+#middle-tier {
+  border-radius: 0px 10px 10px 0px;
+}
+
+#middle-tier {
+  box-shadow: 3px 4px 50px hsla(252, 20%, 20%, 0.3);
   
