@@ -278,4 +278,15 @@ export default {
     background: hsl(249, 22%, 30%);
   }
   &.solarised-dark,  &.solarised-light {
-    outline: 1px $solarised-violet sol
+    outline: 1px $solarised-violet solid;
+  }
+  &.black {
+    outline: 1px $quite-light-grey solid;
+  }
+}
+
+#care-package {
+  box-shadow: 3px 4px 50px hsla(252, 20%, 20%, 0.3);
+  border-radius: 20px;
+  height: fit-content;
+  paddin
