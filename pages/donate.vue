@@ -271,4 +271,11 @@ export default {
 
 #middle-tier {
   box-shadow: 3px 4px 50px hsla(252, 20%, 20%, 0.3);
-  
+  z-index: 1;
+  border-radius: 20px;
+  height: 70vh;
+  &.dark {
+    background: hsl(249, 22%, 30%);
+  }
+  &.solarised-dark,  &.solarised-light {
+    outline: 1px $solarised-violet sol
