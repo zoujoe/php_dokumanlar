@@ -289,4 +289,19 @@ export default {
   box-shadow: 3px 4px 50px hsla(252, 20%, 20%, 0.3);
   border-radius: 20px;
   height: fit-content;
-  paddin
+  padding-bottom: 20px;
+}
+
+#care-package-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faded {
+  opacity: 0.8;
+}
+
+#screenshot {
+  width: 70%;
+  border-radius: 4
