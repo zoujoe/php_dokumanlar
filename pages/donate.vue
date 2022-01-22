@@ -317,4 +317,13 @@ export default {
 
 @media (max-width: 1000px) {
   #tiers {
-  
+    display: block;
+  }
+  .tier, #middle-tier {
+    height: 100%;
+  }
+  #lowest-tier {
+    border-radius: 10px 10px 0px 0px;
+  }
+  #middle-tier {
+    background: $very-light-gr
