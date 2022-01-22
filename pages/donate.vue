@@ -304,4 +304,17 @@ export default {
 
 #screenshot {
   width: 70%;
-  border-radius: 4
+  border-radius: 40px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all opacity 0.2s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+@media (max-width: 1000px) {
+  #tiers {
+  
