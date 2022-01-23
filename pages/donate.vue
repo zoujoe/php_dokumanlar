@@ -326,4 +326,12 @@ export default {
     border-radius: 10px 10px 0px 0px;
   }
   #middle-tier {
-    background: $very-light-gr
+    background: $very-light-grey;
+    border-radius: 0;
+    &.dark {
+      background: hsl(249, 22%, 30%);
+    }
+    &.solarised-light {
+      background: $solarised-light-secondary-background;
+    }
+    &.solari
