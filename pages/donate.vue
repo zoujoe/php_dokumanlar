@@ -344,4 +344,10 @@ export default {
   #middle-tier {
     box-shadow: none;
     z-index: 0;
-    border-radius: 0
+    border-radius: 0px 0px 10px 10px;
+    &.dark {
+      background: hsl(249, 22%, 20%);
+    }
+    &.solarised-light {
+      background: $solarised-light-secondary-background;
+      outline: 
