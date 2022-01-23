@@ -350,4 +350,15 @@ export default {
     }
     &.solarised-light {
       background: $solarised-light-secondary-background;
-      outline: 
+      outline: none;
+    }
+    &.solarised-dark {
+      background: $solarised-dark-secondary-background;
+      outline: none;
+    }
+    &.black {
+      outline: none;
+    }
+  }
+}
+</style>
