@@ -334,4 +334,14 @@ export default {
     &.solarised-light {
       background: $solarised-light-secondary-background;
     }
-    &.solari
+    &.solarised-dark {
+      background: $solarised-dark-secondary-background;
+    }
+    &.black {
+      background: $quite-deep-black;
+    }
+  }
+  #middle-tier {
+    box-shadow: none;
+    z-index: 0;
+    border-radius: 0
