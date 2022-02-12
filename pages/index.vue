@@ -11,4 +11,8 @@
           </nuxt-link>
           <paragraph>things that DON'T work:</paragraph>
           <ul>
-            <li>proper display of reviews to
+            <li>proper display of reviews to other users</li>
+            <li>ratings</li>
+            <li>most things on this version</li>
+          </ul>
+          <paragraph>have fun poking around for as long as i keep it up, though! writing r
