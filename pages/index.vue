@@ -7,4 +7,8 @@
             kind of working. didn't intend for that to be the case (as you can probably tell) but here we are!
           </paragraph>
           <nuxt-link to="/release/aa366795-92d7-4d67-91fa-6741f82a4858">
-            this page should (mostly
+            this page should (mostly) work if you're logged in
+          </nuxt-link>
+          <paragraph>things that DON'T work:</paragraph>
+          <ul>
+            <li>proper display of reviews to
