@@ -24,4 +24,8 @@
 
 <script>
 // @ is an alias to /src
-import Para
+import Paragraph from '~/components/Paragraph.vue'
+import ArticleContent from '~/components/ArticleContent.vue'
+import ParagraphContainer from '~/components/ParagraphContainer.vue'
+
+export 
