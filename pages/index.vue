@@ -15,4 +15,13 @@
             <li>ratings</li>
             <li>most things on this version</li>
           </ul>
-          <paragraph>have fun poking around for as long as i keep it up, though! writing r
+          <paragraph>have fun poking around for as long as i keep it up, though! writing reviews should work fine btw.</paragraph>
+        </paragraph-container>
+      </article-content>
+    </div>
+  </main>
+</template>
+
+<script>
+// @ is an alias to /src
+import Para
