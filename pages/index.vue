@@ -28,4 +28,16 @@ import Paragraph from '~/components/Paragraph.vue'
 import ArticleContent from '~/components/ArticleContent.vue'
 import ParagraphContainer from '~/components/ParagraphContainer.vue'
 
-export 
+export default {
+  name: 'Index',
+  components: {
+    Paragraph,
+    ArticleContent,
+    ParagraphContainer
+  },
+  data () {
+    return {
+      isFullWidth: false
+    }
+  },
+  c
