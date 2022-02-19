@@ -40,4 +40,15 @@ export default {
       isFullWidth: false
     }
   },
-  c
+  computed: {
+    colourMode () {
+      return this.$store.state.theme.colourMode
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.index {
+  padding-left: 3vw;
+  paddi
