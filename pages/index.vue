@@ -51,4 +51,13 @@ export default {
 <style lang="scss" scoped>
 .index {
   padding-left: 3vw;
-  paddi
+  padding-right: 3vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3vh;
+}
+
+#screenshot {
+  width: 70%;
+}
+</style>
