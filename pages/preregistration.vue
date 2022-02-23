@@ -200,3 +200,107 @@ main {
     box-shadow: 0px 4px 20px hsla(222, 46%, 50%, 0.5);
     #at-sign {
       font-size: 1.3rem;
+      font-weight: 500;
+      color: hsl(222, 50%, 85%);
+    }
+    #preregistration-username-input {
+      color: hsl(222, 28%, 95%);
+      background: none;
+      font-size: 1rem;
+      font-weight: 400;
+      border: none;
+      width: 90%;
+      margin-left: 5px;
+      &::placeholder {
+        color: hsl(222, 40%, 95%);
+      }
+    }
+    #preregistration-submit-input {
+      font-size: 24px;
+      background: none;
+      color: hsl(222, 50%, 85%);
+      border: none;
+      transition: 0.2s all linear;
+      &:hover {
+        color: hsl(222, 80%, 90%);
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+.password-input {
+  padding: 5%;
+  border-radius: 15px;
+  width: 90%;
+  margin-bottom: 15px;
+  background: linear-gradient(
+    103.68deg,
+    hsl(155, 46%, 36%) 0.09%,
+    hsl(155, 68%, 45%) 97.38%
+  );
+  margin-top: 15px;
+  #preregistration-password-input {
+    color: hsl(222, 28%, 95%);
+    background: none;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    width: 90%;
+    margin-left: 5px;
+    &::placeholder {
+      color: hsl(222, 40%, 95%);
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  height: 5%;
+}
+
+.masthead {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (max-width: 1000px) {
+  .index {
+    justify-content: center;
+    padding: 0;
+  }
+  main {
+    display: block;
+    width: 80vw;
+  }
+  .call-to-action-box {
+    margin: 0;
+    margin-top: 10vh;
+    width: 100%;
+    h2 {
+      text-align: center;
+    }
+    .call-to-action-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  #preregistration-input-box {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.resize-observer {
+  width: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+</style>
