@@ -5,4 +5,8 @@
         <template #heading>
           <masthead smaller>
             <span v-if="showCreateListModal">Create new list</span>
-            <span v-else-if="showAdjustPositio
+            <span v-else-if="showAdjustPositionInListModal">Adjust position in list</span>
+            <span v-else>
+              Add
+              <span v-if="release.title.length < 100">
+    
