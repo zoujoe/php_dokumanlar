@@ -16,4 +16,10 @@
               </span>
               to list</span>
           </masthead>
-  
+        </template>
+        <template #left>
+          <div v-if="showCreateListModal">
+            <text-input
+              full-width
+              maxlength="96"
+    
