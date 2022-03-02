@@ -9,4 +9,11 @@
             <span v-else>
               Add
               <span v-if="release.title.length < 100">
-    
+                {{ release.title }}
+              </span>
+              <span v-else>
+                release
+              </span>
+              to list</span>
+          </masthead>
+  
