@@ -22,4 +22,9 @@
             <text-input
               full-width
               maxlength="96"
-    
+              placeholder="The inspiration for the list, perhaps?"
+              name="new-list-name"
+              @input="newList.name = $event"
+            >
+              List name*
+            </te
