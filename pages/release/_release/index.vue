@@ -42,4 +42,6 @@
               </text-input>
               <div class="new-list-image-preview" :style="{ backgroundImage: `url(${newList.imageURL})` }" />
             </div>
-            <
+            <paragraph soft>
+              Image uploading is not currently supported. Consider using a third party service, such as <a href="https://imgur.com/" target="_blank">Imgur</a>.
+      
