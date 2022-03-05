@@ -33,4 +33,8 @@
             </text-area>
             <div class="flex-container">
               <text-input
-                full-
+                full-width
+                placeholder="https://via.placeholder.com/64C/"
+                name="new-list-imageURL-input"
+                @input="newList.imageURL = $event"
+           
