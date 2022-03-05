@@ -37,4 +37,9 @@
                 placeholder="https://via.placeholder.com/64C/"
                 name="new-list-imageURL-input"
                 @input="newList.imageURL = $event"
-           
+              >
+                List image
+              </text-input>
+              <div class="new-list-image-preview" :style="{ backgroundImage: `url(${newList.imageURL})` }" />
+            </div>
+            <
