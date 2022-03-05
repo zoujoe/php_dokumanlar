@@ -28,4 +28,9 @@
             >
               List name*
             </text-input>
-            <text-area name="new-list-description" full-width placeholder="Descriptions are optional, but they can help give your list some identity and
+            <text-area name="new-list-description" full-width placeholder="Descriptions are optional, but they can help give your list some identity and purpose." @input="newList.description=$event">
+              List description
+            </text-area>
+            <div class="flex-container">
+              <text-input
+                full-
