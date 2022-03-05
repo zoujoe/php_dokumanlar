@@ -27,4 +27,5 @@
               @input="newList.name = $event"
             >
               List name*
-            </te
+            </text-input>
+            <text-area name="new-list-description" full-width placeholder="Descriptions are optional, but they can help give your list some identity and
