@@ -47,3 +47,7 @@
               Ensure you use a direct link (<a href="https://i.imgur.com/wMeVWI7.png" target="_blank">here's an example</a>, if you're not quite following).
             </paragraph>
             <paragraph softer>
+              * Mandatory field.
+            </paragraph>
+            <div class="flex-container">
+              <regular-button wide type="call-to-action" @pressed="createNewList(
