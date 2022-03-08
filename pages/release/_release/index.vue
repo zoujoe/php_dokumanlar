@@ -54,4 +54,9 @@
                 Create new list
               </regular-button>
               <regular-button no-right-margin type="primary" @pressed="showCreateListModal = false">
-                
+                Go back
+              </regular-button>
+            </div>
+          </div>
+          <div v-else-if="showAdjustPositionInListModal">
+            <release-list editable :list-items=
