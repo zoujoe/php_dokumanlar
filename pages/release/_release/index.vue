@@ -50,4 +50,8 @@
               * Mandatory field.
             </paragraph>
             <div class="flex-container">
-              <regular-button wide type="call-to-action" @pressed="createNewList(
+              <regular-button wide type="call-to-action" @pressed="createNewList()">
+                Create new list
+              </regular-button>
+              <regular-button no-right-margin type="primary" @pressed="showCreateListModal = false">
+                
