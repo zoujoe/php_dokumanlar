@@ -67,4 +67,7 @@
               <regular-button wide type="call-to-action" @pressed="updateReleasePositionInList">
                 Save release positions in list
               </regular-button>
-            
+              <regular-button no-right-margin type="primary" @pressed="showAdjustPositionInListModal = false">
+                Go back
+              </regular-button>
+            <
