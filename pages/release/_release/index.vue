@@ -60,4 +60,8 @@
           </div>
           <div v-else-if="showAdjustPositionInListModal">
             <release-list editable :list-items="userLists[listItemToAdd.selectedListIndex].releases" max-height="50" :selected-release="release.id" @change="selectedListReleasesOrder = $event" />
-            <paragraph s
+            <paragraph softer>
+              Press and drag on a release to adjust its position, or press on the rank itself to edit it.
+            </paragraph>
+            <div class="flex-container">
+            
