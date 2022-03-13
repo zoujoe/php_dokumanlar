@@ -70,4 +70,10 @@
               <regular-button no-right-margin type="primary" @pressed="showAdjustPositionInListModal = false">
                 Go back
               </regular-button>
-            <
+            </div>
+          </div>
+          <div v-else>
+            <dropdown
+              name="selected-list"
+              description-value="2020 favourites, for example."
+              :
