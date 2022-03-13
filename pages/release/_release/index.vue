@@ -59,4 +59,5 @@
             </div>
           </div>
           <div v-else-if="showAdjustPositionInListModal">
-            <release-list editable :list-items=
+            <release-list editable :list-items="userLists[listItemToAdd.selectedListIndex].releases" max-height="50" :selected-release="release.id" @change="selectedListReleasesOrder = $event" />
+            <paragraph s
