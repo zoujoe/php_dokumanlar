@@ -64,4 +64,7 @@
               Press and drag on a release to adjust its position, or press on the rank itself to edit it.
             </paragraph>
             <div class="flex-container">
+              <regular-button wide type="call-to-action" @pressed="updateReleasePositionInList">
+                Save release positions in list
+              </regular-button>
             
