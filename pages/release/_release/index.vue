@@ -76,4 +76,7 @@
             <dropdown
               name="selected-list"
               description-value="2020 favourites, for example."
-              :
+              :default-value="listItemToAdd.selectedList"
+              :options="userListNames"
+              return-index
+              @change="listItemToAdd.selectedList = $event[0]; listItemToAdd.selecte
