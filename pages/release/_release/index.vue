@@ -79,4 +79,8 @@
               :default-value="listItemToAdd.selectedList"
               :options="userListNames"
               return-index
-              @change="listItemToAdd.selectedList = $event[0]; listItemToAdd.selecte
+              @change="listItemToAdd.selectedList = $event[0]; listItemToAdd.selectedListIndex = $event[1]"
+            >
+              Selected list
+            </dropdown>
+            <text-area name="list-item-description" full-width placeholder="Descriptions are optional, but 
