@@ -90,4 +90,9 @@
               <regular-button wide type="secondary" @pressed="showCreateListModal = true">
                 Create new list
               </regular-button>
-              <!-- disabled if a list hasn
+              <!-- disabled if a list hasn't been selected *or* if release isn't in list -->
+              <regular-button
+                wide
+                no-right-margin
+                type="secondary"
+                :disable="!listIt
