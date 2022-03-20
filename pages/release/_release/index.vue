@@ -86,4 +86,8 @@
             <text-area name="list-item-description" full-width placeholder="Descriptions are optional, but should be related to the album or artist if included." @input="listItemToAdd.description=$event">
               Release description
             </text-area>
-            <div class="flex-container secondary-list-buttons
+            <div class="flex-container secondary-list-buttons">
+              <regular-button wide type="secondary" @pressed="showCreateListModal = true">
+                Create new list
+              </regular-button>
+              <!-- disabled if a list hasn
