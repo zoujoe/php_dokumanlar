@@ -95,4 +95,8 @@
                 wide
                 no-right-margin
                 type="secondary"
-                :disable="!listIt
+                :disable="!listItemToAdd.selectedList"
+                disabled-reason="Please select a list first."
+                @pressed="showAdjustPositionInListModal = true"
+              >
+         
