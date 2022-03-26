@@ -99,4 +99,8 @@
                 disabled-reason="Please select a list first."
                 @pressed="showAdjustPositionInListModal = true"
               >
-         
+                Adjust position in list
+              </regular-button>
+            </div>
+            <regular-button wide type="call-to-action" @pressed="addReleaseToList">
+              <span v-i
