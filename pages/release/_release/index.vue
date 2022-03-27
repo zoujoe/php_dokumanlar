@@ -109,4 +109,8 @@
               <span v-else>
                 Add release to list
               </span>
-        
+            </regular-button>
+          </div>
+        </template>
+      </modal>
+      <modal v-if="showUpdateRatingModal" report-width narrow @closeModal="showUpdateRatingModal = false" @wi
