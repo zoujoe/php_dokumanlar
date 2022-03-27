@@ -103,4 +103,10 @@
               </regular-button>
             </div>
             <regular-button wide type="call-to-action" @pressed="addReleaseToList">
-              <span v-i
+              <span v-if="release.title.length <= 128">
+                Add {{ release.title }} to list
+              </span>
+              <span v-else>
+                Add release to list
+              </span>
+        
