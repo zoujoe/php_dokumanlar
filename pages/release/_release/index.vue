@@ -113,4 +113,11 @@
           </div>
         </template>
       </modal>
-      <modal v-if="showUpdateRatingModal" report-width narrow @closeModal="showUpdateRatingModal = false" @wi
+      <modal v-if="showUpdateRatingModal" report-width narrow @closeModal="showUpdateRatingModal = false" @widthUpdated="updateRatingModalWidth = $event">
+        <template #heading>
+          <masthead centred>
+            Update rating
+          </masthead>
+        </template>
+        <template #left>
+   
