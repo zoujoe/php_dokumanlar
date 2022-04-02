@@ -120,4 +120,6 @@
           </masthead>
         </template>
         <template #left>
-   
+          <ring shadow colour="hsl(252, 70%, 56%)" :width="updateRatingModalWidth - 256" :percent="Number(initialScore)" :stroke-width="4">
+            <!-- colour is saturated-purple -->
+      
