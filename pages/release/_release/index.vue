@@ -128,4 +128,12 @@
               centred
               editable
               no-margin
-              @change="initialScore = 
+              @change="initialScore = $event"
+            >
+              86
+            </masthead>
+          </ring>
+        </template>
+      </modal>
+    </transition>
+    <blur loading :apply-blur="loadi
