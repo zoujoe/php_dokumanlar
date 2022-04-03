@@ -142,4 +142,11 @@
         <nuxt-link
           class="link"
           :to="'/artist/' + release['artist-credit'][0].artist.id"
-          :class="col
+          :class="colourMode"
+        >
+          <subheading>
+            {{ release['artist-credit'][0].artist.name }}
+          </subheading>
+        </nuxt-link>
+        <masthead>
+          <span v-
