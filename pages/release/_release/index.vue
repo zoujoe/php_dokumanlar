@@ -136,4 +136,10 @@
         </template>
       </modal>
     </transition>
-    <blur loading :apply-blur="loadi
+    <blur loading :apply-blur="loading" />
+    <hero :background="release.image">
+      <header>
+        <nuxt-link
+          class="link"
+          :to="'/artist/' + release['artist-credit'][0].artist.id"
+          :class="col
