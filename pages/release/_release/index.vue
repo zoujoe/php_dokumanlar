@@ -157,4 +157,10 @@
           </span>
         </masthead>
         <tag desaturated>
-         
+          {{ release.firstReleaseDate[3] }}
+          <nuxt-link to="/">
+            {{ release.firstReleaseDate[2] }}
+          </nuxt-link>
+        </tag>
+        <div class="tags">
+          <tag v-
