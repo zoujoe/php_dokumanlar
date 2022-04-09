@@ -149,4 +149,12 @@
           </subheading>
         </nuxt-link>
         <masthead>
-          <span v-
+          <span v-if="release.title">
+            {{ release.title }}
+          </span>
+          <span v-else>
+            Loading...
+          </span>
+        </masthead>
+        <tag desaturated>
+         
