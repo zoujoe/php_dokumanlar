@@ -174,4 +174,10 @@
         :class="[colourMode]"
         :src="release.image"
         :alt="release.title"
-        @load="loading = false; createParagraphO
+        @load="loading = false; createParagraphOnlyReviews()"
+      >
+    </hero>
+    <div v-if="!editing && !selectedReview" class="flex-container content">
+      <div class="left-column">
+        <div class="flex-container">
+  
