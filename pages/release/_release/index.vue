@@ -170,4 +170,8 @@
       </header>
       <img
         id="release-image"
-        class="r
+        class="release-image"
+        :class="[colourMode]"
+        :src="release.image"
+        :alt="release.title"
+        @load="loading = false; createParagraphO
