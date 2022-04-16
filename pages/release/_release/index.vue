@@ -182,4 +182,8 @@
         <div class="flex-container">
           <regular-button type="secondary" @pressed="showUpdateRatingModal = true">
             <span v-if="initialScore">Update rating</span>
-            <span 
+            <span v-else>Rate this release</span>
+          </regular-button>
+          <regular-button type="secondary" @pressed="showAddToListModal = true">
+            Add to list
+          </re
