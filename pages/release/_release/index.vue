@@ -180,4 +180,6 @@
     <div v-if="!editing && !selectedReview" class="flex-container content">
       <div class="left-column">
         <div class="flex-container">
-  
+          <regular-button type="secondary" @pressed="showUpdateRatingModal = true">
+            <span v-if="initialScore">Update rating</span>
+            <span 
