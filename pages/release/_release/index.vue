@@ -186,4 +186,8 @@
           </regular-button>
           <regular-button type="secondary" @pressed="showAddToListModal = true">
             Add to list
-          </re
+          </regular-button>
+          <regular-button no-right-margin type="tertiary" :to="'https://musicbrainz.org/release-group/' + id">
+            Edit this release
+          </regular-button>
+       
