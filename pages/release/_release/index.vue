@@ -190,4 +190,8 @@
           <regular-button no-right-margin type="tertiary" :to="'https://musicbrainz.org/release-group/' + id">
             Edit this release
           </regular-button>
-       
+        </div>
+        <div class="flex-container user-review-container" emphasised-block>
+          <div class="user-score-container">
+            <div v-if="user">
+              <profile-picture :u
