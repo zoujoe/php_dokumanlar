@@ -194,4 +194,9 @@
         <div class="flex-container user-review-container" emphasised-block>
           <div class="user-score-container">
             <div v-if="user">
-              <profile-picture :u
+              <profile-picture :username="user.username" size="medium" :url="user.avatar" />
+            </div>
+            <p class="user-score">
+              {{ initialScore }}
+            </p>
+       
