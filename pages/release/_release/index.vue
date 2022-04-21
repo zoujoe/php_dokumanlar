@@ -199,4 +199,9 @@
             <p class="user-score">
               {{ initialScore }}
             </p>
-       
+          </div>
+          <div class="user-review-composition-container">
+            <text-input
+              full-width
+              maxlength="125"
+              placeholder="Something p
