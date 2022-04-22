@@ -204,4 +204,8 @@
             <text-input
               full-width
               maxlength="125"
-              placeholder="Something p
+              placeholder="Something provocative and enticing!"
+              name="review-header"
+              :default-value="reviewContent.headerDraft"
+              @input="reviewContent.headerDraft=$event"
+           
