@@ -208,4 +208,9 @@
               name="review-header"
               :default-value="reviewContent.headerDraft"
               @input="reviewContent.headerDraft=$event"
-           
+            >
+              Header
+            </text-input>
+            <text-area
+              v-if="paragraphOnlyUserReview[1] === 'passed'"
+              name="review-body
