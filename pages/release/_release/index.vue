@@ -213,4 +213,6 @@
             </text-input>
             <text-area
               v-if="paragraphOnlyUserReview[1] === 'passed'"
-              name="review-body
+              name="review-body"
+              full-width
+              placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin felis nibh, condimentum sit amet tempor quis, ultricies eu m
