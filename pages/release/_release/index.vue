@@ -217,4 +217,8 @@
               full-width
               placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin felis nibh, condimentum sit amet tempor quis, ultricies eu massa. Pellentesque aliquam mi at odio commodo, at pharetra arcu consectetur."
               :default-value="paragraphOnlyUserReview[0]"
-              @input="reviewContent.body[0].
+              @input="reviewContent.body[0].contentDraft = $event"
+            >
+              Body
+            </text-area>
+            <paragraph v-else-if="paragraphOnlyUserReview[1] === 'non paragraph blocks'" no-top-margi
