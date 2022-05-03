@@ -225,4 +225,7 @@
               Your review body has blocks other than paragraphs. Please use the <a @click="openRichEditor">rich editor</a> to edit the review.
             </paragraph>
             <paragraph v-else-if="paragraphOnlyUserReview[1] === 'multiple blocks'" no-top-margin soft>
-              Your review body has multiple blocks. Please use the <a 
+              Your review body has multiple blocks. Please use the <a @click="openRichEditor">rich editor</a> to edit the review.
+            </paragraph>
+            <div class="flex-container">
+              <regular-button type="primary" @pressed="pu
