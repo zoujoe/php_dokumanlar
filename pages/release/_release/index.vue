@@ -224,4 +224,5 @@
             <paragraph v-else-if="paragraphOnlyUserReview[1] === 'non paragraph blocks'" no-top-margin soft>
               Your review body has blocks other than paragraphs. Please use the <a @click="openRichEditor">rich editor</a> to edit the review.
             </paragraph>
-            <para
+            <paragraph v-else-if="paragraphOnlyUserReview[1] === 'multiple blocks'" no-top-margin soft>
+              Your review body has multiple blocks. Please use the <a 
