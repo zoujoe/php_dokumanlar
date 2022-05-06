@@ -228,4 +228,8 @@
               Your review body has multiple blocks. Please use the <a @click="openRichEditor">rich editor</a> to edit the review.
             </paragraph>
             <div class="flex-container">
-              <regular-button type="primary" @pressed="pu
+              <regular-button type="primary" @pressed="publishReview">
+                Publish review
+              </regular-button>
+              <regular-button type="tertiary" @pressed="openRichEditor">
+                Open ri
