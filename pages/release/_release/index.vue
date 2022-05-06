@@ -232,4 +232,10 @@
                 Publish review
               </regular-button>
               <regular-button type="tertiary" @pressed="openRichEditor">
-                Open ri
+                Open rich editor
+              </regular-button>
+            </div>
+          </div>
+        </div>
+        <vertical-table class="relevant-lists-and-charts">
+          <template #head
