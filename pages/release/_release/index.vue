@@ -238,4 +238,9 @@
           </div>
         </div>
         <vertical-table class="relevant-lists-and-charts">
-          <template #head
+          <template #header>
+            Relevant lists and charts
+          </template>
+          <template #content>
+            <div v-for="list in releaseLists" :key="list.id" class="row">
+     
