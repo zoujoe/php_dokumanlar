@@ -246,4 +246,6 @@
               <div class="flex-container">
                 <profile-picture size="medium" :url="list.imageURL" no-click />
                 <section class="list-information">
-  
+                  <subheading smallest no-margin>
+                    <nuxt-link :to="`/user/${list.username}/lists/${list.id}`">
+                      {{ list.
