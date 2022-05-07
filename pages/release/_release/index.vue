@@ -243,4 +243,7 @@
           </template>
           <template #content>
             <div v-for="list in releaseLists" :key="list.id" class="row">
-     
+              <div class="flex-container">
+                <profile-picture size="medium" :url="list.imageURL" no-click />
+                <section class="list-information">
+  
