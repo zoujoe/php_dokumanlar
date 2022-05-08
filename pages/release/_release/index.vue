@@ -248,4 +248,9 @@
                 <section class="list-information">
                   <subheading smallest no-margin>
                     <nuxt-link :to="`/user/${list.username}/lists/${list.id}`">
-                      {{ list.
+                      {{ list.name }}
+                    </nuxt-link>
+                  </subheading>
+                  <paragraph no-top-margin no-bottom-margin>
+                    By
+               
