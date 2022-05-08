@@ -253,4 +253,9 @@
                   </subheading>
                   <paragraph no-top-margin no-bottom-margin>
                     By
-               
+                    <nuxt-link :to="`/user/${list.username}`">
+                      {{ list.username }}
+                    </nuxt-link>
+                  </paragraph>
+                </section>
+   
