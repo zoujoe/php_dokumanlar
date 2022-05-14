@@ -278,4 +278,10 @@
               <tag align="right">
                 Total ratings
               </tag>
-              <p 
+              <p style="color: hsl(249, 10%, 26%);">
+                {{ amountOfRatings }}
+              </p>
+            </div>
+          </pill>
+        </div>
+        <div v-if="reviews" class="revi
