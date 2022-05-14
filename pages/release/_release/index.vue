@@ -271,4 +271,11 @@
                 Average
               </tag>
               <p style="color: hsl(249, 10%, 26%)">
-                {{
+                {{ averageScore }}
+              </p>
+            </div>
+            <div class="flex-container">
+              <tag align="right">
+                Total ratings
+              </tag>
+              <p 
