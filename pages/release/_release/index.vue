@@ -266,4 +266,9 @@
       <div class="right-column">
         <div v-if="averageScore">
           <pill>
-          
+            <div class="flex-container">
+              <tag align="right">
+                Average
+              </tag>
+              <p style="color: hsl(249, 10%, 26%)">
+                {{
