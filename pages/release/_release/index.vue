@@ -258,4 +258,12 @@
                     </nuxt-link>
                   </paragraph>
                 </section>
-   
+              </div>
+            </div>
+          </template>
+        </vertical-table>
+      </div>
+      <div class="right-column">
+        <div v-if="averageScore">
+          <pill>
+          
