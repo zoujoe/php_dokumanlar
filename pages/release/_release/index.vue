@@ -284,4 +284,10 @@
             </div>
           </pill>
         </div>
-        <div v-if="reviews" class="revi
+        <div v-if="reviews" class="reviews">
+          <review
+            v-for="(review, i) in paragraphOnlyReviews"
+            :key="review.id"
+            :index="i"
+            :user="user"
+            :review-prop
