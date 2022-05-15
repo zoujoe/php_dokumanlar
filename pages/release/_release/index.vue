@@ -290,4 +290,12 @@
             :key="review.id"
             :index="i"
             :user="user"
-            :review-prop
+            :review-prop="review"
+            :release="id"
+            @liked="likeReview(review, i)"
+            @show="selectedReview = i"
+          />
+        </div>
+      </div>
+    </div>
+    <div v-else class="re
