@@ -298,4 +298,8 @@
         </div>
       </div>
     </div>
-    <div v-else class="re
+    <div v-else class="review-container">
+      <article-content>
+        <masthead :editable="editing" @change="reviewContent.headerDraft = $event">
+          <span v-if="editing">
+            {{ reviewCont
