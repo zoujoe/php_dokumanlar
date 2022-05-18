@@ -302,4 +302,10 @@
       <article-content>
         <masthead :editable="editing" @change="reviewContent.headerDraft = $event">
           <span v-if="editing">
-            {{ reviewCont
+            {{ reviewContent.headerDraft }}
+          </span>
+          <span v-else>
+            {{ reviewContent.header }}
+          </span>
+        </masthead>
+        <div class="flex-container review-autho
