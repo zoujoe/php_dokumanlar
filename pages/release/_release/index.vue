@@ -311,4 +311,9 @@
         <div class="flex-container review-author-container">
           <profile-picture :username="reviewContent.username" size="small" :url="reviewContent.avatar" />
           <div class="review-author">
-            <subheading sm
+            <subheading smaller no-margin>
+              Review by
+              <nuxt-link :to="'/user/' + reviewContent.username">
+                {{ reviewContent.username }}
+              </nuxt-link>
+            <
