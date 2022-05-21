@@ -308,4 +308,7 @@
             {{ reviewContent.header }}
           </span>
         </masthead>
-        <div class="flex-container review-autho
+        <div class="flex-container review-author-container">
+          <profile-picture :username="reviewContent.username" size="small" :url="reviewContent.avatar" />
+          <div class="review-author">
+            <subheading sm
