@@ -316,4 +316,10 @@
               <nuxt-link :to="'/user/' + reviewContent.username">
                 {{ reviewContent.username }}
               </nuxt-link>
-            <
+            </subheading>
+            <subheading smallest no-margin>
+              18 December 2020
+            </subheading>
+          </div>
+        </div>
+        <div v-for="(blo
