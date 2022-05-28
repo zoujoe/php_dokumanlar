@@ -328,4 +328,8 @@
               <p>{{ i + 1 }}</p>
             </div>
             <div v-if="block.typeDraft !== 'deleted'" class="block-editing-toolbar-content flex-container">
-              <div class
+              <div class="block-information">
+                <dropdown
+                  alternate
+                  name="block-type"
+                  description-value="This determines the block type."
