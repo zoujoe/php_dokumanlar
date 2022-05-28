@@ -325,4 +325,7 @@
         <div v-for="(block, i) in reviewContent.body" :key="block.id" class="review-content-block">
           <div v-if="editing" class="block-editing-toolbar">
             <div class="block-number">
-   
+              <p>{{ i + 1 }}</p>
+            </div>
+            <div v-if="block.typeDraft !== 'deleted'" class="block-editing-toolbar-content flex-container">
+              <div class
