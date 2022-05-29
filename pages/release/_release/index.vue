@@ -335,4 +335,7 @@
                   description-value="This determines the block type."
                   :options="['Image', 'Paragraph', 'Subheading']"
                   :default-value="block.typeDraft.charAt(0).toUpperCase() + block.typeDraft.slice(1)"
-      
+                  @change="block = changeBlockType(block, $event.toLowerCase())"
+                />
+              </div>
+              <button class="delete-review-block-button" @click
