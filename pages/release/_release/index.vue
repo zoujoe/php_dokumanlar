@@ -338,4 +338,9 @@
                   @change="block = changeBlockType(block, $event.toLowerCase())"
                 />
               </div>
-              <button class="delete-review-block-button" @click
+              <button class="delete-review-block-button" @click="deleteBlock(i)">
+                <close-icon title="Delete block" class="delete-review-icon" />
+              </button>
+            </div>
+            <div v-else class="block-editing-toolbar-deleted">
+ 
