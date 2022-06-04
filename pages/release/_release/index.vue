@@ -343,4 +343,9 @@
               </button>
             </div>
             <div v-else class="block-editing-toolbar-deleted">
- 
+              <paragraph>
+                Deleted block
+              </paragraph>
+            </div>
+          </div>
+          <paragraph v-if="block.typeDraft === 'paragraph'" :editable="
