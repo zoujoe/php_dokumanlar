@@ -352,4 +352,8 @@
             <span v-if="editing">
               {{ block.contentPreviousDraft }}
             </span>
-           
+            <span v-else>
+              {{ block.content }}
+            </span>
+          </paragraph>
+          <subheading v-if="block.typeDraft === 'subheading'" :top-margin="edit
