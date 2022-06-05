@@ -348,4 +348,8 @@
               </paragraph>
             </div>
           </div>
-          <paragraph v-if="block.typeDraft === 'paragraph'" :editable="
+          <paragraph v-if="block.typeDraft === 'paragraph'" :editable="editing" @change="block.contentDraft = $event">
+            <span v-if="editing">
+              {{ block.contentPreviousDraft }}
+            </span>
+           
