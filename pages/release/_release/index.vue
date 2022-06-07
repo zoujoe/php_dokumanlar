@@ -356,4 +356,9 @@
               {{ block.content }}
             </span>
           </paragraph>
-          <subheading v-if="block.typeDraft === 'subheading'" :top-margin="edit
+          <subheading v-if="block.typeDraft === 'subheading'" :top-margin="editing" :editable="editing" @change="block.contentDraft = $event">
+            <span v-if="editing">
+              {{ block.contentPreviousDraft }}
+            </span>
+            <span v-else>
+              {{ block.content }}
