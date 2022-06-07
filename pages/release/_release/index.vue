@@ -362,3 +362,8 @@
             </span>
             <span v-else>
               {{ block.content }}
+            </span>
+          </subheading>
+          <div v-else-if="block.typeDraft === 'image'" class="review-image-container">
+            <img
+              v-if="(block.imageURL || block.imageU
