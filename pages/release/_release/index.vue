@@ -366,4 +366,8 @@
           </subheading>
           <div v-else-if="block.typeDraft === 'image'" class="review-image-container">
             <img
-              v-if="(block.imageURL || block.imageU
+              v-if="(block.imageURL || block.imageURLDraft) && !block.changeImage"
+              class="review-image"
+              :src="getReviewImage(block)"
+              :alt="block.content"
+              @error="$set(block, 'changeImage', true)"
