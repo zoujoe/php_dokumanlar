@@ -374,4 +374,9 @@
               @click="clickedReviewImage(block.imageURLDraft, selectedReview, i)"
             >
             <div v-else-if="block.changeImage && editing" class="emphasised-block">
-      
+              <text-input
+                alternate
+                full-width
+                no-margin
+                placeholder="https://something.com/images/relevant-photo.jpg"
+          
