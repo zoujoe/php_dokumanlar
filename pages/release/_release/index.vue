@@ -371,3 +371,7 @@
               :src="getReviewImage(block)"
               :alt="block.content"
               @error="$set(block, 'changeImage', true)"
+              @click="clickedReviewImage(block.imageURLDraft, selectedReview, i)"
+            >
+            <div v-else-if="block.changeImage && editing" class="emphasised-block">
+      
