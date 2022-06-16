@@ -379,4 +379,8 @@
                 full-width
                 no-margin
                 placeholder="https://something.com/images/relevant-photo.jpg"
-          
+                name="review-imageURL-input"
+                :default-value="block.imageURLDraft"
+                @input="block.imageURLToAdd = $event"
+              >
+                I
