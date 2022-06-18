@@ -383,4 +383,7 @@
                 :default-value="block.imageURLDraft"
                 @input="block.imageURLToAdd = $event"
               >
-                I
+                Image URL
+              </text-input>
+              <paragraph centred soft>
+                Image uploading is not currently supported. Consider using a third party service,
