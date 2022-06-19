@@ -387,4 +387,7 @@
               </text-input>
               <paragraph centred soft>
                 Image uploading is not currently supported. Consider using a third party service, such as <a href="https://imgur.com/" target="_blank">Imgur</a>.
-                Ensure you use a direct link (<a href="https://i.imgur.com/wMeVWI7.png" target="_blank">here's an example</a
+                Ensure you use a direct link (<a href="https://i.imgur.com/wMeVWI7.png" target="_blank">here's an example</a>, if you're not quite following).
+              </paragraph>
+              <regular-button centred type="primary" @pressed="saveReviewImageChanges(block.imageURL, selectedReview, i)">
+    
