@@ -390,4 +390,8 @@
                 Ensure you use a direct link (<a href="https://i.imgur.com/wMeVWI7.png" target="_blank">here's an example</a>, if you're not quite following).
               </paragraph>
               <regular-button centred type="primary" @pressed="saveReviewImageChanges(block.imageURL, selectedReview, i)">
-    
+                Save changes
+              </regular-button>
+            </div>
+            <subheading :editable="editing" smaller @change="block.contentDraft = $event">
+     
