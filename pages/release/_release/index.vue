@@ -394,4 +394,7 @@
               </regular-button>
             </div>
             <subheading :editable="editing" smaller @change="block.contentDraft = $event">
-     
+              <span v-if="block.content">{{ block.content }}</span>
+              <span v-if="editing && !block.content">Click me to add a caption.</span>
+            </subheading>
+ 
