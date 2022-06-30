@@ -397,4 +397,7 @@
               <span v-if="block.content">{{ block.content }}</span>
               <span v-if="editing && !block.content">Click me to add a caption.</span>
             </subheading>
- 
+          </div>
+          <div v-else-if="block.typeDraft === 'deleted'" class="review-image-container">
+            <div class="emphasised-block">
+              <parag
