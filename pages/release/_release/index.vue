@@ -403,4 +403,10 @@
               <paragraph centred soft>
                 This block has been deleted. It will be permanently removed when this review is published.
               </paragraph>
-              <regular-button centred type="prima
+              <regular-button centred type="primary" @pressed="restoreBlock(i)">
+                Restore block
+              </regular-button>
+            </div>
+          </div>
+        </div>
+        <div v-if="editing" id="add-new-block-con
