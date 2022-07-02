@@ -409,4 +409,8 @@
             </div>
           </div>
         </div>
-        <div v-if="editing" id="add-new-block-con
+        <div v-if="editing" id="add-new-block-container" class="review-content-block">
+          <div class="flex-container">
+            <regular-button type="primary" @pressed="publishReview">
+              Publish review
+            </regular-but
