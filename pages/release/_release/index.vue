@@ -400,4 +400,7 @@
           </div>
           <div v-else-if="block.typeDraft === 'deleted'" class="review-image-container">
             <div class="emphasised-block">
-              <parag
+              <paragraph centred soft>
+                This block has been deleted. It will be permanently removed when this review is published.
+              </paragraph>
+              <regular-button centred type="prima
