@@ -417,4 +417,9 @@
             <regular-button type="secondary" @pressed="addNewBlock()">
               Add new block
             </regular-button>
-            <regular-button no-right-margin type="secondary" @pressed
+            <regular-button no-right-margin type="secondary" @pressed="autosave(); editing = false; getParagraphOnlyUserReview()">
+              Close editor
+            </regular-button>
+          </div>
+          <paragraph soft centred>
+            By publishing this rev
