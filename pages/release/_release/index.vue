@@ -423,4 +423,7 @@
           </div>
           <paragraph soft centred>
             By publishing this review you agree to tasteful's Content Guidelines. Breaking these rules may result in the removal of this review or the suspension of your account.
-     
+          </paragraph>
+          <paragraph no-top-margin centred>
+            Your content is automatically saved as a draft twice each minute and when you close the editor.
+          </paragraph>
