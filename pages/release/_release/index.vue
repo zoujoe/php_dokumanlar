@@ -427,3 +427,13 @@
           <paragraph no-top-margin centred>
             Your content is automatically saved as a draft twice each minute and when you close the editor.
           </paragraph>
+        </div>
+      </article-content>
+    </div>
+  </main>
+</template>
+
+<script>
+// @ is an alias to /src
+import { mapGetters } from 'vuex'
+import closeIcon from 'vue-material-design-icons/Close.v
