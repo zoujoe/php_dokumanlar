@@ -413,4 +413,8 @@
           <div class="flex-container">
             <regular-button type="primary" @pressed="publishReview">
               Publish review
-            </regular-but
+            </regular-button>
+            <regular-button type="secondary" @pressed="addNewBlock()">
+              Add new block
+            </regular-button>
+            <regular-button no-right-margin type="secondary" @pressed
