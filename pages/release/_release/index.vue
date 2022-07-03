@@ -422,4 +422,5 @@
             </regular-button>
           </div>
           <paragraph soft centred>
-            By publishing this rev
+            By publishing this review you agree to tasteful's Content Guidelines. Breaking these rules may result in the removal of this review or the suspension of your account.
+     
