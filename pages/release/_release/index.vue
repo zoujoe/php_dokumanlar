@@ -436,4 +436,9 @@
 <script>
 // @ is an alias to /src
 import { mapGetters } from 'vuex'
-import closeIcon from 'vue-material-design-icons/Close.v
+import closeIcon from 'vue-material-design-icons/Close.vue'
+import _ from 'lodash'
+import blur from '~/components/Blur.vue'
+import masthead from '~/components/Masthead.vue'
+import hero from '~/components/Hero.vue'
+import s
