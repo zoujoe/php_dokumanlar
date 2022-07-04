@@ -441,4 +441,8 @@ import _ from 'lodash'
 import blur from '~/components/Blur.vue'
 import masthead from '~/components/Masthead.vue'
 import hero from '~/components/Hero.vue'
-import s
+import subheading from '~/components/Subheading.vue'
+import tag from '~/components/Tag.vue'
+import regularButton from '~/components/RegularButton.vue'
+import textInput from '~/components/TextInput.vue'
+im
