@@ -445,4 +445,7 @@ import subheading from '~/components/Subheading.vue'
 import tag from '~/components/Tag.vue'
 import regularButton from '~/components/RegularButton.vue'
 import textInput from '~/components/TextInput.vue'
-im
+import textArea from '~/components/TextArea.vue'
+import verticalTable from '~/components/VerticalTable.vue'
+import profilePicture from '~/components/ProfilePicture.vue'
+import pill from '~/componen
