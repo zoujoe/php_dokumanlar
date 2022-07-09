@@ -455,4 +455,17 @@ import review from '~/components/Review.vue'
 import paragraph from '~/components/Paragraph.vue'
 import articleContent from '~/components/ArticleContent.vue'
 import releaseList from '~/components/ReleaseList.vue'
-import ring 
+import ring from '~/components/Ring.vue'
+
+export default {
+  name: 'Release',
+  components: {
+    blur,
+    masthead,
+    hero,
+    subheading,
+    tag,
+    regularButton,
+    textInput,
+    textArea,
+  
