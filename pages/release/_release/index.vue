@@ -448,4 +448,8 @@ import textInput from '~/components/TextInput.vue'
 import textArea from '~/components/TextArea.vue'
 import verticalTable from '~/components/VerticalTable.vue'
 import profilePicture from '~/components/ProfilePicture.vue'
-import pill from '~/componen
+import pill from '~/components/Pill.vue'
+import modal from '~/components/Modal.vue'
+import dropdown from '~/components/Dropdown.vue'
+import review from '~/components/Review.vue'
+import paragraph fro
