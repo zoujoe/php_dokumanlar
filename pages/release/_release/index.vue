@@ -468,4 +468,16 @@ export default {
     regularButton,
     textInput,
     textArea,
-  
+    verticalTable,
+    profilePicture,
+    pill,
+    modal,
+    dropdown,
+    review,
+    paragraph,
+    articleContent,
+    closeIcon,
+    releaseList,
+    ring
+  },
+  d
