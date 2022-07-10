@@ -504,4 +504,10 @@ export default {
       paragraphOnlyUserReview: ['', 'passed'],
       listItemToAdd: {
         selectedList: '',
-        descri
+        description: '',
+        selectedListIndex: null
+      },
+      previousAutosave: [],
+      initialScore: 86,
+      paragraphOnlyReviews: undefined,
+      loa
