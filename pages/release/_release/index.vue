@@ -487,4 +487,13 @@ export default {
       amountOfRatings: undefined,
       reviews: undefined,
       ratings: {},
-      r
+      release: {
+        'artist-credit': [
+          {
+            artist: {
+              name: 'Loading...'
+            }
+          }
+        ],
+        firstReleaseDate: []
+    
