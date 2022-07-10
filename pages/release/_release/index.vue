@@ -480,4 +480,11 @@ export default {
     releaseList,
     ring
   },
-  d
+  data () {
+    return {
+      id: this.$route.params.release,
+      averageScore: undefined,
+      amountOfRatings: undefined,
+      reviews: undefined,
+      ratings: {},
+      r
