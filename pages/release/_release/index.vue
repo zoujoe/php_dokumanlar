@@ -510,4 +510,9 @@ export default {
       previousAutosave: [],
       initialScore: 86,
       paragraphOnlyReviews: undefined,
-      loa
+      loading: false,
+      consideredUser: false,
+      showAddToListModal: false,
+      showCreateListModal: false,
+      showAdjustPositionInListModal: false,
+      showUpda
