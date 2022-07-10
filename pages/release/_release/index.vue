@@ -496,4 +496,12 @@ export default {
           }
         ],
         firstReleaseDate: []
-    
+      },
+      reviewContent: {
+        header: '',
+        body: []
+      },
+      paragraphOnlyUserReview: ['', 'passed'],
+      listItemToAdd: {
+        selectedList: '',
+        descri
