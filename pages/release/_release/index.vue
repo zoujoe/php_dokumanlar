@@ -515,4 +515,8 @@ export default {
       showAddToListModal: false,
       showCreateListModal: false,
       showAdjustPositionInListModal: false,
-      showUpda
+      showUpdateRatingModal: false,
+      newList: {
+        name: '',
+        description: '',
+        imageURL: 'https://coverartarchive.org/release/315bbc48-dea9-463c-bfa9-a6ccab78b990/25806517352
