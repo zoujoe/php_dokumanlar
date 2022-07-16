@@ -519,4 +519,11 @@ export default {
       newList: {
         name: '',
         description: '',
-        imageURL: 'https://coverartarchive.org/release/315bbc48-dea9-463c-bfa9-a6ccab78b990/25806517352
+        imageURL: 'https://coverartarchive.org/release/315bbc48-dea9-463c-bfa9-a6ccab78b990/25806517352-1200.jpg',
+        releases: []
+      },
+      selectedReview: false,
+      editing: false,
+      newBlockCount: 0,
+      editableBlockIndex: -1,
+      userLists: {}
