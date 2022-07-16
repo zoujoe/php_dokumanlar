@@ -535,4 +535,14 @@ export default {
   },
   computed: {
     ...mapGetters({
-  
+      colourMode: 'theme/colourMode',
+      user: 'login/user'
+    })
+  },
+  mounted () {
+    this.onPageLoad()
+  },
+  methods: {
+    onPageLoad () {
+      this.loading = true
+      this.onUserLoad
