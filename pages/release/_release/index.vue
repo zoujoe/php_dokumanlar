@@ -526,4 +526,13 @@ export default {
       editing: false,
       newBlockCount: 0,
       editableBlockIndex: -1,
-      userLists: {}
+      userLists: {},
+      userListNames: [],
+      releaseLists: [],
+      selectedListReleasesOrder: [],
+      updateRatingModalWidth: 0
+    }
+  },
+  computed: {
+    ...mapGetters({
+  
