@@ -545,4 +545,10 @@ export default {
   methods: {
     onPageLoad () {
       this.loading = true
-      this.onUserLoad
+      this.onUserLoad()
+      this.$axios
+        .get(
+        `https://us-central1-tasteful.cloudfunctions.net/getReleaseData?query=${this.id}`
+        )
+        .then((res) => {
+          this.release 
