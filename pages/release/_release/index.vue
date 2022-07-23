@@ -551,4 +551,10 @@ export default {
         `https://us-central1-tasteful.cloudfunctions.net/getReleaseData?query=${this.id}`
         )
         .then((res) => {
-          this.release 
+          this.release = res.data
+          document.title = 'tasteful | ' + this.release.title
+          this.checkForReleaseInDatabase()
+          this.getReleaseLists()
+        })
+        .catch((err) => {
+          const er
