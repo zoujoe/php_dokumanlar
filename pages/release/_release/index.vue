@@ -557,4 +557,11 @@ export default {
           this.getReleaseLists()
         })
         .catch((err) => {
-          const er
+          const error = err.response.data
+          return this.$nuxt.error(
+            {
+              statusCode: 500,
+              message: error.message
+            })
+        })
+      this.ge
