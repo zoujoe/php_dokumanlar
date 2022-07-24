@@ -569,4 +569,8 @@ export default {
     rate (scoreString) {
       const applyRating = (score) => {
         // rate on the release page
-        const releases = this.$fire.firestore.collec
+        const releases = this.$fire.firestore.collection('releases')
+        const users = this.$fire.firestore.collection('users')
+        const userDoc = users.doc(this.user.id)
+        const username = this.user.username
+        c
