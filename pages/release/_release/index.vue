@@ -573,4 +573,9 @@ export default {
         const users = this.$fire.firestore.collection('users')
         const userDoc = users.doc(this.user.id)
         const username = this.user.username
-        c
+        const releaseData = {
+          title: this.release.title,
+          artist: this.release['artist-credit'][0].name,
+          id: this.id
+        }
+        releases.doc(this.id).se
