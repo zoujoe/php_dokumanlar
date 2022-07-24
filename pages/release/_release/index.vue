@@ -578,4 +578,8 @@ export default {
           artist: this.release['artist-credit'][0].name,
           id: this.id
         }
-        releases.doc(this.id).se
+        releases.doc(this.id).set(releaseData, { merge: true })
+        const updateContent = {}
+        updateContent[`ratings.${username}`] = score
+        releases.doc(this.id).update(updateContent)
+        relea
