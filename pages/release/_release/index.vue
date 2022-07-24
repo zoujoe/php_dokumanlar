@@ -582,4 +582,9 @@ export default {
         const updateContent = {}
         updateContent[`ratings.${username}`] = score
         releases.doc(this.id).update(updateContent)
-        relea
+        releaseData.score = score
+        userDoc.collection('ratings').doc(this.id).set(releaseData)
+        alert('Your rating for ' + this.release.title + ' has been submitted.')
+      }
+
+      // ensure score is a n
