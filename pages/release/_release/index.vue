@@ -564,4 +564,9 @@ export default {
               message: error.message
             })
         })
-      this.ge
+      this.getRatingsAndReviews()
+    },
+    rate (scoreString) {
+      const applyRating = (score) => {
+        // rate on the release page
+        const releases = this.$fire.firestore.collec
