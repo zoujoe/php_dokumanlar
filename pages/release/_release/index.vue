@@ -587,4 +587,8 @@ export default {
         alert('Your rating for ' + this.release.title + ' has been submitted.')
       }
 
-      // ensure score is a n
+      // ensure score is a number
+      if (!isNaN(scoreString) && scoreString !== '') {
+        const score = Math.floor(Number(scoreString))
+        if (score >= 0 && score <= 100) {
+          // is a valid numbe
