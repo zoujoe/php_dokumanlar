@@ -591,4 +591,13 @@ export default {
       if (!isNaN(scoreString) && scoreString !== '') {
         const score = Math.floor(Number(scoreString))
         if (score >= 0 && score <= 100) {
-          // is a valid numbe
+          // is a valid number
+          applyRating(score)
+        }
+      } else if (scoreString === '') {
+        // Remove the rating.
+        applyRating(false)
+      }
+    },
+    checkIfExistingRating () {
+     
