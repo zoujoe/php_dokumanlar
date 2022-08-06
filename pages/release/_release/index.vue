@@ -600,4 +600,8 @@ export default {
       }
     },
     checkIfExistingRating () {
-     
+      // check if the user has already rated the release
+      const users = this.$fire.firestore.collection('users')
+      const id = this.user.id
+      users.doc(id + '/ratings/' + this.id)
+ 
