@@ -604,4 +604,10 @@ export default {
       const users = this.$fire.firestore.collection('users')
       const id = this.user.id
       users.doc(id + '/ratings/' + this.id)
- 
+        .get()
+        .then((res) => {
+          const scoreDoc = res.data()
+          if (scoreDoc !== undefined) {
+            // if the user has rated the release
+            const userScore = scoreDoc.score
+     
