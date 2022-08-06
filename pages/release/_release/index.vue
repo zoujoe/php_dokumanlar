@@ -610,4 +610,9 @@ export default {
           if (scoreDoc !== undefined) {
             // if the user has rated the release
             const userScore = scoreDoc.score
-     
+            this.initialScore = userScore.toString()
+          }
+        })
+    },
+    checkIfExistingReview () {
+      this.$fire.firestore.collection('releases').doc(this.id).collection('reviews
