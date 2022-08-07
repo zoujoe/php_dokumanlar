@@ -615,4 +615,10 @@ export default {
         })
     },
     checkIfExistingReview () {
-      this.$fire.firestore.collection('releases').doc(this.id).collection('reviews
+      this.$fire.firestore.collection('releases').doc(this.id).collection('reviews').doc(this.user.id)
+        .get()
+        .then((doc) => {
+          const reviewData = doc.data()
+          if (reviewData) {
+            if (reviewData.body.length === 0) {
+              reviewD
