@@ -628,4 +628,11 @@ export default {
             }
             this.reviewContent = reviewData
           }
-          this
+          this.getParagraphOnlyUserReview()
+        })
+        .catch((err) => {
+          return this.$nuxt.error(
+            {
+              statusCode: 500,
+              message: err
+            }
