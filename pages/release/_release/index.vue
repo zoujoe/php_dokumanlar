@@ -621,4 +621,11 @@ export default {
           const reviewData = doc.data()
           if (reviewData) {
             if (reviewData.body.length === 0) {
-              reviewD
+              reviewData.body.push({
+                contentPreviousDraft: '',
+                typeDraft: 'paragraph'
+              })
+            }
+            this.reviewContent = reviewData
+          }
+          this
