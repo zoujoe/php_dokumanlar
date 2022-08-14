@@ -635,4 +635,11 @@ export default {
             {
               statusCode: 500,
               message: err
-            }
+            })
+        })
+    },
+    getUserLists () {
+      this.$fire.firestore.collection('users').doc(this.user.id).collection('lists')
+        .get()
+        .then((user) => {
+          this.us
