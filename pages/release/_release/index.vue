@@ -642,4 +642,8 @@ export default {
       this.$fire.firestore.collection('users').doc(this.user.id).collection('lists')
         .get()
         .then((user) => {
-          this.us
+          this.userLists = user.docs.map(list => list.data())
+          this.userLists.forEach((list) => {
+            const releases = this.getListReleases(list.releases)
+            list.releases = releases
+  
