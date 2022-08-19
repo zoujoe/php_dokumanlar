@@ -646,4 +646,10 @@ export default {
           this.userLists.forEach((list) => {
             const releases = this.getListReleases(list.releases)
             list.releases = releases
-  
+            this.userListNames.push(list.name)
+          })
+          this.listItemToAdd.selectedList = this.userListNames[0]
+          this.listItemToAdd.selectedListIndex = 0
+        })
+    },
+    getRele
