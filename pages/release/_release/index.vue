@@ -652,4 +652,9 @@ export default {
           this.listItemToAdd.selectedListIndex = 0
         })
     },
-    getRele
+    getReleaseLists () {
+      const listReferences = this.release.lists
+      const lists = []
+      listReferences.forEach((listReference) => {
+        this.$fire.firestore.doc(listReference)
+         
