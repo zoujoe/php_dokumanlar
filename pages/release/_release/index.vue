@@ -671,4 +671,13 @@ export default {
     getListReleases (listReleases) {
       // release is certainly in database, so don't need to use getReleaseData function and waste bandwidth
       const releasesRef = this.$fire.firestore.collection('releases')
-      const releases = [...listR
+      const releases = [...listReleases]
+      releases.forEach((release) => {
+        releasesRef.doc(release.id)
+          .get()
+          .then((res) => {
+            release.data = res.data()
+          })
+      })
+      return releases
+   
