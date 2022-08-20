@@ -669,4 +669,6 @@ export default {
       this.releaseLists = lists
     },
     getListReleases (listReleases) {
-      // release i
+      // release is certainly in database, so don't need to use getReleaseData function and waste bandwidth
+      const releasesRef = this.$fire.firestore.collection('releases')
+      const releases = [...listR
