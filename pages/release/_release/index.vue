@@ -680,4 +680,10 @@ export default {
           })
       })
       return releases
-   
+    },
+    getRatingsAndReviews () {
+      const releases = this.$fire.firestore.collection('releases')
+      releases.doc(this.id)
+        .get()
+        .then((res) => {
+          // get
