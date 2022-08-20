@@ -661,4 +661,12 @@ export default {
           .then((res) => {
             const listData = res.data()
             const releases = this.getListReleases(listData.releases)
-            listData.releases
+            listData.releases = releases
+            lists.push(listData)
+            this.getListUsernames()
+          })
+      })
+      this.releaseLists = lists
+    },
+    getListReleases (listReleases) {
+      // release i
