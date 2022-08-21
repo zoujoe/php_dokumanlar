@@ -686,4 +686,8 @@ export default {
       releases.doc(this.id)
         .get()
         .then((res) => {
-          // get
+          // get ratings
+          this.ratings = res.data().ratings
+          if (this.ratings) {
+            const ratings = Object.values(this.ratings)
+            const sum = ratings.reduce((val, val2)
