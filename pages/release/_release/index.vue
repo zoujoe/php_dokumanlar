@@ -706,4 +706,9 @@ export default {
         .get()
         .then((res) => {
           this.reviews = res.docs.map(doc => doc.data())
-          this.getReviewe
+          this.getReviewerAvatars()
+          this.getReviewerUsernames()
+        })
+        .catch((err) => {
+          console.log('Release does not exist. Will add to database (tried getting reviews).')
+          conso
