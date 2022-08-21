@@ -699,3 +699,11 @@ export default {
           console.log('Release may not exist. Will add to database (tried getting ratings).')
           // add adding-to-db support
           console.log(err.response.data)
+        })
+
+      // get reviews
+      releases.doc(this.id).collection('reviews')
+        .get()
+        .then((res) => {
+          this.reviews = res.docs.map(doc => doc.data())
+          this.getReviewe
