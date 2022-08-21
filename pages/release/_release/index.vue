@@ -690,4 +690,9 @@ export default {
           this.ratings = res.data().ratings
           if (this.ratings) {
             const ratings = Object.values(this.ratings)
-            const sum = ratings.reduce((val, val2)
+            const sum = ratings.reduce((val, val2) => val + val2, 0)
+            this.amountOfRatings = ratings.length
+            this.averageScore = Math.floor(sum / this.amountOfRatings)
+          }
+        })
+        .catch((err) => {
