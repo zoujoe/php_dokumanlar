@@ -711,4 +711,11 @@ export default {
         })
         .catch((err) => {
           console.log('Release does not exist. Will add to database (tried getting reviews).')
-          conso
+          console.log(err.response.data)
+        })
+    },
+    checkForReleaseInDatabase () {
+      const releases = this.$fire.firestore.collection('releases')
+      releases.doc(this.id)
+        .get()
+        
