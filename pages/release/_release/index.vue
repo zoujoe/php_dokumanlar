@@ -732,4 +732,6 @@ export default {
       // check if user has already liked
       if (this.reviews[i].likers.some(liker => liker.id === this.user.id)) {
         this.reviews[i].likes = review.likes - 1
-     
+        const indexOfLiker = this.reviews[i].likers.findIndex(review => review.id === this.user.id)
+        this.reviews[i].likers.splice(indexOfLiker, 1)
+      } else if (this.user.id === review.aut
