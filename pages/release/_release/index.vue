@@ -718,4 +718,11 @@ export default {
       const releases = this.$fire.firestore.collection('releases')
       releases.doc(this.id)
         .get()
-        
+        .then((release) => {
+          if (!release.exists) {
+            this.addReleaseToDatabase()
+          }
+        })
+    },
+    addReleaseToDatabase (release) {
+      this
