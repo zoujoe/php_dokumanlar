@@ -760,4 +760,9 @@ export default {
     onUserLoad () {
       this.checkIfExistingRating()
       this.checkIfExistingReview()
-   
+      this.getUserLists()
+    },
+    getAvatar (id) {
+      const imagePath = 'users/' + id + '/avatar.jpg'
+      return this.$fire.storage.ref().child(imagePath)
+        .g
