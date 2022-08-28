@@ -734,4 +734,9 @@ export default {
         this.reviews[i].likes = review.likes - 1
         const indexOfLiker = this.reviews[i].likers.findIndex(review => review.id === this.user.id)
         this.reviews[i].likers.splice(indexOfLiker, 1)
-      } else if (this.user.id === review.aut
+      } else if (this.user.id === review.author) {
+        alert('You can\'t like your own review, sorry.')
+      } else {
+        this.reviews[i].likes = review.likes + 1
+        this.reviews[i].likers.push({
+          id: this.
