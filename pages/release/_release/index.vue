@@ -728,4 +728,8 @@ export default {
       this.$fire.firestore.collection('releases').doc(this.id).set(this.release)
     },
     likeReview (review, i) {
-      const releases = this.$fire.firestore.collection(
+      const releases = this.$fire.firestore.collection('releases')
+      // check if user has already liked
+      if (this.reviews[i].likers.some(liker => liker.id === this.user.id)) {
+        this.reviews[i].likes = review.likes - 1
+     
