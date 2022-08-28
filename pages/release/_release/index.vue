@@ -739,4 +739,10 @@ export default {
       } else {
         this.reviews[i].likes = review.likes + 1
         this.reviews[i].likers.push({
-          id: this.
+          id: this.user.id,
+          username: this.user.username
+        })
+      }
+      const likes = this.reviews[i].likes
+      const likers = this.reviews[i].likers
+      releases.do
