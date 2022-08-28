@@ -725,4 +725,7 @@ export default {
         })
     },
     addReleaseToDatabase (release) {
-      this
+      this.$fire.firestore.collection('releases').doc(this.id).set(this.release)
+    },
+    likeReview (review, i) {
+      const releases = this.$fire.firestore.collection(
