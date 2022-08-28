@@ -752,4 +752,12 @@ export default {
     },
     getReviewImage (block) {
       if (this.editing) {
-        re
+        return block.imageURLDraft
+      } else {
+        return block.imageURL
+      }
+    },
+    onUserLoad () {
+      this.checkIfExistingRating()
+      this.checkIfExistingReview()
+   
