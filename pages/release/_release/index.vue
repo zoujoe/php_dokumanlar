@@ -745,4 +745,11 @@ export default {
       }
       const likes = this.reviews[i].likes
       const likers = this.reviews[i].likers
-      releases.do
+      releases.doc(this.id).collection('reviews').doc(review.author).update({
+        likes,
+        likers
+      })
+    },
+    getReviewImage (block) {
+      if (this.editing) {
+        re
