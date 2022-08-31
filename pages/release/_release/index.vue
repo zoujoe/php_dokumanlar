@@ -778,4 +778,12 @@ export default {
       })
     },
     getUsername (id) {
-      return this.$fire.fir
+      return this.$fire.firestore.collection('users').doc(id)
+        .get()
+        .then((user) => {
+          const userData = user.data()
+          return userData.username
+        })
+    },
+    getReviewerUsernames () {
+      
