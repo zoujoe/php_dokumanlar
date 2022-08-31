@@ -765,4 +765,10 @@ export default {
     getAvatar (id) {
       const imagePath = 'users/' + id + '/avatar.jpg'
       return this.$fire.storage.ref().child(imagePath)
-        .g
+        .getDownloadURL()
+        .then(url => url)
+    },
+    getReviewerAvatars () {
+      this.reviews.forEach(async (review) => {
+        const i = this.reviews.indexOf(review)
+        await 
