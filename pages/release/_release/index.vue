@@ -771,4 +771,11 @@ export default {
     getReviewerAvatars () {
       this.reviews.forEach(async (review) => {
         const i = this.reviews.indexOf(review)
-        await 
+        await this.getAvatar(review.author)
+          .then((url) => {
+            this.$set(this.reviews[i], 'avatar', url)
+          })
+      })
+    },
+    getUsername (id) {
+      return this.$fire.fir
