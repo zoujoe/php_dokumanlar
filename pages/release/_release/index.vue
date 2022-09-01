@@ -801,4 +801,9 @@ export default {
     },
     createParagraphOnlyReviews () {
       const paragraphOnlyReviews = []
-   
+      if (!this.reviews) {
+        // reviews may not be defined if the page is accessed after vue has already been mounted
+        this.onPageLoad()
+        return false
+      }
+      this.reviews.forEach((r
