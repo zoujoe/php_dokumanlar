@@ -825,4 +825,11 @@ export default {
     getParagraphOnlyUserReview () {
       const userReviewBody = this.reviewContent.body
       let paragraphOnlyUserReviewBody = ''
-      let userReviewTruncatedIssue = 'passe
+      let userReviewTruncatedIssue = 'passed'
+      let length = -1
+      userReviewBody.forEach((block) => {
+        if (block.typeDraft !== 'deleted') {
+          length = length + 1
+        }
+        if (length > 0) {
+          user
