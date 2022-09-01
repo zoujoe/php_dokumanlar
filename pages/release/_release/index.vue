@@ -789,4 +789,10 @@ export default {
       this.reviews.forEach(async (review) => {
         const i = this.reviews.indexOf(review)
         const username = await this.getUsername(review.author)
-        this.$set(this.reviews[i], '
+        this.$set(this.reviews[i], 'username', username)
+      })
+    },
+    getListUsernames () {
+      this.releaseLists.forEach(async (list, i) => {
+        const author = list.author
+        const username = 
