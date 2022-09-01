@@ -820,4 +820,9 @@ export default {
           paragraphOnlyReviews.push(reviewWithOnlyParagraphBlocks)
         }
       })
-      this.paragraphOnlyReviews = p
+      this.paragraphOnlyReviews = paragraphOnlyReviews
+    },
+    getParagraphOnlyUserReview () {
+      const userReviewBody = this.reviewContent.body
+      let paragraphOnlyUserReviewBody = ''
+      let userReviewTruncatedIssue = 'passe
