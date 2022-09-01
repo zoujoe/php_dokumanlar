@@ -816,4 +816,8 @@ export default {
             }
           })
           const reviewWithOnlyParagraphBlocks = Object.assign({}, review)
-  
+          reviewWithOnlyParagraphBlocks.body = bodyOnlyParagraphs // The Line.
+          paragraphOnlyReviews.push(reviewWithOnlyParagraphBlocks)
+        }
+      })
+      this.paragraphOnlyReviews = p
