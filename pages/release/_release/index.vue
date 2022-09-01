@@ -810,4 +810,10 @@ export default {
         if (review.author !== this.user.id) {
           const body = review.body // array of 'blocks'
           const bodyOnlyParagraphs = []
-          body.forEach(
+          body.forEach((block) => {
+            if (block.type === 'paragraph') {
+              bodyOnlyParagraphs.push(block)
+            }
+          })
+          const reviewWithOnlyParagraphBlocks = Object.assign({}, review)
+  
