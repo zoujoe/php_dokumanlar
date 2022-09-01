@@ -795,4 +795,10 @@ export default {
     getListUsernames () {
       this.releaseLists.forEach(async (list, i) => {
         const author = list.author
-        const username = 
+        const username = await this.getUsername(author)
+        this.$set(this.releaseLists[i], 'username', username)
+      })
+    },
+    createParagraphOnlyReviews () {
+      const paragraphOnlyReviews = []
+   
