@@ -806,4 +806,8 @@ export default {
         this.onPageLoad()
         return false
       }
-      this.reviews.forEach((r
+      this.reviews.forEach((review) => {
+        if (review.author !== this.user.id) {
+          const body = review.body // array of 'blocks'
+          const bodyOnlyParagraphs = []
+          body.forEach(
