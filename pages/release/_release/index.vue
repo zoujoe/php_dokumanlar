@@ -786,4 +786,7 @@ export default {
         })
     },
     getReviewerUsernames () {
-      
+      this.reviews.forEach(async (review) => {
+        const i = this.reviews.indexOf(review)
+        const username = await this.getUsername(review.author)
+        this.$set(this.reviews[i], '
