@@ -835,4 +835,9 @@ export default {
           userReviewTruncatedIssue = 'multiple blocks'
         } else if (block.typeDraft === 'paragraph') {
           paragraphOnlyUserReviewBody = paragraphOnlyUserReviewBody + block.contentPreviousDraft
-        } else if (
+        } else if (block.typeDraft !== 'deleted') {
+          console.log(block.typeDraft)
+          userReviewTruncatedIssue = 'non paragraph blocks'
+        }
+      })
+      this.editableBlock
