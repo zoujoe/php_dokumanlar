@@ -832,4 +832,7 @@ export default {
           length = length + 1
         }
         if (length > 0) {
-          user
+          userReviewTruncatedIssue = 'multiple blocks'
+        } else if (block.typeDraft === 'paragraph') {
+          paragraphOnlyUserReviewBody = paragraphOnlyUserReviewBody + block.contentPreviousDraft
+        } else if (
