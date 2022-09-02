@@ -840,4 +840,6 @@ export default {
           userReviewTruncatedIssue = 'non paragraph blocks'
         }
       })
-      this.editableBlock
+      this.editableBlockIndex = length
+      this.paragraphOnlyUserReview = [paragraphOnlyUserReviewBody, userReviewTruncatedIssue, length]
+      // i provide length as an argument because it determine
