@@ -842,4 +842,6 @@ export default {
       })
       this.editableBlockIndex = length
       this.paragraphOnlyUserReview = [paragraphOnlyUserReviewBody, userReviewTruncatedIssue, length]
-      // i provide length as an argument because it determine
+      // i provide length as an argument because it determines the index of the block that's being edited.
+      // this is useful in the instance where the user has a deleted block at index 0 but a paragraph at index 1, for example.
+    },
