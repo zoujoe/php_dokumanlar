@@ -849,4 +849,9 @@ export default {
       this.editing = true
       const header = this.reviewContent.headerPreviousDraft
       const body = this.reviewContent.body
-      const author = this.re
+      const author = this.reviewContent.author
+      if (!body.length) {
+        // Automatically add an additional block if the body is empty.
+        this.addNewBlock()
+      }
+      if
