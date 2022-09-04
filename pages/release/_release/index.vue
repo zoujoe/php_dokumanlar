@@ -845,3 +845,8 @@ export default {
       // i provide length as an argument because it determines the index of the block that's being edited.
       // this is useful in the instance where the user has a deleted block at index 0 but a paragraph at index 1, for example.
     },
+    openRichEditor () {
+      this.editing = true
+      const header = this.reviewContent.headerPreviousDraft
+      const body = this.reviewContent.body
+      const author = this.re
