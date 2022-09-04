@@ -854,4 +854,10 @@ export default {
         // Automatically add an additional block if the body is empty.
         this.addNewBlock()
       }
-      if
+      if (!header) {
+        // Add a header if there is none.
+        this.addHeader()
+      }
+      if (!author) {
+        // If this is a new review add the necessary properties
+ 
