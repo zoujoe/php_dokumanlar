@@ -864,4 +864,8 @@ export default {
         this.reviewContent.username = this.user.username
         this.reviewContent.avatar = this.user.avatar
       }
- 
+      this.previousAutosave = JSON.parse(JSON.stringify(body))
+      // load previous values
+      body.forEach((block) => {
+        block.contentPreviousDraft = block.contentDraft
+      
