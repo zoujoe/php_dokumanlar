@@ -860,4 +860,8 @@ export default {
       }
       if (!author) {
         // If this is a new review add the necessary properties
+        this.reviewContent.author = this.user.id
+        this.reviewContent.username = this.user.username
+        this.reviewContent.avatar = this.user.avatar
+      }
  
