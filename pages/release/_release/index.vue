@@ -868,4 +868,5 @@ export default {
       // load previous values
       body.forEach((block) => {
         block.contentPreviousDraft = block.contentDraft
-      
+        // 'contentPreviousDraft' is never altered beyond this point and is only used to display the initial body on the DOM.
+        // 'contentDraft' isn't used as that variable is
