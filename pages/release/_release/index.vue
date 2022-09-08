@@ -869,4 +869,8 @@ export default {
       body.forEach((block) => {
         block.contentPreviousDraft = block.contentDraft
         // 'contentPreviousDraft' is never altered beyond this point and is only used to display the initial body on the DOM.
-        // 'contentDraft' isn't used as that variable is
+        // 'contentDraft' isn't used as that variable is being written to. Displaying that messes with the cursor as it re-renders
+        // after its updated with a new value.
+      })
+      // begin autosaving
+      this.$store.dispatch('interface/displayB
