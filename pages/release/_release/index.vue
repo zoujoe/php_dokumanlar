@@ -873,4 +873,7 @@ export default {
         // after its updated with a new value.
       })
       // begin autosaving
-      this.$store.dispatch('interface/displayB
+      this.$store.dispatch('interface/displayBar', { message: 'You are in edit mode. Click a block to edit its contents.', temporary: false })
+      const autosaveLoop = setInterval(() => {
+        if (!this.editing) {
+          clearIn
