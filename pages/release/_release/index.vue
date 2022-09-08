@@ -876,4 +876,12 @@ export default {
       this.$store.dispatch('interface/displayBar', { message: 'You are in edit mode. Click a block to edit its contents.', temporary: false })
       const autosaveLoop = setInterval(() => {
         if (!this.editing) {
-          clearIn
+          clearInterval(autosaveLoop)
+        } else {
+          this.autosave()
+        }
+      }, 30000)
+    },
+    autosave () {
+      const reviewDraft = this.reviewContent
+      // reviewDraft.body
