@@ -889,4 +889,10 @@ export default {
       // reviewDraft.author = this.reviewContent.author
       if (!_.isEqual(this.previousAutosave, reviewDraft)) {
         // a save is necessary because the content has changed since last save
-        this.$store.dispatch('interface/displayBar', { mess
+        this.$store.dispatch('interface/displayBar', { message: 'Saving draft... 💾', temporary: true })
+        this.saveDraft(reviewDraft)
+      } else {
+        // save is not necessary
+        this.showDraftSavedMessage()
+      }
+      this.previousAutosa
