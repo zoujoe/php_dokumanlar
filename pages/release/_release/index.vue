@@ -887,4 +887,6 @@ export default {
       // reviewDraft.body = this.reviewContent.body
       // reviewDraft.header = this.reviewContent.headerDraft
       // reviewDraft.author = this.reviewContent.author
-      if (!_.isEqual(this.p
+      if (!_.isEqual(this.previousAutosave, reviewDraft)) {
+        // a save is necessary because the content has changed since last save
+        this.$store.dispatch('interface/displayBar', { mess
