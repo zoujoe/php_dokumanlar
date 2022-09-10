@@ -884,4 +884,7 @@ export default {
     },
     autosave () {
       const reviewDraft = this.reviewContent
-      // reviewDraft.body
+      // reviewDraft.body = this.reviewContent.body
+      // reviewDraft.header = this.reviewContent.headerDraft
+      // reviewDraft.author = this.reviewContent.author
+      if (!_.isEqual(this.p
