@@ -942,4 +942,9 @@ export default {
         author: this.user.id,
         avatar: this.user.avatar
       }
-     
+      // save to database
+      const releases = this.$fire.firestore.collection('releases')
+      releases.doc(this.id)
+        .collection('reviews')
+        .doc(this.user.id)
+       
