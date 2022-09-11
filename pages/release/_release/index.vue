@@ -924,4 +924,8 @@ export default {
       const publishDraft = reviewDraft.filter((block) => {
         return block.typeDraft !== 'deleted'
       })
- 
+      publishDraft.forEach((block) => {
+        block.content = block.contentDraft
+        block.type = block.typeDraft
+      })
+      this.reviewContent.body = JSON.parse(JSON.st
