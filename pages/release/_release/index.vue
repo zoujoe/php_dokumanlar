@@ -900,4 +900,9 @@ export default {
     saveDraft (draft) {
       // draft needs to be filtered to remove certain tags
       const filteredDraft = JSON.parse(JSON.stringify(draft))
-      filteredDraft.bod
+      filteredDraft.body.forEach((block) => {
+        delete block.changeImage
+        delete block.imageURLToAdd
+      })
+      const releases = this.$fire.firestore.collection('releases')
+      releases
