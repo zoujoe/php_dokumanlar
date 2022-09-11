@@ -895,4 +895,9 @@ export default {
         // save is not necessary
         this.showDraftSavedMessage()
       }
-      this.previousAutosa
+      this.previousAutosave = reviewDraft
+    },
+    saveDraft (draft) {
+      // draft needs to be filtered to remove certain tags
+      const filteredDraft = JSON.parse(JSON.stringify(draft))
+      filteredDraft.bod
