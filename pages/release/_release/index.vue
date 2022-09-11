@@ -934,4 +934,12 @@ export default {
         delete block.imageURLToAdd
       })
       const review = {
-        bod
+        body: publishDraft,
+        header: headerDraft,
+        headerDraft,
+        likers: [],
+        username: this.user.username,
+        author: this.user.id,
+        avatar: this.user.avatar
+      }
+     
