@@ -914,4 +914,9 @@ export default {
           }
         )
         .then(() => {
- 
+          this.showDraftSavedMessage()
+        })
+    },
+    publishReview () {
+      // get the final draft
+      const reviewDraft = JSON.parse(JSON.stringify(this.reviewCon
