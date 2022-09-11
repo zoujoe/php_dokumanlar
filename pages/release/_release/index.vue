@@ -928,4 +928,10 @@ export default {
         block.content = block.contentDraft
         block.type = block.typeDraft
       })
-      this.reviewContent.body = JSON.parse(JSON.st
+      this.reviewContent.body = JSON.parse(JSON.stringify(publishDraft))
+      publishDraft.forEach((block) => {
+        delete block.changeImage
+        delete block.imageURLToAdd
+      })
+      const review = {
+        bod
