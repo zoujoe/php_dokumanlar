@@ -905,4 +905,13 @@ export default {
         delete block.imageURLToAdd
       })
       const releases = this.$fire.firestore.collection('releases')
-      releases
+      releases.doc(this.id)
+        .collection('reviews')
+        .doc(this.user.id)
+        .set(filteredDraft,
+          {
+            merge: true
+          }
+        )
+        .then(() => {
+ 
