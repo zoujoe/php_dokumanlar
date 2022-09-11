@@ -919,4 +919,9 @@ export default {
     },
     publishReview () {
       // get the final draft
-      const reviewDraft = JSON.parse(JSON.stringify(this.reviewCon
+      const reviewDraft = JSON.parse(JSON.stringify(this.reviewContent.body))
+      const headerDraft = this.reviewContent.headerDraft
+      const publishDraft = reviewDraft.filter((block) => {
+        return block.typeDraft !== 'deleted'
+      })
+ 
