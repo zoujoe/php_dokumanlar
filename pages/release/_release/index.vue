@@ -947,4 +947,11 @@ export default {
       releases.doc(this.id)
         .collection('reviews')
         .doc(this.user.id)
-       
+        .set(review,
+          {
+            merge: true
+          }
+        )
+        .then(() => {
+          this.showDraftSavedMessage('Your review has been published! 🎉')
+ 
