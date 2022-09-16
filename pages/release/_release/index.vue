@@ -957,4 +957,9 @@ export default {
         })
       // add review to user in database
       const users = this.$fire.firestore.collection('users')
-      users.doc(this.user.id).collection('reviews').doc(this.id)
+      users.doc(this.user.id).collection('reviews').doc(this.id).set({
+        review: releases.doc(this.id).collection('reviews').doc(this.user.id) // reference
+      })
+    },
+    showDraftSavedMessage (message = 'Draft saved. 😊') {
+      this.$sto
