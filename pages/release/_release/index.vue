@@ -954,4 +954,7 @@ export default {
         )
         .then(() => {
           this.showDraftSavedMessage('Your review has been published! 🎉')
- 
+        })
+      // add review to user in database
+      const users = this.$fire.firestore.collection('users')
+      users.doc(this.user.id).collection('reviews').doc(this.id)
