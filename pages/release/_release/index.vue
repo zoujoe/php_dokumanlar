@@ -965,4 +965,8 @@ export default {
       this.$store.dispatch('interface/displayBar', { message, temporary: false })
       setTimeout(() => {
         if (this.editing) {
-          this.$store.dispatch('interface/dis
+          this.$store.dispatch('interface/displayBar', { message: 'You are in edit mode. Click a block to edit its contents.', temporary: false })
+        } else {
+          this.$store.dispatch('interface/hideBar')
+        }
+      }, 3
