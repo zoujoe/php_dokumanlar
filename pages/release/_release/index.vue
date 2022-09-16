@@ -962,4 +962,7 @@ export default {
       })
     },
     showDraftSavedMessage (message = 'Draft saved. 😊') {
-      this.$sto
+      this.$store.dispatch('interface/displayBar', { message, temporary: false })
+      setTimeout(() => {
+        if (this.editing) {
+          this.$store.dispatch('interface/dis
