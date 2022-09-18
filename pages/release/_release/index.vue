@@ -986,4 +986,11 @@ export default {
         this.newBlockCount = this.newBlockCount + 1
       }
       this.reviewContent.body.push({
-      
+        contentDraft: blockContent,
+        contentPreviousDraft: blockContent,
+        typeDraft: 'paragraph'
+      })
+    },
+    addHeader () {
+      const possibleHeaderContent = [
+        'A wo
