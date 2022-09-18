@@ -998,4 +998,8 @@ export default {
         'Something provocative and enticing!',
         'Your thoughts in one sentence.'
       ]
-      const index = Math.floor(Math.random() * 
+      const index = Math.floor(Math.random() * possibleHeaderContent.length)
+      this.reviewContent.headerDraft = possibleHeaderContent[index]
+    },
+    clickedReviewImage (imageURL, selectedReview, i) {
+      if (!
