@@ -977,4 +977,8 @@ export default {
         'An empty canvas which permits all sorts of wonderful and delightful expression.',
         'What quality will you describe in this area? That\'s up to you, I suppose.',
         'Don\'t forget that you can change the type of block this is to something other than a paragraph by using the dropdown above this block.',
-        `So much room for expressing your love for ${this.release
+        `So much room for expressing your love for ${this.release.title}, so little time...`,
+        'I\'ve run out of things to say. Enjoy the same text from the next block out!',
+        'A new block.'
+      ]
+      const blockContent = possibleBlock
