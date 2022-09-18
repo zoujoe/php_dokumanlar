@@ -976,4 +976,5 @@ export default {
         'This is a fresh, new, and lovely block with which you can do what you please.',
         'An empty canvas which permits all sorts of wonderful and delightful expression.',
         'What quality will you describe in this area? That\'s up to you, I suppose.',
-        'Don\'t forget that you can change the t
+        'Don\'t forget that you can change the type of block this is to something other than a paragraph by using the dropdown above this block.',
+        `So much room for expressing your love for ${this.release
