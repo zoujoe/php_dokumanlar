@@ -969,4 +969,9 @@ export default {
         } else {
           this.$store.dispatch('interface/hideBar')
         }
-      }, 3
+      }, 3000)
+    },
+    addNewBlock () {
+      const possibleBlockContent = [
+        'This is a fresh, new, and lovely block with which you can do what you please.',
+        'An empty canvas which p
