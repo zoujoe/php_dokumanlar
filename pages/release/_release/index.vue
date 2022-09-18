@@ -1002,4 +1002,9 @@ export default {
       this.reviewContent.headerDraft = possibleHeaderContent[index]
     },
     clickedReviewImage (imageURL, selectedReview, i) {
-      if (!
+      if (!this.editing) {
+        window.open(imageURL, '_blank')
+      } else {
+        // Allow the user to change the image.
+        this.$set(this.reviewContent.body[i], 'imageURLToAdd', imageURL)
+        this.$set(this
