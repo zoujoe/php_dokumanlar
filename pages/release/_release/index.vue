@@ -993,4 +993,9 @@ export default {
     },
     addHeader () {
       const possibleHeaderContent = [
-        'A wo
+        'A wonderful opening line!',
+        'Something to grab their attention.',
+        'Something provocative and enticing!',
+        'Your thoughts in one sentence.'
+      ]
+      const index = Math.floor(Math.random() * 
