@@ -981,4 +981,9 @@ export default {
         'I\'ve run out of things to say. Enjoy the same text from the next block out!',
         'A new block.'
       ]
-      const blockContent = possibleBlock
+      const blockContent = possibleBlockContent[this.newBlockCount]
+      if (this.newBlockCount !== (possibleBlockContent.length - 1)) {
+        this.newBlockCount = this.newBlockCount + 1
+      }
+      this.reviewContent.body.push({
+      
