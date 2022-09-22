@@ -1007,4 +1007,9 @@ export default {
       } else {
         // Allow the user to change the image.
         this.$set(this.reviewContent.body[i], 'imageURLToAdd', imageURL)
-        this.$set(this
+        this.$set(this.reviewContent.body[i], 'changeImage', true)
+      }
+    },
+    saveReviewImageChanges (imageURL, selectedReview, i) {
+      if (!this.reviewContent.body[i].imageURLToAdd) {
+        // r
