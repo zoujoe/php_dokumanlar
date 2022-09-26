@@ -1012,4 +1012,8 @@ export default {
     },
     saveReviewImageChanges (imageURL, selectedReview, i) {
       if (!this.reviewContent.body[i].imageURLToAdd) {
-        // r
+        // remove block
+        this.reviewContent.body.splice(i, 1)
+      } else {
+        this.reviewContent.body[i].changeImage = false
+        this.$set(this.reviewContent.body[i], 'imageURLDraft', 
