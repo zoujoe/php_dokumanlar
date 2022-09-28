@@ -1016,4 +1016,10 @@ export default {
         this.reviewContent.body.splice(i, 1)
       } else {
         this.reviewContent.body[i].changeImage = false
-        this.$set(this.reviewContent.body[i], 'imageURLDraft', 
+        this.$set(this.reviewContent.body[i], 'imageURLDraft', this.reviewContent.body[i].imageURLToAdd)
+        this.$set(this.reviewContent.body[i], 'imageURLToAdd', '')
+      }
+    },
+    changeBlockType (block, type) {
+      const updatedBlock = block
+ 
