@@ -1022,4 +1022,9 @@ export default {
     },
     changeBlockType (block, type) {
       const updatedBlock = block
- 
+      updatedBlock.typeDraft = type
+      if (type === 'image') {
+        const imageBlock = updatedBlock
+        imageBlock.changeImage = true
+        return imageBlock
+      }
