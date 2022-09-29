@@ -1028,3 +1028,8 @@ export default {
         imageBlock.changeImage = true
         return imageBlock
       }
+      return updatedBlock
+    },
+    deleteBlock (blockIndex) {
+      // the block is not actually deleted from the array until the draft is published.
+      this.re
