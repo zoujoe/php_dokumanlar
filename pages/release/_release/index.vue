@@ -1032,4 +1032,5 @@ export default {
     },
     deleteBlock (blockIndex) {
       // the block is not actually deleted from the array until the draft is published.
-      this.re
+      this.reviewContent.body[blockIndex].typeDraftBeforeDeletion = this.reviewContent.body[blockIndex].typeDraft
+      this.reviewContent.body[blockIndex].contentPreviousDraft = thi
