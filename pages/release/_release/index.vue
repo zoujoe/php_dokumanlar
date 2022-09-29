@@ -1033,4 +1033,8 @@ export default {
     deleteBlock (blockIndex) {
       // the block is not actually deleted from the array until the draft is published.
       this.reviewContent.body[blockIndex].typeDraftBeforeDeletion = this.reviewContent.body[blockIndex].typeDraft
-      this.reviewContent.body[blockIndex].contentPreviousDraft = thi
+      this.reviewContent.body[blockIndex].contentPreviousDraft = this.reviewContent.body[blockIndex].contentDraft
+      this.reviewContent.body[blockIndex].typeDraft = 'deleted'
+    },
+    restoreBlock (blockIndex) {
+      this.reviewContent.body[blo
