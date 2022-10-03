@@ -1041,4 +1041,8 @@ export default {
     },
     createNewList () {
       const newListMessage = this.checkNewListData()
-      this.showCreateListModal = !newLi
+      this.showCreateListModal = !newListMessage[1]
+      if (newListMessage[1]) {
+        this.newList.author = this.user.id
+        const users = this.$fire.firestore.collection('users')
+        const userLists = users.doc(
