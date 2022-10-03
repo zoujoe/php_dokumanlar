@@ -1037,4 +1037,8 @@ export default {
       this.reviewContent.body[blockIndex].typeDraft = 'deleted'
     },
     restoreBlock (blockIndex) {
-      this.reviewContent.body[blo
+      this.reviewContent.body[blockIndex].typeDraft = this.reviewContent.body[blockIndex].typeDraftBeforeDeletion
+    },
+    createNewList () {
+      const newListMessage = this.checkNewListData()
+      this.showCreateListModal = !newLi
