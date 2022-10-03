@@ -1045,4 +1045,7 @@ export default {
       if (newListMessage[1]) {
         this.newList.author = this.user.id
         const users = this.$fire.firestore.collection('users')
-        const userLists = users.doc(
+        const userLists = users.doc(this.user.id).collection('lists')
+        const listID = this.newList.name.toLowerCase().replaceAll(' ', '-')
+        if (this.newList.imageURL === this.release.imageURL) {
+          t
