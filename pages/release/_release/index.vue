@@ -1053,4 +1053,9 @@ export default {
         this.newList.id = listID
         userLists.doc(listID).set(this.newList)
         this.userLists.push(this.newList)
-        this.userListNames.push(this.newList.name
+        this.userListNames.push(this.newList.name)
+      }
+      this.$store.dispatch('interface/displayBar', { message: newListMessage[0], temporary: true })
+    },
+    checkNewListData () {
+      const newList = this.newList
