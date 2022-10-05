@@ -1048,4 +1048,9 @@ export default {
         const userLists = users.doc(this.user.id).collection('lists')
         const listID = this.newList.name.toLowerCase().replaceAll(' ', '-')
         if (this.newList.imageURL === this.release.imageURL) {
-          t
+          this.newList.imageURL = ''
+        }
+        this.newList.id = listID
+        userLists.doc(listID).set(this.newList)
+        this.userLists.push(this.newList)
+        this.userListNames.push(this.newList.name
