@@ -1059,3 +1059,5 @@ export default {
     },
     checkNewListData () {
       const newList = this.newList
+      if (newList.name.length >= 3 && !this.userListNames.includes(newList.name)) {
+        return [`✨ Your list '${newList.name}' has been created!`, true] // true = success, close create
