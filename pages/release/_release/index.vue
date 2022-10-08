@@ -1062,4 +1062,7 @@ export default {
       if (newList.name.length >= 3 && !this.userListNames.includes(newList.name)) {
         return [`✨ Your list '${newList.name}' has been created!`, true] // true = success, close create list screen
       } else if (this.userListNames.includes(newList.name)) {
-        return ['✍️ The name you chose must be really good, because you\'ve already made a list with the same name before!'
+        return ['✍️ The name you chose must be really good, because you\'ve already made a list with the same name before!', false]
+      } else if (newList.name.length === 0) {
+        return ['✍️ Please give your list a fitting name.', false] // false = error, continue to show create list screen
+      } else 
