@@ -1096,4 +1096,10 @@ export default {
         // if there weren't any existing lists
           lists = []
         }
-        lists.push('/u
+        lists.push('/users/' + this.user.id + '/lists/' + list.id)
+        release.update({
+          lists
+        })
+        // notify user
+        let message
+        if (this.release.tit
