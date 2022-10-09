@@ -1102,4 +1102,7 @@ export default {
         })
         // notify user
         let message
-        if (this.release.tit
+        if (this.release.title.length <= 30) {
+          message = `✨ '${this.release.title}' was added to your list '${list.name}'!`
+        } else {
+          message = `✨ This release was added to your list '${list
