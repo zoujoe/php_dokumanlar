@@ -1088,4 +1088,6 @@ export default {
         const users = this.$fire.firestore.collection('users')
         const userLists = users.doc(this.user.id).collection('lists')
         userLists.doc(list.id).set(list)
-        // add
+        // add reference on release page that it is included in this list, so other users may view it
+        const releases = this.$fire.firestore.collection('releases')
+        const release = releases.doc(this.release.i
