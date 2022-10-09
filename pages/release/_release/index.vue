@@ -1076,4 +1076,7 @@ export default {
       const list = this.userLists[listIndex]
       // check if release is already in database
       if (list.releases.some(release => release.id === this.release.id)) {
-        this.$store.dispatch('interface/displayBar', { message: '✋ Relea
+        this.$store.dispatch('interface/displayBar', { message: '✋ Release is already in list! Add anyway?', promptOptions: ['Add duplicate', 'Update', 'Do not add'], temporary: false })
+      } else {
+        // add release to list
+        list.release
