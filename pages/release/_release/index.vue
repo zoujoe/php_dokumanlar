@@ -1069,4 +1069,9 @@ export default {
         return ['✍️ Please make sure your list\'s name is at least three characters long.', false]
       }
     },
-    addReleaseToList () 
+    addReleaseToList () {
+      // get list index
+      const listIndex = this.userListNames.indexOf(this.listItemToAdd.selectedList)
+      // get list data
+      const list = this.userLists[listIndex]
+    
