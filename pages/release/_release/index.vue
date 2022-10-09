@@ -1085,4 +1085,7 @@ export default {
           data: this.releases
         })
         // add updated list to database
-        co
+        const users = this.$fire.firestore.collection('users')
+        const userLists = users.doc(this.user.id).collection('lists')
+        userLists.doc(list.id).set(list)
+        // add
