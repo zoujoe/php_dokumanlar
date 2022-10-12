@@ -1117,4 +1117,15 @@ export default {
       const users = this.$fire.firestore.collection('users')
       const userLists = users.doc(this.user.id).collection('lists')
       userLists.doc(list.id).set(list)
-      this.$store.dispatch('interface/displayBar', { message: `✨ Your
+      this.$store.dispatch('interface/displayBar', { message: `✨ Your list '${this.listItemToAdd.selectedList}' has been updated!`, temporary: true })
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.release {
+  padding-bottom: 3vh;
+}
+.release-image {
+  bor
