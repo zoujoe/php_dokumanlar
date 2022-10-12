@@ -1114,4 +1114,7 @@ export default {
       const list = this.userLists[this.listItemToAdd.selectedListIndex]
       list.releases = this.selectedListReleasesOrder
       // add updated list to database
-      const users = this.$fire.firestore.collection
+      const users = this.$fire.firestore.collection('users')
+      const userLists = users.doc(this.user.id).collection('lists')
+      userLists.doc(list.id).set(list)
+      this.$store.dispatch('interface/displayBar', { message: `✨ Your
