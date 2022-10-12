@@ -1111,4 +1111,7 @@ export default {
       }
     },
     updateReleasePositionInList () {
-      const list = this.userLists[th
+      const list = this.userLists[this.listItemToAdd.selectedListIndex]
+      list.releases = this.selectedListReleasesOrder
+      // add updated list to database
+      const users = this.$fire.firestore.collection
