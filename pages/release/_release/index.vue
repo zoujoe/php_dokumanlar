@@ -1135,4 +1135,19 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
   &.light {
-    color: rgba($saturated-
+    color: rgba($saturated-purple, 0.25)
+  }
+}
+.link {
+  text-decoration: none;
+}
+.tags {
+  max-width: 90%;
+}
+.flex-container {
+  display: flex;
+}
+.user-score-container {
+  margin-left: 32px;
+  margin-top: 16px;
+  ma
