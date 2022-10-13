@@ -1150,4 +1150,15 @@ export default {
 .user-score-container {
   margin-left: 32px;
   margin-top: 16px;
-  ma
+  margin-right: 16px;
+}
+.user-score {
+  text-align: center;
+  color: $saturated-purple;
+  font-weight: 700;
+  font-size: 18px;
+  width: 64px;
+  letter-spacing: 2px;
+  margin-top: 16px;
+}
+.user-r
