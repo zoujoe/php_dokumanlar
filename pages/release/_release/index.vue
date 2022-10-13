@@ -1128,4 +1128,11 @@ export default {
   padding-bottom: 3vh;
 }
 .release-image {
-  bor
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px;
+  width: 300px;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &.light {
+    color: rgba($saturated-
