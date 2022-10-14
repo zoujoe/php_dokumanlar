@@ -1171,4 +1171,15 @@ export default {
   margin-left: 32px;
 }
 .content {
- 
+  padding-left: calc(25vw - 32px);
+  padding-right: 25vw;
+}
+.left-column {
+  margin-right: 35px;
+  max-width: 25vw;
+}
+.right-column {
+  margin-left: 35px;
+  max-width: 25vw;
+}
+.review-contai
