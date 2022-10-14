@@ -1161,4 +1161,14 @@ export default {
   letter-spacing: 2px;
   margin-top: 16px;
 }
-.user-r
+.user-review-container {
+  margin-bottom: 32px;
+}
+.user-review-composition-container {
+  width: 100%;
+}
+.relevant-lists-and-charts {
+  margin-left: 32px;
+}
+.content {
+ 
