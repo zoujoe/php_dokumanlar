@@ -1182,4 +1182,15 @@ export default {
   margin-left: 35px;
   max-width: 25vw;
 }
-.review-contai
+.review-container {
+  display: flex;
+  justify-content: center;
+}
+.review-author-container {
+  align-items: center;
+  margin-top: 24px;
+}
+.review-author {
+  margin-left: 8px;
+}
+.review-image-cont
