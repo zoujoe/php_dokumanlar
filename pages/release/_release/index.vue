@@ -1202,4 +1202,13 @@ export default {
   max-width: 512px;
 }
 .review-image {
-  margin-bottom: 32p
+  margin-bottom: 32px;
+  max-width: 512px;
+  box-shadow: 0px 4px 32px $desaturated-dimmest-purple;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.emphasised-block {
+  background: $l
