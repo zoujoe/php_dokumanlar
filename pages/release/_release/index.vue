@@ -1193,4 +1193,13 @@ export default {
 .review-author {
   margin-left: 8px;
 }
-.review-image-cont
+.review-image-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 64px;
+  max-width: 512px;
+}
+.review-image {
+  margin-bottom: 32p
