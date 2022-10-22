@@ -1211,4 +1211,15 @@ export default {
   }
 }
 .emphasised-block {
-  background: $l
+  background: $lighter-purple;
+  padding: 32px;
+  border-radius: 10px;
+  margin-bottom: 32px;
+}
+.review-caption {
+  max-width: 90%;
+}
+.review-content-block {
+  display: flex;
+  align-items: center;
+  
