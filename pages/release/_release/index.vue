@@ -1232,4 +1232,13 @@ export default {
   border-radius: 10px;
 }
 .block-editing-toolbar {
- 
+  display: flex;
+  border-radius: 0px 16px 16px 0px;
+  background: $lighter-purple;
+  width: 100%;
+  margin-top: 32px;
+}
+.block-editing-toolbar-content {
+  width: 100%;
+}
+.block-editing-toolbar
