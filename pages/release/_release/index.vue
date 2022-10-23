@@ -1222,4 +1222,14 @@ export default {
 .review-content-block {
   display: flex;
   align-items: center;
-  
+  flex-direction: column;
+}
+#add-new-block-container {
+  margin-top: 64px;
+  margin-bottom: 96px;
+  background: $lighter-purple;
+  padding: 32px;
+  border-radius: 10px;
+}
+.block-editing-toolbar {
+ 
