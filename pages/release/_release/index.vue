@@ -1241,4 +1241,13 @@ export default {
 .block-editing-toolbar-content {
   width: 100%;
 }
-.block-editing-toolbar
+.block-editing-toolbar-deleted {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+.block-number {
+  background: $desaturated-dimmish-purple;
+  color: $lighter-purple;
+  padding: 16px;
+  border-radius: 16p
