@@ -1250,4 +1250,13 @@ export default {
   background: $desaturated-dimmish-purple;
   color: $lighter-purple;
   padding: 16px;
-  border-radius: 16p
+  border-radius: 16px 0px 0px 16px;
+}
+.block-information {
+  margin-left: 16px;
+}
+.delete-review-block-button {
+  appearance: none;
+  background: none;
+  border: none;
+  margin-left:
