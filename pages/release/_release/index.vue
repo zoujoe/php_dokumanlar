@@ -1259,4 +1259,15 @@ export default {
   appearance: none;
   background: none;
   border: none;
-  margin-left:
+  margin-left: auto;
+  margin-right: 16px;
+}
+.delete-review-icon {
+  color: $desaturated-dimmish-purple;
+  transition: all 0.2s linear;
+  &:hover {
+    color: $saturated-purple;
+    cursor: pointer;
+  }
+}
+.new-list-ima
