@@ -1270,4 +1270,11 @@ export default {
     cursor: pointer;
   }
 }
-.new-list-ima
+.new-list-image-preview {
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 10px;
+  margin-left: 16px;
+  margin-top: auto;
+  margin-bottom: 16px;
+  background-size:
