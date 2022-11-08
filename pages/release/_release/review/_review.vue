@@ -8,4 +8,7 @@
           </masthead>
         </template>
         <template #left>
-          <dropdo
+          <dropdown
+            name="selected-list"
+            description-value="2020 favourites, for example."
+            :options="['Example list 1', 'Example list 
