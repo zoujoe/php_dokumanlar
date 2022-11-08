@@ -18,4 +18,11 @@
           <text-area name="list-item-description" full-width placeholder="Descriptions are optional, but should be related to the album or artist if included." @input="listItemToAdd.description=$event">
             Description
           </text-area>
-          <regular-button wide type="call-to-a
+          <regular-button wide type="call-to-action">
+            Add to list
+          </regular-button>
+        </template>
+      </modal>
+    </transition>
+    <blur loading :apply-blur="loading" />
+    <hero :backgro
