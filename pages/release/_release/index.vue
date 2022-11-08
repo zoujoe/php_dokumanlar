@@ -1277,4 +1277,14 @@ export default {
   margin-left: 16px;
   margin-top: auto;
   margin-bottom: 16px;
-  background-size:
+  background-size: cover;
+}
+.secondary-list-buttons {
+  margin-bottom: 16px;
+}
+.list-information {
+  margin-top: auto;
+  margin-left: 16px;
+  margin-bottom: auto;
+}
+</style>
