@@ -25,4 +25,10 @@
       </modal>
     </transition>
     <blur loading :apply-blur="loading" />
-    <hero :backgro
+    <hero :background="release.image">
+      <header>
+        <nuxt-link
+          class="link"
+          :to="'/artist/' + release['artist-credit'][0].artist.id"
+          :class="colourMode"
+ 
