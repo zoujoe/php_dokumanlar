@@ -11,4 +11,8 @@
           <dropdown
             name="selected-list"
             description-value="2020 favourites, for example."
-            :options="['Example list 1', 'Example list 
+            :options="['Example list 1', 'Example list 2']"
+          >
+            Selected list
+          </dropdown>
+          <text-area name="list-item-description" full-width placeholder="Descriptions are optional, but should be 
