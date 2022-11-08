@@ -31,4 +31,10 @@
           class="link"
           :to="'/artist/' + release['artist-credit'][0].artist.id"
           :class="colourMode"
- 
+        >
+          <subheading>
+            {{ release['artist-credit'][0].artist.name }}
+          </subheading>
+        </nuxt-link>
+        <masthead>
+          <span v-if="releas
