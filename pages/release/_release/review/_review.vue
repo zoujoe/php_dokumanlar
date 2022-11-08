@@ -15,4 +15,7 @@
           >
             Selected list
           </dropdown>
-          <text-area name="list-item-description" full-width placeholder="Descriptions are optional, but should be 
+          <text-area name="list-item-description" full-width placeholder="Descriptions are optional, but should be related to the album or artist if included." @input="listItemToAdd.description=$event">
+            Description
+          </text-area>
+          <regular-button wide type="call-to-a
