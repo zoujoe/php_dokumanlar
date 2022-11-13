@@ -37,4 +37,11 @@
           </subheading>
         </nuxt-link>
         <masthead>
-          <span v-if="releas
+          <span v-if="release.title">
+            {{ release.title }}
+          </span>
+          <span v-else>
+            Loading...
+          </span>
+        </masthead>
+        <tag desa
