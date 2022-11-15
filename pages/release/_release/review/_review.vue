@@ -58,4 +58,11 @@
       </header>
       <img
         id="release-image"
-        clas
+        class="release-image"
+        :class="[colourMode]"
+        :src="release.image"
+        :alt="release.title"
+        @load="loading = false"
+      >
+    </hero>
+    <div v-if="review" class="r
