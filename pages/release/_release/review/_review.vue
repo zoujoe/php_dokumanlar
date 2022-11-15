@@ -69,4 +69,8 @@
       <article-content>
         <masthead>{{ review.header }}</masthead>
         <div class="flex-container review-author-container">
-          <profile-pictu
+          <profile-picture :username="review.username" size="small" :url="review.avatar" />
+          <div class="review-author">
+            <subheading smaller no-margin>
+              Review by
+              <nuxt-li
