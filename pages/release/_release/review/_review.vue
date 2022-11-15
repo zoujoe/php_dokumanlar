@@ -51,3 +51,11 @@
           </nuxt-link>
         </tag>
         <div class="tags">
+          <tag v-for="tag in release.genres" :key="tag.id">
+            {{ tag.name }}
+          </tag>
+        </div>
+      </header>
+      <img
+        id="release-image"
+        clas
