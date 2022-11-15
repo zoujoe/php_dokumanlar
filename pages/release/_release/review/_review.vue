@@ -65,4 +65,8 @@
         @load="loading = false"
       >
     </hero>
-    <div v-if="review" class="r
+    <div v-if="review" class="review-container">
+      <article-content>
+        <masthead>{{ review.header }}</masthead>
+        <div class="flex-container review-author-container">
+          <profile-pictu
