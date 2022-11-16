@@ -93,4 +93,13 @@
             </subheading>
           </div>
         </div>
-      </article
+      </article-content>
+    </div>
+  </main>
+</template>
+
+<script>
+// @ is an alias to /src
+import { mapGetters } from 'vuex'
+import blur from '~/components/Blur.vue'
+import masthead fro
