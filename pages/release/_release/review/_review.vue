@@ -115,4 +115,16 @@ import articleContent from '~/components/ArticleContent.vue'
 import profilePicture from '~/components/ProfilePicture.vue'
 
 export default {
-  name: 'Rele
+  name: 'ReleaseReview',
+  components: {
+    blur,
+    masthead,
+    hero,
+    subheading,
+    tag,
+    regularButton,
+    textArea,
+    modal,
+    dropdown,
+    paragraph,
+    articleContent,
