@@ -78,4 +78,9 @@
               </nuxt-link>
             </subheading>
             <subheading smallest no-margin>
-              1
+              18 December 2020
+            </subheading>
+          </div>
+        </div>
+        <div v-for="block in review.body" :key="block.id" class="review-content-block">
+          <paragraph v-if=
