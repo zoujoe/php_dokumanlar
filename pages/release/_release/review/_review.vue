@@ -110,4 +110,9 @@ import regularButton from '~/components/RegularButton.vue'
 import textArea from '~/components/TextArea.vue'
 import modal from '~/components/Modal.vue'
 import dropdown from '~/components/Dropdown.vue'
-import paragraph from '~/c
+import paragraph from '~/components/Paragraph.vue'
+import articleContent from '~/components/ArticleContent.vue'
+import profilePicture from '~/components/ProfilePicture.vue'
+
+export default {
+  name: 'Rele
