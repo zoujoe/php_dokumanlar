@@ -87,4 +87,10 @@
             {{ block.content }}
           </paragraph>
           <div v-else-if="block.type === 'image'" class="review-image-container">
-            
+            <img class="review-image" :src="block.url" :alt="block.caption">
+            <subheading smaller>
+              {{ block.caption }}
+            </subheading>
+          </div>
+        </div>
+      </article
