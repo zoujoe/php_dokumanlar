@@ -102,4 +102,8 @@
 // @ is an alias to /src
 import { mapGetters } from 'vuex'
 import blur from '~/components/Blur.vue'
-import masthead fro
+import masthead from '~/components/Masthead.vue'
+import hero from '~/components/Hero.vue'
+import subheading from '~/components/Subheading.vue'
+import tag from '~/components/Tag.vue'
+import regularButton from '~/
