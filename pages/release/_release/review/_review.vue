@@ -83,4 +83,8 @@
           </div>
         </div>
         <div v-for="block in review.body" :key="block.id" class="review-content-block">
-          <paragraph v-if=
+          <paragraph v-if="block.type === 'paragraph'">
+            {{ block.content }}
+          </paragraph>
+          <div v-else-if="block.type === 'image'" class="review-image-container">
+            
