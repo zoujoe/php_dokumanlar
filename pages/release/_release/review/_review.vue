@@ -73,4 +73,9 @@
           <div class="review-author">
             <subheading smaller no-margin>
               Review by
-              <nuxt-li
+              <nuxt-link :to="'/user/' + review.username">
+                {{ review.username }}
+              </nuxt-link>
+            </subheading>
+            <subheading smallest no-margin>
+              1
