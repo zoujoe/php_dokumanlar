@@ -106,4 +106,8 @@ import masthead from '~/components/Masthead.vue'
 import hero from '~/components/Hero.vue'
 import subheading from '~/components/Subheading.vue'
 import tag from '~/components/Tag.vue'
-import regularButton from '~/
+import regularButton from '~/components/RegularButton.vue'
+import textArea from '~/components/TextArea.vue'
+import modal from '~/components/Modal.vue'
+import dropdown from '~/components/Dropdown.vue'
+import paragraph from '~/c
