@@ -128,3 +128,11 @@ export default {
     dropdown,
     paragraph,
     articleContent,
+    profilePicture
+  },
+  data () {
+    return {
+      id: this.$route.params.release,
+      reviewID: this.$route.params.review,
+      averageScore: undefined,
+  
