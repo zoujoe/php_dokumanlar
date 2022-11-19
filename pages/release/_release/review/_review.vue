@@ -135,4 +135,14 @@ export default {
       id: this.$route.params.release,
       reviewID: this.$route.params.review,
       averageScore: undefined,
+      amountOfRatings: undefined,
+      review: undefined,
+      release: {
+        'artist-credit': [
+          {
+            artist: {
+              name: 'Loading...'
+            }
+          }
+        ],
   
