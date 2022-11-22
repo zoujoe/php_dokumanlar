@@ -145,4 +145,12 @@ export default {
             }
           }
         ],
-  
+        firstReleaseDate: []
+      },
+      reviewContent: {
+        header: '',
+        body: ''
+      },
+      listItemToAdd: {
+        selectedList: '',
+       
