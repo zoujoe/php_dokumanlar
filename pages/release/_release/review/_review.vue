@@ -153,4 +153,13 @@ export default {
       },
       listItemToAdd: {
         selectedList: '',
-       
+        description: ''
+      },
+      initialScore: undefined,
+      loading: false,
+      consideredUser: false,
+      showAddToListModal: false
+    }
+  },
+  computed: mapGetters({
+    colourMode: 'them
