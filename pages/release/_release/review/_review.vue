@@ -168,4 +168,8 @@ export default {
   mounted () {
     this.loading = true
     if (this.release.title === undefined) {
-      // if the page is not loaded following a
+      // if the page is not loaded following a search we must find all the information again
+      // get release group info
+      this.$axios
+        .get(
+          `https://us-central1-tasteful.cloudfunctions.net/getReleaseData?query=
