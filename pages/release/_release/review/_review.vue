@@ -162,4 +162,10 @@ export default {
     }
   },
   computed: mapGetters({
-    colourMode: 'them
+    colourMode: 'theme/colourMode',
+    user: 'login/user'
+  }),
+  mounted () {
+    this.loading = true
+    if (this.release.title === undefined) {
+      // if the page is not loaded following a
