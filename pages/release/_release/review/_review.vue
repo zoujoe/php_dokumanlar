@@ -178,3 +178,12 @@ export default {
           this.release = res.data
           document.title = 'tasteful | ' + this.release.title
           this.getReview()
+        })
+    } else {
+      this.release = this.$store.state.search.release
+      document.title = 'tasteful | ' + this.release.title
+    }
+  },
+  methods: {
+    getAvatar (id) {
+      
