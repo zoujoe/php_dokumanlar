@@ -186,4 +186,9 @@ export default {
   },
   methods: {
     getAvatar (id) {
-      
+      const imagePath = 'users/' + id + '/avatar.jpg'
+      return this.$fire.storage.ref().child(imagePath)
+        .getDownloadURL()
+        .then(url => url)
+    },
+    
