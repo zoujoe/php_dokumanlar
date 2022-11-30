@@ -191,4 +191,9 @@ export default {
         .getDownloadURL()
         .then(url => url)
     },
-    
+    getUsername (id) {
+      return this.$fire.firestore.collection('users').doc(id)
+        .get()
+        .then((user) => {
+          const userData = user.data()
+          return user
