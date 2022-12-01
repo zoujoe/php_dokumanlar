@@ -196,4 +196,10 @@ export default {
         .get()
         .then((user) => {
           const userData = user.data()
-          return user
+          return userData.username
+        })
+    },
+    getReview () {
+      const releases = this.$fire.firestore.collection('releases')
+      releases.doc(this.id).collection('reviews').doc(this.reviewID)
+        .
