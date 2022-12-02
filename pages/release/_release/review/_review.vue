@@ -202,4 +202,8 @@ export default {
     getReview () {
       const releases = this.$fire.firestore.collection('releases')
       releases.doc(this.id).collection('reviews').doc(this.reviewID)
-        .
+        .get()
+        .then(async (review) => {
+          this.review = review.data()
+          const username = await this.getUsername(this.reviewID)
+          this.$set(this.review, 'use
