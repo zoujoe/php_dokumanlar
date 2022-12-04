@@ -206,4 +206,11 @@ export default {
         .then(async (review) => {
           this.review = review.data()
           const username = await this.getUsername(this.reviewID)
-          this.$set(this.review, 'use
+          this.$set(this.review, 'username', username)
+          const avatar = await this.getAvatar(this.reviewID)
+          this.$set(this.review, 'avatar', avatar)
+        })
+    }
+  }
+}
+</s
