@@ -213,4 +213,14 @@ export default {
     }
   }
 }
-</s
+</script>
+
+<style lang="scss" scoped>
+.release-review {
+  padding-bottom: 3vh;
+}
+.release-image {
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px;
+  width: 300px;
+  marg
