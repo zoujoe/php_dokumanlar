@@ -257,4 +257,14 @@ export default {
   margin-bottom: 32px;
 }
 .user-review-composition-container {
-  
+  width: 100%;
+}
+.relevant-lists-and-charts {
+  margin-left: 32px;
+}
+.content {
+  padding-left: calc(25vw - 32px);
+  padding-right: 25vw;
+}
+.left-column {
+  margin-right: 35px;
