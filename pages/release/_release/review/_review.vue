@@ -279,4 +279,15 @@ export default {
   justify-content: center;
 }
 .review-author-container {
-  align-i
+  align-items: center;
+  margin-top: 24px;
+}
+.review-author {
+  margin-left: 8px;
+}
+.review-image-container {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  max-width: 512px;
+}
+.review-
