@@ -290,4 +290,13 @@ export default {
   margin-bottom: 64px;
   max-width: 512px;
 }
-.review-
+.review-image {
+  margin-bottom: 32px;
+  max-width: 512px;
+  box-shadow: 0px 4px 32px $desaturated-dimmest-purple;
+  border-radius: 5px;
+}
+.review-caption {
+  max-width: 90%;
+}
+</sty
