@@ -268,3 +268,15 @@ export default {
 }
 .left-column {
   margin-right: 35px;
+  max-width: 25vw;
+}
+.right-column {
+  margin-left: 35px;
+  max-width: 25vw;
+}
+.review-container {
+  display: flex;
+  justify-content: center;
+}
+.review-author-container {
+  align-i
