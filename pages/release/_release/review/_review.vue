@@ -223,4 +223,17 @@ export default {
   border-radius: 10px;
   box-shadow: 0px 0px 50px;
   width: 300px;
-  marg
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &.light {
+    color: rgba($saturated-purple, 0.25)
+  }
+}
+.link {
+  text-decoration: none;
+}
+.tags {
+  max-width: 90%;
+}
+.flex-container
