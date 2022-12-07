@@ -248,3 +248,13 @@ export default {
   text-align: center;
   color: $saturated-purple;
   font-weight: 700;
+  font-size: 18px;
+  width: 64px;
+  letter-spacing: 2px;
+  margin-top: 16px;
+}
+.user-review-container {
+  margin-bottom: 32px;
+}
+.user-review-composition-container {
+  
