@@ -236,4 +236,15 @@ export default {
 .tags {
   max-width: 90%;
 }
-.flex-container
+.flex-container {
+  display: flex;
+}
+.user-score-container {
+  margin-left: 32px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+.user-score {
+  text-align: center;
+  color: $saturated-purple;
+  font-weight: 700;
