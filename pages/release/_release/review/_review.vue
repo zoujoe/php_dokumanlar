@@ -299,4 +299,4 @@ export default {
 .review-caption {
   max-width: 90%;
 }
-</sty
+</style>
