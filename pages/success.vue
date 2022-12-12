@@ -20,4 +20,10 @@
           tasteful has  a long road ahead, but by preregistering you've earned yourself
           <strong>early access</strong>
           to new features as they are developed. You can see where we're going from here by visiting
-          <nux
+          <nuxt-link to="/roadmap">
+            our roadmap.
+          </nuxt-link>
+        </paragraph>
+      </paragraph-container>
+      <img src="~/assets/love.gif" alt="thank you ❤️">
+    </arti
