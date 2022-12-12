@@ -17,4 +17,7 @@
       <paragraph-container>
         <subheading>What's next?</subheading>
         <paragraph>
-          tasteful has  a long road ahead, but b
+          tasteful has  a long road ahead, but by preregistering you've earned yourself
+          <strong>early access</strong>
+          to new features as they are developed. You can see where we're going from here by visiting
+          <nux
