@@ -39,3 +39,15 @@ import paragraph from '~/components/Paragraph.vue'
 
 export default {
   name: 'Success',
+  components: {
+    masthead,
+    subheading,
+    articleContent,
+    paragraph,
+    paragraphContainer
+  },
+  data () {
+    return {
+      username: this.$store.getters.user.username
+    }
+ 
