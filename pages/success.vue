@@ -26,4 +26,11 @@
         </paragraph>
       </paragraph-container>
       <img src="~/assets/love.gif" alt="thank you ❤️">
-    </arti
+    </article-content>
+  </main>
+</template>
+
+<script>
+import masthead from '~/components/Masthead.vue'
+import subheading from '~/components/Subheading.vue'
+import articleContent from '~/com
