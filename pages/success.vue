@@ -33,4 +33,9 @@
 <script>
 import masthead from '~/components/Masthead.vue'
 import subheading from '~/components/Subheading.vue'
-import articleContent from '~/com
+import articleContent from '~/components/ArticleContent.vue'
+import paragraphContainer from '~/components/ParagraphContainer.vue'
+import paragraph from '~/components/Paragraph.vue'
+
+export default {
+  name: 'Success',
