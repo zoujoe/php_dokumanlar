@@ -62,4 +62,19 @@ export default {
 <style lang="scss" scoped>
 .success {
   padding-left: 3vw;
-  padding-right: 3vw
+  padding-right: 3vw;
+  display: flex;
+  justify-content: center;
+}
+main {
+  width: 94vw;
+}
+img {
+  width: 15vw;
+}
+@media (max-width: 1000px) {
+  img {
+    width: 50vw;
+  }
+}
+</style>
