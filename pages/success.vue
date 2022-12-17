@@ -50,4 +50,16 @@ export default {
     return {
       username: this.$store.getters.user.username
     }
- 
+  },
+  mounted () {
+    if (this.username === undefined) {
+      this.$router.push('/')
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.success {
+  padding-left: 3vw;
+  padding-right: 3vw
