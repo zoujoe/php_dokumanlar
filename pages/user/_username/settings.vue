@@ -184,3 +184,223 @@
               :options="['dark', 'solarised-dark', 'black']"
               full-width
               @change="update('theme-toggle', [1, $event])"
+            />
+          </div>
+        </template>
+      </divided-container>
+
+      <divided-container>
+        <template #left>
+          <subheading smaller no-top-margin>
+            Invites
+          </subheading>
+          <paragraph soft>
+            Expanding tasteful's world domination, one code and seed at a time.
+          </paragraph>
+        </template>
+        <template #right>
+          <div v-if="!inviteCode">
+            <regular-button @pressed="generateInvitation">
+              <span>Generate Invitation</span>
+            </regular-button>
+            <paragraph>
+              Be aware that Invitations may only be used once and it is impossible
+              to generate a second. Share it wisely.
+            </paragraph>
+          </div>
+          <div v-else>
+            <input-label no-top-margin>
+              Invite code
+            </input-label>
+            <text-input
+              name="invite-code-input"
+              :default-value="!loading ? inviteCode : ''"
+              full-width
+              disabled
+            >
+              <template #icon>
+                <key-icon title="Invite code" />
+              </template>
+            </text-input>
+            <input-label>
+              Invite seed
+            </input-label>
+            <text-input
+              name="invite-seed-input"
+              :default-value="!loading ? inviteSeed : ''"
+              full-width
+              disabled
+            >
+              <template #icon>
+                <fingerprint-icon title="Invite seed" />
+              </template>
+            </text-input>
+            <paragraph>Your Invitation has <span v-if="!inviteUsed">not</span> been used. <span v-if="inviteUsed">Thanks for helping tasteful grow!</span><span v-else>Share that code and seed!</span></paragraph>
+          </div>
+        </template>
+      </divided-container>
+      <!-- <divided-container>
+        <template #left>
+          <subheading smaller no-top-margin>
+            Search
+          </subheading>
+          <paragraph soft>
+            For settings related to the tasteful search engine, I suppose.
+          </paragraph>
+        </template>
+        <template #right>
+          <input-label no-top-margin>
+            Display album art where no artist image is available
+          </input-label>
+          <checkbox>Beware: this will seriously hit performance.</checkbox>
+          <input-label>
+            Display artist image when available
+          </input-label>
+          <checkbox>This will impact tasteful's data usage.</checkbox>
+          <input-label>
+            Display album art when available
+          </input-label>
+          <checkbox>This will also impact tasteful's data usage.</checkbox>
+          <input-label>
+            Display pretty floating circles
+          </input-label>
+          <checkbox>Aren't they nice?</checkbox>
+        </template>
+      </divided-container> -->
+      <divided-container red-border>
+        <template #left>
+          <subheading smaller no-top-margin>
+            Danger zone
+          </subheading>
+          <paragraph soft>
+            Proceed with caution; some of these settings may lead to
+            irreversable troubles!
+          </paragraph>
+        </template>
+        <template #right>
+          <!-- <input-label no-top-margin>
+            Experimental features
+          </input-label>
+          <checkbox>They're available now. Proceed with caution!</checkbox> -->
+          <regular-button include-arrow-icon @pressed="signOut">
+            <span>Sign out</span>
+          </regular-button>
+        </template>
+      </divided-container>
+      <paragraph centred>
+        Changes are automatically saved, don't worry!
+      </paragraph>
+    </article-content>
+  </main>
+</template>
+
+<script>
+// @ is an alias to /src
+import crypto from 'crypto'
+import faceIcon from 'vue-material-design-icons/Face.vue'
+// import linkIcon from 'vue-material-design-icons/Link.vue'
+import keyIcon from 'vue-material-design-icons/Key.vue'
+import fingerprintIcon from 'vue-material-design-icons/Fingerprint.vue'
+// import genderMaleFemaleIcon from 'vue-material-design-icons/GenderMaleFemale.vue'
+import invertColoursIcon from 'vue-material-design-icons/InvertColors.vue'
+import paletteIcon from 'vue-material-design-icons/Palette.vue'
+import { mapGetters } from 'vuex'
+import masthead from '~/components/Masthead.vue'
+import subheading from '~/components/Subheading.vue'
+import paragraph from '~/components/Paragraph.vue'
+import paragraphContainer from '~/components/ParagraphContainer.vue'
+import textInput from '~/components/TextInput.vue'
+import dropdown from '~/components/Dropdown.vue'
+import submitButton from '~/components/SubmitButton.vue'
+import regularButton from '~/components/RegularButton.vue'
+import articleContent from '~/components/ArticleContent.vue'
+import dividedContainer from '~/components/DividedContainer.vue'
+import inputLabel from '~/components/InputLabel.vue'
+import blur from '~/components/Blur.vue'
+// import checkbox from '~/components/Checkbox.vue'
+import { adjectives, nouns } from '~/assets/js/words.js'
+
+export default {
+  name: 'Settings',
+  components: {
+    masthead,
+    subheading,
+    paragraph,
+    paragraphContainer,
+    textInput,
+    dropdown,
+    submitButton,
+    regularButton,
+    articleContent,
+    faceIcon,
+    // linkIcon,
+    keyIcon,
+    fingerprintIcon,
+    // genderMaleFemaleIcon,
+    paletteIcon,
+    invertColoursIcon,
+    dividedContainer,
+    blur,
+    // checkbox,
+    inputLabel
+  },
+  data () {
+    return {
+      username: undefined,
+      usernameError: false,
+      usernameToSubmit: '',
+      loading: true,
+      inviteCode: undefined,
+      inviteSeed: undefined,
+      inviteUsed: undefined,
+      error: {
+        display: false,
+        message: ''
+      }
+    }
+  },
+  computed: mapGetters({
+    colourMode: 'theme/colourMode',
+    colourModeToggle: 'theme/colourModeToggle',
+    user: 'login/user'
+  }),
+  mounted () {
+    setTimeout(() => {
+      if (this.user === null || this.user === false) {
+        this.loading = false
+      } else if (this.user) {
+        this.inviteCode = this.user.inviteCode
+        this.inviteSeed = this.user.inviteSeed
+        // check if Invitation has been used
+        this.$fire.firestore.collection('invites').doc(this.user.invitation).get()
+          .then((doc) => {
+            const data = doc.data()
+            this.inviteUsed = data.used
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+          .finally(() => {
+            this.loading = false
+          })
+      }
+    }, 3000)
+  },
+  methods: {
+    submitUsername () {
+      // remove any existing errors
+      this.error.display = false
+      this.usernameError = false
+      this.error.message = ''
+      // check if username is valid
+      if (/[\s~`!@#$%^&*+=\-[\]\\';,/{}|\\":<>?()._]/g.test(this.usernameToSubmit)) {
+        this.error.display = true
+        this.usernameError = true
+        this.error.message = 'No symbols!'
+      } else if (this.usernameToSubmit.includes(' ')) {
+        this.error.display = true
+        this.usernameError = true
+        this.error.message = 'No spaces, please.'
+      } else if (!this.usernameToSubmit.match(/[a-z]/i)) {
+        this.error.display = true
+        this.usernameError = true
