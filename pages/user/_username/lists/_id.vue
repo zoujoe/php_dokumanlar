@@ -54,3 +54,7 @@ export default {
         .then((doc) => {
           this.list = doc.data()
         })
+    }
+  }
+}
+</script>
