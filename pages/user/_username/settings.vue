@@ -404,3 +404,145 @@ export default {
       } else if (!this.usernameToSubmit.match(/[a-z]/i)) {
         this.error.display = true
         this.usernameError = true
+        this.error.message = "Make sure you've got some letters in there."
+      } else if (
+        this.usernameToSubmit.includes('tastef') ||
+        this.usernameToSubmit.includes('admin') ||
+        this.usernameToSubmit.includes('settings')
+      ) {
+        this.error.display = true
+        this.usernameError = true
+        this.error.message = "Please don't try to impersonate authority. 1312."
+      } else if (this.usernameToSubmit.length < 3) {
+        this.error.display = true
+        this.usernameError = true
+        this.error.message =
+          'Double-check that your username is over three characters long.'
+      } else if (this.usernameToSubmit.length > 16) {
+        this.error.display = true
+        this.usernameError = true
+        this.error.message = 'Keep it under 16 characters, cheers.'
+      } else {
+        // check if username already existed
+        const usernames = this.$fire.firestore.collection('usernames')
+        const users = this.$fire.firestore.collection('users')
+        usernames.get().then((data) => {
+          data.forEach((username) => {
+            if (
+              this.usernameToSubmit.toLowerCase() === username.id.toLowerCase()
+            ) {
+              this.error.display = true
+              this.error.message =
+                "Someone's already got that username, unfortunately. Get those creative juices flowing!"
+            }
+          })
+          // update usernameError value once
+          if (this.error.display) {
+            this.usernameError = true
+          } else {
+            // if the username wasn't taken, add it to the database
+            // first add it to the user's own document
+            users
+              .doc(this.user.id)
+              .set(
+                {
+                  username: this.usernameToSubmit
+                },
+                { merge: true }
+              )
+              .then(() => {
+                // then add it to the list of usernames
+                usernames
+                  .doc(this.usernameToSubmit)
+                  .set({
+                    uid: this.user.id
+                  })
+                  .then(() => {
+                    // all is done.
+                    this.username = this.usernameToSubmit
+                    setTimeout(() => {
+                      this.$router.push({ path: '/user/' + this.username })
+                    }, 1000)
+                  })
+                  .catch((error) => {
+                    this.error.display = true
+                    this.error.message = 'Something went wrong. ' + error
+                  })
+              })
+              .catch((error) => {
+                this.error.display = true
+                this.error.message = 'Something went wrong. ' + error
+              })
+          }
+        })
+      }
+    },
+    update (toUpdate, value) {
+      if (toUpdate === 'display name') {
+        console.log(value)
+      } else if (toUpdate === 'theme') {
+        this.$store.commit('theme/setColourMode', value)
+      } else if (toUpdate === 'theme-toggle') {
+        const themeToggle = this.colourModeToggle
+        if (value[0] === 0) {
+          themeToggle[0] = value[1]
+        } else {
+          themeToggle[1] = value[1]
+        }
+        this.$store.commit('theme/setColourModeToggle', themeToggle)
+      }
+    },
+    signOut () {
+      this.$store.commit('login/setUser', 'logout')
+      this.$store.dispatch('login/signOutUser')
+    },
+    generateInvitation () {
+      const randomItem = (arr) => {
+        return arr[Math.floor(Math.random() * arr.length)]
+      }
+      const inviteCode = [randomItem(adjectives), '-', randomItem(adjectives), '-', randomItem(adjectives), '-', randomItem(nouns)]
+      this.inviteCode = inviteCode.join('')
+      this.inviteSeed = crypto.randomBytes(4).toString('hex')
+      const invitation = crypto.createHash('sha256').update(this.inviteCode + this.inviteSeed).digest('hex')
+      // check if invitation has already been created (odds are mindbogglingly low)
+      this.$fire.firestore.collection('invites').doc(invitation).get()
+        .then((res) => {
+          if (res.exists) {
+            alert('You just got incredibly lucky: you generated an existing Invitation. This is EXTREMELY rare (like, 1 in trillions of zillions or something odds). I wasn\'t expecting anyone to see this... but I hope you enjoyed this celebration. Have a good day!')
+          } else {
+            this.$fire.firestore.collection('users').doc(this.user.id).set({
+              inviteSeed: this.inviteSeed,
+              inviteCode: this.inviteCode,
+              invitation
+            }, { merge: true })
+              .then(() => {
+                this.$fire.firestore.collection('invites').doc(invitation).set({
+                  used: false
+                })
+              })
+          }
+        })
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.user {
+  padding-left: 3vw;
+  padding-right: 3vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3vh;
+}
+.username-input-container {
+  display: flex;
+  align-items: center;
+}
+.submit-button {
+  margin-left: 10px;
+}
+.flex-container {
+  display: flex;
+}
+</style>
