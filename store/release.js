@@ -7,4 +7,7 @@ export const getters = {
 }
 
 export const mutations = {
-  setReviewInFocus (st
+  setReviewInFocus (state, payload) {
+    state.reviewInFocus = payload
+  }
+}
