@@ -149,3 +149,38 @@ export const actions = {
                 }
                 commit('setError', errorPayload)
               }
+            )
+        }
+      })
+    }
+    commit('setError', errorPayload)
+  },
+  signOutUser ({ commit }) {
+    this.$fire.auth
+      .signOut()
+      .then(() => {
+        commit('setUser', 'logout')
+      })
+      .catch((err) => {
+        const errorPayload = {
+          display: true,
+          code: true,
+          message: err
+        }
+        commit('setError', errorPayload)
+      })
+  },
+  updateUser ({ commit }, payload) {
+    const user = {
+      id: payload.uid,
+      username: ''
+    }
+    commit('setUser', user)
+  }
+}
+
+export const getters = {
+  user: state => state.user,
+  error: state => state.error,
+  allowSignup: state => state.allowSignup
+}
